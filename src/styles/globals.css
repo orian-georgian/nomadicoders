@@ -1,0 +1,107 @@
+﻿@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(56, 189, 248, 0.18), transparent 28%),
+    radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.18), transparent 24%),
+    #0b0f19;
+  color: #e5eef8;
+}
+
+::selection {
+  background: rgba(56, 189, 248, 0.25);
+  color: #f8fbff;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply antialiased;
+  }
+
+  a {
+    @apply transition-colors duration-200;
+  }
+}
+
+@layer components {
+  .container {
+    @apply mx-auto w-full max-w-container px-4 sm:px-6 lg:px-8;
+  }
+
+  .section {
+    @apply py-16 sm:py-20 lg:py-24;
+  }
+
+  .heading {
+    @apply text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-5xl;
+  }
+
+  .subheading {
+    @apply text-base leading-7 text-slate-300 sm:text-lg;
+  }
+
+  .glass {
+    @apply border border-white/10 bg-white/5 backdrop-blur-xl;
+  }
+
+  .gradient-text {
+    @apply bg-brand-gradient bg-clip-text text-transparent;
+  }
+}
+
+@keyframes float-badge-up {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(0, -10px, 0);
+  }
+}
+
+@keyframes float-badge-down {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(0, 10px, 0);
+  }
+}
+
+@layer components {
+  .float-badge-card {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: geometricPrecision;
+  }
+
+  .float-badge-up {
+    animation: float-badge-up 5.2s linear infinite alternate;
+    will-change: transform;
+  }
+
+  .float-badge-down {
+    animation: float-badge-down 5.2s linear infinite alternate;
+    will-change: transform;
+  }
+}
+
+
+

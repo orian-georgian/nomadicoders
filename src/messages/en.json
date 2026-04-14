@@ -1,0 +1,427 @@
+{
+    "Metadata":  {
+                     "title":  "Nomadicoders | Senior Developers for Modern Web Products",
+                     "description":  "Nomadicoders is a two-person senior development team building high-performance web apps and websites with speed, clarity and remote-first execution."
+                 },
+    "Nav":  {
+                "services":  "Services",
+                "whyUs":  "Why us",
+                "projects":  "Projects",
+                "contact":  "Contact",
+                "cta":  "Start a project",
+                "language":  "Language switcher"
+            },
+    "Footer":  {
+                   "tagline":  "Two senior developers building standout digital products, remotely.",
+                   "privacy":  "Privacy",
+                   "terms":  "Terms",
+                   "email":  "Email us"
+               },
+    "Home":  {
+                 "hero":  {
+                              "eyebrow":  "Remote senior team",
+                              "title":  "We build high-performance web apps from anywhere in the world.",
+                              "description":  "A senior developer team delivering fast, scalable and reliable digital products without the overhead of an agency.",
+                              "primaryCta":  "Start a project",
+                              "secondaryCta":  "See our work",
+                              "badges":  {
+                                             "performanceTitle":  "Performance",
+                                             "performanceDescription":  "Fast, scalable delivery"
+                                         },
+                              "panel":  {
+                                            "title":  "Senior shipping engine",
+                                            "buildVelocity":  "Build velocity",
+                                            "coverage":  "Coverage"
+                                        },
+                              "stats":  {
+                                            "years":  "Years of product engineering",
+                                            "projects":  "Products shipped",
+                                            "delivery":  "Faster delivery with senior-only execution",
+                                            "timezone":  "Flexible collaboration across time zones",
+                                            "execution":  "Senior-only execution across the full build",
+                                            "handoffs":  "Handoffs between strategy and build",
+                                            "seniors":  "Senior developers from kickoff to launch",
+                                            "direct":  "Direct delivery team across the project"
+                                        }
+                          },
+                 "problem":  {
+                                 "eyebrow":  "The usual bottleneck",
+                                 "title":  "Agency-style overhead slows good products down.",
+                                 "description":  "Too many layers, slow handoffs and unclear ownership make even simple projects feel heavier than they need to be.",
+                                 "items":  {
+                                               "scope":  "You do not need to pay for layers of project management to get a polished product.",
+                                               "speed":  "Decisions stay fast because the people planning the work are the same people shipping it.",
+                                               "quality":  "We build with scale, maintainability and performance in mind from day one."
+                                           }
+                             },
+                 "services":  {
+                                  "eyebrow":  "What we build",
+                                  "title":  "Senior product execution for teams that need things shipped well.",
+                                  "description":  "From custom web apps to marketing sites and hands-on senior support, we build digital products that are fast, maintainable and ready to grow.",
+                                  "items":  {
+                                                "apps":  {
+                                                             "title":  "Custom web apps",
+                                                             "description":  "Dashboards, internal tools, customer portals and SaaS products built with strong architecture and performance-first thinking."
+                                                         },
+                                                "websites":  {
+                                                                 "title":  "Marketing websites",
+                                                                 "description":  "Fast, flexible websites that feel premium, communicate clearly and support content, SEO and conversions."
+                                                             },
+                                                "fractional":  {
+                                                                   "title":  "Fractional senior support",
+                                                                   "description":  "Technical direction, codebase cleanup, component systems and implementation help for teams that need senior execution now."
+                                                               }
+                                            }
+                              },
+                 "whyChooseUs":  {
+                                     "eyebrow":  "Why choose us",
+                                     "title":  "A small senior team that stays close to the work.",
+                                     "description":  "You work directly with the people making technical decisions, shaping the product and shipping the final result.",
+                                     "items":  {
+                                                   "senior":  "Only senior developers on the work. No outsourcing, no junior handoff and no mystery team behind the scenes.",
+                                                   "communication":  "Fast, clear communication with the people actually building the product.",
+                                                   "execution":  "Product-minded delivery that balances UX, performance, maintainability and business goals.",
+                                                   "flexibility":  "Remote-first collaboration that fits async teams, founders on the move and growing companies."
+                                               }
+                                 },
+                 "projects":  {
+                                  "eyebrow":  "Selected work",
+                                  "title":  "A few examples of what we build.",
+                                  "description":  "From internal tools to conversion-focused websites, we help teams turn ideas into fast, maintainable products.",
+                                  "items":  {
+                                                "saas":  {
+                                                             "category":  "B2B SaaS",
+                                                             "title":  "Operations dashboard",
+                                                             "summary":  "A real-time internal platform for tracking team workloads, approvals and delivery status across regions.",
+                                                             "outcome":  "Reduced manual coordination and improved operational visibility."
+                                                         },
+                                                "booking":  {
+                                                                "category":  "Travel product",
+                                                                "title":  "Booking flow redesign",
+                                                                "summary":  "A mobile-first booking flow with clearer pricing, faster checkout and smoother content management for the client team.",
+                                                                "outcome":  "Improved conversion with a simpler and more trustworthy flow."
+                                                            },
+                                                "marketing":  {
+                                                                  "category":  "Service business",
+                                                                  "title":  "High-performance marketing site",
+                                                                  "summary":  "A performance-focused website with strong messaging, reusable sections and a scalable content structure.",
+                                                                  "outcome":  "Better page speed, cleaner CMS workflows and stronger lead quality."
+                                                              }
+                                            }
+                              },
+                 "cta":  {
+                             "eyebrow":  "Start a project",
+                             "title":  "Need senior hands without agency overhead?",
+                             "description":  "If you need clear communication, fast execution and a team that can take ownership from product thinking to launch, let\u0027s talk.",
+                             "button":  "Start a project",
+                             "contact":  {
+                                             "emailLabel":  "Email",
+                                             "callLabel":  "Discovery call",
+                                             "callValue":  "Book a 30-minute intro",
+                                             "openLabel":  "Open"
+                                         }
+                         },
+                 "refactorExperience":  {
+                                            "eyebrow":  "Code Transformation",
+                                            "title":  "Messy code slows you down.\nClean code moves you forward.",
+                                            "description":  "What looks like a small refactor often removes hidden complexity. We turn fragile, duplicated logic into clean, reliable systems that are easier to scale, maintain, and build on.",
+                                            "before":  "Before",
+                                            "after":  "After",
+                                            "button":  "Refactor code",
+                                            "refactoringButton":  "Refactoring...",
+                                            "resetButton":  "Back to before",
+                                            "metrics":  {
+                                                            "performance":  "Performance",
+                                                            "maintainability":  "Maintainability",
+                                                            "bugs":  "Bugs"
+                                                        },
+                                            "insights":  {
+                                                             "before":  {
+                                                                            "title":  "What is wrong in the first version",
+                                                                            "items":  {
+                                                                                          "detailsMixedTogether":  "The same bookings list is looped several times for related work.",
+                                                                                          "defaultsRepeated":  "The pricing logic is repeated instead of being reused.",
+                                                                                          "changesFeelRisky":  "Even a small pricing change could require edits in multiple places."
+                                                                                      }
+                                                                        },
+                                                             "after":  {
+                                                                           "title":  "What improves after refactoring",
+                                                                           "items":  {
+                                                                                         "fieldsAreCleaner":  "A named breakfast constant removes the magic number and keeps pricing easier to change.",
+                                                                                         "goalsCollectedOnce":  "Destructuring and one loop make the code shorter and easier to scan.",
+                                                                                         "easierToUpdate":  "Fewer operations and clearer types make the function safer to change later."
+                                                                                     }
+                                                                       }
+                                                         },
+                                            "intro":  {
+                                                          "label":  "Simple example",
+                                                          "title":  "A booking total function before and after refactoring",
+                                                          "description":  "The first version loops over the same bookings several times and repeats pricing logic. The refactored version keeps one clear flow, uses a named constant and is easier to maintain.",
+                                                          "chips":  {
+                                                                        "example":  "Messy JavaScript with duplicated work",
+                                                                        "outcome":  "Clean TypeScript with one clear flow"
+                                                                    }
+                                                      },
+                                            "beforePanel":  {
+                                                                "helper":  "Works today. Hard to change tomorrow.",
+                                                                "annotations":  {
+                                                                                    "responsibilities":  "Too many responsibilities",
+                                                                                    "logic":  "Hard to follow logic",
+                                                                                    "risk":  "More rules, more risk",
+                                                                                    "concerns":  "Mixed concerns"
+                                                                                }
+                                                            },
+                                            "afterPanel":  {
+                                                               "helper":  "Cleaner now. Easier to extend later.",
+                                                               "annotations":  {
+                                                                                   "flow":  "Clear responsibility",
+                                                                                   "reuse":  "All rules applied consistently",
+                                                                                   "rules":  "Separated concerns",
+                                                                                   "notifications":  "Simple and predictable"
+                                                                               }
+                                                           }
+                                        },
+                 "uiFixExperience":  {
+                                         "eyebrow":  "Interface Transformation",
+                                         "title":  "Design isn\u0027t decoration.\nIt\u0027s how your product works.",
+                                         "description":  "What looks like just UI is often the difference between confusion and clarity. We refine structure, spacing, and interaction so your product feels intuitive, reliable, and ready to scale.",
+                                         "before":  "Before",
+                                         "after":  "After",
+                                         "button":  "Fix UI",
+                                         "fixingButton":  "Fixing...",
+                                         "resetButton":  "Back to before",
+                                         "dashboardTitle":  "Bookings",
+                                         "dashboardSubtitle":  "Upcoming reservations",
+                                         "afterTitle":  "A bookings dashboard that is easier to scan and manage.",
+                                         "afterSubtitle":  "Reservations, statuses, prices and actions now sit in a layout that feels clear, consistent and faster to use.",
+                                         "issues":  {
+                                                        "cramped":  "Content feels crowded",
+                                                        "misaligned":  "Inconsistent layout",
+                                                        "hardToRead":  "Low visual hierarchy"
+                                                    },
+                                         "columns":  {
+                                                         "name":  "Name",
+                                                         "date":  "Date",
+                                                         "status":  "Status",
+                                                         "price":  "Price",
+                                                         "actions":  "Actions"
+                                                     },
+                                         "actions":  {
+                                                         "view":  "View",
+                                                         "cancel":  "Cancel",
+                                                         "loadMore":  "Load more"
+                                                     },
+                                         "statuses":  {
+                                                          "confirmed":  "Confirmed",
+                                                          "pending":  "Pending",
+                                                          "cancelled":  "Cancelled"
+                                                      },
+                                         "rowMeta":  "Guest booking",
+                                         "improvements":  {
+                                                              "clearer":  "Well-balanced layout",
+                                                              "hierarchy":  "Strong visual hierarchy",
+                                                              "scan":  "Quick to navigate"
+                                                          },
+                                         "afterDashboardTitle":  "Upcoming bookings"
+                                     },
+                 "workflowSection":  {
+                                         "eyebrow":  "Process",
+                                         "title":  "A clear process. No surprises.",
+                                         "description":  "We guide your product from idea to a stable, scalable solution, with full visibility and continuous feedback at every step.",
+                                         "approachLabel":  "How we build",
+                                         "detailPanel":  {
+                                                              "stepLabel":  "Step",
+                                                              "principleLabel":  "Core principle",
+                                                              "focusLabel":  "What we focus on",
+                                                              "outcomeLabel":  "What you get"
+                                                          },
+                                         "steps":  {
+                                                       "discovery":  {
+                                                                         "title":  "Discovery",
+                                                                         "description":  "We understand your goals, users, and constraints.",
+                                                                         "principle":  "Understanding before coding",
+                                                                         "detail":  "This stage aligns the product vision with real constraints before any scope is locked.",
+                                                                         "focus":  "Stakeholders, user needs, and project constraints",
+                                                                         "outcome":  "A shared brief the whole team can work from"
+                                                                     },
+                                                       "scope":  {
+                                                                     "title":  "Scope & Clarity",
+                                                                     "description":  "We define what matters and remove what doesn't.",
+                                                                     "principle":  "Clear architecture decisions",
+                                                                     "detail":  "We remove ambiguity early, define boundaries, and protect the product from unnecessary complexity.",
+                                                                     "focus":  "Priorities, tradeoffs, and system boundaries",
+                                                                     "outcome":  "A lean scope with sharper product decisions"
+                                                                 },
+                                                       "planning":  {
+                                                                        "title":  "Planning & Estimate",
+                                                                        "description":  "Clear timeline, priorities, and transparent costs.",
+                                                                        "principle":  "Realistic estimation",
+                                                                        "detail":  "We turn direction into a realistic plan that respects budget, timelines, and the real effort required.",
+                                                                        "focus":  "Sequencing, estimates, and delivery milestones",
+                                                                        "outcome":  "A roadmap with transparent expectations"
+                                                                    },
+                                                       "design":  {
+                                                                      "title":  "Design & Validation",
+                                                                      "description":  "Wireframes and mockups with early feedback.",
+                                                                      "principle":  "User-first thinking",
+                                                                      "detail":  "Before engineering starts, we validate flows and uncover friction while changes are still fast and inexpensive.",
+                                                                      "focus":  "Key flows, UX risks, and early validation",
+                                                                      "outcome":  "Screens and decisions ready for implementation"
+                                                                  },
+                                                       "build":  {
+                                                                     "title":  "Build",
+                                                                     "description":  "We implement with performance and scalability in mind.",
+                                                                     "principle":  "Clean, maintainable code",
+                                                                     "detail":  "Implementation moves in small, reviewable increments so quality stays high as the product takes shape.",
+                                                                     "focus":  "Architecture, maintainability, and performance",
+                                                                     "outcome":  "Production-grade features without brittle shortcuts"
+                                                                 },
+                                                       "feedback":  {
+                                                                        "title":  "Continuous Feedback",
+                                                                        "description":  "Regular demos and fast iterations. No surprises.",
+                                                                        "principle":  "Iterative development",
+                                                                        "detail":  "You see progress continuously, not at the end, so the product improves while there is still room to adjust.",
+                                                                        "focus":  "Demos, iteration loops, and course correction",
+                                                                        "outcome":  "Fewer surprises and faster alignment"
+                                                                    },
+                                                       "launch":  {
+                                                                      "title":  "Launch",
+                                                                      "description":  "Stable, tested, production-ready delivery.",
+                                                                      "principle":  "Reliable deployment",
+                                                                      "detail":  "We prepare release quality carefully so deployment feels controlled, stable, and repeatable.",
+                                                                      "focus":  "Testing, deployment readiness, and reliability",
+                                                                      "outcome":  "A smooth handoff into production"
+                                                                  },
+                                                       "growth":  {
+                                                                      "title":  "Growth & Support",
+                                                                      "description":  "Ongoing improvements, scaling, and optimization.",
+                                                                      "principle":  "Performance & scalability",
+                                                                      "detail":  "After launch, we keep improving the product based on real usage, bottlenecks, and new business needs.",
+                                                                      "focus":  "Optimization, scaling, and next priorities",
+                                                                      "outcome":  "A product that keeps getting stronger"
+                                                                  }
+                                                   },
+                                         "buildTrack":  {
+                                                          "rightTechChoices":  {
+                                                                                     "title":  "Right Tech Choices",
+                                                                                     "description":  "Stack tailored to your product, not trends"
+                                                                                 },
+                                                          "featureBreakdown":  {
+                                                                                     "title":  "Feature Breakdown",
+                                                                                     "description":  "Small, clear, testable units of work"
+                                                                                 },
+                                                          "smartPlanning":  {
+                                                                                "title":  "Smart Planning",
+                                                                                "description":  "Prioritized roadmap with realistic estimates"
+                                                                            },
+                                                          "focusedImplementation":  {
+                                                                                         "title":  "Focused Implementation",
+                                                                                         "description":  "Clean, maintainable, scalable code"
+                                                                                     },
+                                                          "performanceFirst":  {
+                                                                                    "title":  "Performance First",
+                                                                                    "description":  "Fast load times and efficient execution"
+                                                                                },
+                                                          "codeQuality":  {
+                                                                              "title":  "Code Quality",
+                                                                              "description":  "Consistent structure, readable logic, low risk"
+                                                                          },
+                                                          "testingStability":  {
+                                                                                   "title":  "Testing & Stability",
+                                                                                   "description":  "Prevent issues before they reach users"
+                                                                               },
+                                                          "reviewDemo":  {
+                                                                             "title":  "Review & Demo",
+                                                                             "description":  "You see progress early and often"
+                                                                         }
+                                                      },
+                                         "trust":  {
+                                                       "transparentCommunication":  "Transparent communication",
+                                                       "weeklyDemos":  "Weekly demos",
+                                                       "fastIterations":  "Fast iterations",
+                                                       "noUnnecessaryComplexity":  "No unnecessary complexity"
+                                                   },
+                                         "cta":  {
+                                                     "title":  "Ready to build something reliable?",
+                                                     "button":  "Start a conversation",
+                                                     "description":  "We'll help you turn your idea into a product that works and keeps working."
+                                                 }
+
+                                     },
+                 "testimonialsSection":  {
+                                             "eyebrow":  "Testimonials",
+                                             "title":  "Trusted by the teams we've worked with",
+                                             "description":  "We focus on building long-term relationships, not just delivering features. Here's how our work is experienced from the other side.",
+                                             "recipientLabel":  "Directed to",
+                                             "linkedinLabel":  "View LinkedIn recommendation",
+                                             "profiles":  {
+                                                              "georgian":  "Georgian",
+                                                              "andreea":  "Andreea",
+                                                              "nomadicoders":  "Nomadicoders"
+                                                          },
+                                             "items":  {
+                                                           "georgian":  {
+                                                                             "quote":  "They don't just deliver features, they think through the entire product. The code quality and structure made a huge difference for our team.",
+                                                                             "name":  "Mihai",
+                                                                             "role":  "Senior Engineer",
+                                                                             "company":  "Product Studio",
+                                                                             "source":  "LinkedIn"
+                                                                         },
+                                                           "andreea":  {
+                                                                            "quote":  "Working with them brought clarity to our project. What used to feel complex became structured and predictable.",
+                                                                            "name":  "Raluca",
+                                                                            "role":  "Product Manager",
+                                                                            "company":  "HealthTech Platform",
+                                                                            "source":  "Client feedback"
+                                                                        },
+                                                           "startupFounder":  {
+                                                                                    "quote":  "Communication was clear, timelines were respected, and we always knew what was happening. That's rare.",
+                                                                                    "name":  "Startup Founder",
+                                                                                    "role":  "Founder",
+                                                                                    "company":  "B2B SaaS Company",
+                                                                                    "source":  "Client feedback"
+                                                                                },
+                                                           "saasClient":  {
+                                                                              "quote":  "The improvements in performance and usability were immediately noticeable. Our product feels faster and easier to use.",
+                                                                              "name":  "SaaS Client",
+                                                                              "role":  "Product Team",
+                                                                              "company":  "Growth SaaS Platform",
+                                                                              "source":  "Client feedback"
+                                                                          }
+                                                       },
+                                             "cta":  {
+                                                         "title":  "Let's build something together",
+                                                         "description":  "If you need a team that brings clarity, momentum, and reliable execution, we're ready to help.",
+                                                         "button":  "Start a conversation"
+                                                     }
+                                         }
+             },
+    "Legal":  {
+                  "privacy":  {
+                                  "eyebrow":  "Privacy",
+                                  "title":  "Privacy policy",
+                                  "intro":  "We keep data collection minimal and only gather the information needed to reply to inquiries and deliver our services.",
+                                  "collection":  "When you contact us, we may store your name, email address, company details and project information you choose to share.",
+                                  "usage":  "We use that information to communicate about potential work, provide estimates, deliver contracted services and improve how we operate.",
+                                  "retention":  "We retain project and contact information only as long as it is reasonably necessary for business, legal and operational purposes."
+                              },
+                  "terms":  {
+                                "eyebrow":  "Terms",
+                                "title":  "Terms of engagement",
+                                "intro":  "Project scope, pricing, delivery milestones and responsibilities are confirmed in writing before work begins.",
+                                "scope":  "Any timeline or deliverable depends on timely feedback, access and approvals from the client side.",
+                                "delivery":  "Unless otherwise agreed, intellectual property transfers to the client after all outstanding invoices for the project have been paid.",
+                                "liability":  "Our liability is limited to the value of the services delivered under the active agreement, to the extent permitted by law."
+                            }
+              }
+}
+
+
+
+
+
+
+
+
+
+
