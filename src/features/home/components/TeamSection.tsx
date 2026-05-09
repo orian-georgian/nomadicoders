@@ -1,6 +1,6 @@
 ﻿"use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import {
   motion,
@@ -256,12 +256,14 @@ function TeamMemberOrb({
   member: TeamMember;
   reducedMotion: boolean;
 }) {
+  const [isHovered, setIsHovered] = useState(false);
   const floatAnimation = reducedMotion
     ? undefined
     : {
         x: member.startsAbove ? [0, 6, -4, 0] : [0, -6, 4, 0],
         y: member.startsAbove ? [-10, 10, -10] : [10, -10, 10],
       };
+  const shouldFloat = !reducedMotion && !isHovered;
 
   return (
     <motion.div
@@ -272,16 +274,16 @@ function TeamMemberOrb({
       whileInView={{ opacity: 1, y: 0 }}
     >
       <motion.div
-        animate={floatAnimation}
+        animate={shouldFloat ? floatAnimation : { x: 0, y: 0 }}
         className="relative will-change-transform"
         transition={
-          reducedMotion
-            ? undefined
-            : {
+          shouldFloat
+            ? {
                 duration: member.floatingDuration,
                 ease: "easeInOut",
                 repeat: Number.POSITIVE_INFINITY,
               }
+            : { duration: 0.24, ease: "easeOut" }
         }
       >
         <Link
@@ -292,6 +294,8 @@ function TeamMemberOrb({
           <motion.div
             className="relative isolate aspect-square w-full rounded-full border border-white/10 bg-transparent p-2 shadow-[0_18px_45px_rgba(2,6,23,0.25)] focus-visible:ring-sky-300/40"
             initial="rest"
+            onHoverEnd={() => setIsHovered(false)}
+            onHoverStart={() => setIsHovered(true)}
             transition={hoverTransition}
             variants={{
               hover: reducedMotion ? {} : { scale: 1.05 },
@@ -300,15 +304,17 @@ function TeamMemberOrb({
             whileFocus="hover"
             whileHover="hover"
           >
-            <div className="relative h-full w-full overflow-hidden rounded-full bg-white/[0.04]">
-              <Image
-                alt={member.name}
-                className="h-full w-full object-cover"
-                fill
-                priority={false}
-                sizes="(max-width: 768px) 75vw, (max-width: 1280px) 280px, 320px"
-                src={member.imageSrc}
-              />
+            <div className="relative h-full w-full overflow-hidden rounded-full bg-transparent [clip-path:inset(1px_round_9999px)]">
+              <div className="absolute inset-[-1px] transform-gpu">
+                <Image
+                  alt={member.name}
+                  className="h-full w-full object-cover"
+                  fill
+                  priority={false}
+                  sizes="(max-width: 768px) 75vw, (max-width: 1280px) 280px, 320px"
+                  src={member.imageSrc}
+                />
+              </div>
 
               <div className="absolute inset-0 rounded-full bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.18),transparent_38%),linear-gradient(180deg,rgba(2,6,23,0),rgba(2,6,23,0.14)_62%,rgba(2,6,23,0.78)_100%)]" />
 
@@ -499,8 +505,8 @@ export function TeamSection() {
       id="team-section"
     >
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(8,11,18,0.12),rgba(8,11,18,0.78)),radial-gradient(circle_at_top,rgba(99,102,241,0.14),transparent_34%),radial-gradient(circle_at_20%_30%,rgba(139,92,246,0.14),transparent_26%),radial-gradient(circle_at_80%_20%,rgba(56,189,248,0.16),transparent_28%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(148,163,184,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(148,163,184,0.08)_1px,transparent_1px)] bg-[size:72px_72px] opacity-[0.08] [mask-image:radial-gradient(circle_at_center,black,transparent_78%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(11,15,25,0),rgba(15,23,42,0.22)_42%,rgba(11,15,25,0))]" />
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(148,163,184,0.07)_1px,transparent_1px),linear-gradient(90deg,rgba(148,163,184,0.07)_1px,transparent_1px)] bg-[size:72px_72px] opacity-[0.055] [mask-image:radial-gradient(circle_at_center,black,transparent_76%)]" />
 
         <motion.div
           animate={
@@ -508,7 +514,7 @@ export function TeamSection() {
               ? undefined
               : { scale: [1, 1.06, 0.98], x: [0, 24, -10], y: [0, -18, 8] }
           }
-          className="absolute left-[-6rem] top-16 h-72 w-72 rounded-full bg-violet-500/12 blur-3xl"
+          className="absolute left-[-6rem] top-16 h-72 w-72 rounded-full bg-violet-500/9 blur-3xl"
           transition={
             reducedMotion
               ? undefined
@@ -525,7 +531,7 @@ export function TeamSection() {
               ? undefined
               : { scale: [1, 0.96, 1.08], x: [0, -22, 12], y: [0, 18, -12] }
           }
-          className="absolute right-[-5rem] top-24 h-80 w-80 rounded-full bg-sky-400/12 blur-3xl"
+          className="absolute right-[-5rem] top-24 h-80 w-80 rounded-full bg-sky-400/9 blur-3xl"
           transition={
             reducedMotion
               ? undefined

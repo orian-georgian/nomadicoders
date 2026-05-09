@@ -18,9 +18,6 @@ const config: Config = {
       backgroundImage: {
         "brand-gradient": "linear-gradient(135deg, #38BDF8 0%, #8B5CF6 100%)"
       },
-      boxShadow: {
-        glow: "0 24px 80px rgba(56, 189, 248, 0.18)"
-      },
       maxWidth: {
         container: "72rem"
       }

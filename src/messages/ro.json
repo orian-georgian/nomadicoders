@@ -74,14 +74,26 @@
                                             }
                               },
                  "whyChooseUs":  {
-                                     "eyebrow":  "De ce noi",
-                                     "title":  "O echipa mica de seniori care ramâne aproape de munca.",
-                                     "description":  "Lucrezi direct cu oamenii care iau deciziile tehnice, modeleaza produsul ?i livreaza rezultatul final.",
+                                     "eyebrow":  "De ce Nomadicoders",
+                                     "title":  "Executie senior fara overhead de agentie.",
+                                     "description":  "Eliminam straturile care incetinesc proiectele si pastram oamenii care iau deciziile aproape de munca efectiva.",
                                      "items":  {
-                                                   "senior":  "Doar dezvoltatori seniori lucreaza la proiect. Fara externalizare, fara predare catre juniori ?i fara o echipa ascunsa în spate.",
-                                                   "communication":  "Comunicare rapida ?i clara cu oamenii care construiesc efectiv produsul.",
-                                                   "execution":  "Livrare orientata spre produs, care echilibreaza UX-ul, performan?a, mentenan?a ?i obiectivele de afaceri.",
-                                                   "flexibility":  "Colaborare remote-first potrivita pentru echipe asincrone, fondatori mobili ?i companii în cre?tere."
+                                                   "layers":  {
+                                                                  "title":  "Fara straturi de management",
+                                                                  "description":  "Lucrezi direct cu dezvoltatorii seniori care planifica si construiesc produsul, fara externalizare sau predare catre juniori."
+                                                              },
+                                                   "decisions":  {
+                                                                     "title":  "Decizii rapide si clare",
+                                                                     "description":  "Mai putine predari, mai putine sedinte si aliniere mai rapida cand prioritatile, scope-ul sau detaliile de produs se schimba."
+                                                                 },
+                                                   "quality":  {
+                                                                  "title":  "Inginerie orientata spre produs",
+                                                                  "description":  "Echilibram UX-ul, performanta, mentenanta si obiectivele de business de la prima decizie tehnica."
+                                                              },
+                                                   "flexibility":  {
+                                                                       "title":  "Flexibilitate remote-first",
+                                                                       "description":  "Colaborare potrivita pentru lucru asincron, fondatori mobili, echipe distribuite si companii in crestere."
+                                                                   }
                                                }
                                  },
                  "projects":  {

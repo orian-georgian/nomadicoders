@@ -14,6 +14,8 @@ import { useTranslations } from "next-intl";
 
 import { buttonVariants } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
+import { BuildVelocityCardContent } from "@/components/shared/hero/BuildVelocityCardContent";
+import { HeroMetricCard } from "@/components/shared/hero/HeroMetricCard";
 import { fadeIn, slideUp, staggerContainer } from "@/lib/animations";
 
 import { CoverageMetrics } from "./CoverageMetrics";
@@ -192,21 +194,9 @@ export function Hero() {
           <div className="relative z-10 space-y-8">
             <motion.div className="space-y-6" variants={slideUp()}>
               <motion.span
-                className="glass relative inline-flex items-center gap-3 overflow-hidden rounded-full px-4 py-2 text-sky-100"
+                className="glass relative inline-flex overflow-hidden rounded-full px-4 py-2 text-sky-100"
                 variants={fadeIn()}
               >
-                <motion.span
-                  animate={{
-                    opacity: [0.65, 1, 0.7],
-                    scale: [0.96, 1.08, 0.96],
-                  }}
-                  className="relative h-2 w-2 rounded-full bg-cyan-300 shadow-[0_0_16px_rgba(103,232,249,0.9)]"
-                  transition={{
-                    duration: 3.2,
-                    repeat: Number.POSITIVE_INFINITY,
-                    ease: "easeInOut",
-                  }}
-                />
                 <span className="relative text-xs font-semibold uppercase tracking-[0.28em] text-sky-100">
                   {t("eyebrow")}
                 </span>
@@ -292,56 +282,22 @@ export function Hero() {
 
                   <div className="mt-4 grid gap-4">
                     <div className="grid gap-4 sm:grid-cols-2">
-                      <motion.div
-                        className="rounded-[1.35rem] border border-white/10 bg-gradient-to-br from-sky-500/14 via-slate-900 to-violet-500/12 p-5"
-                        variants={slideUp(0.05)}
-                      >
-                        <p className="text-xs uppercase tracking-[0.24em] text-slate-400">
-                          {t("panel.buildVelocity")}
-                        </p>
-                        <div className="mt-5 flex items-end gap-3">
-                          <p className="text-5xl font-semibold leading-none tracking-tight text-white sm:text-6xl">
-                            2x
-                          </p>
-                          <div className="mb-1 ml-auto flex h-16 items-end gap-1.5">
-                            {[58, 82, 68, 100].map((height, index) => (
-                              <motion.span
-                                key={height}
-                                animate={{
-                                  height: [
-                                    `${Math.max(20, Math.round(height * 0.32))}%`,
-                                    `${height}%`,
-                                    `${Math.max(32, Math.round(height * 0.74))}%`,
-                                  ],
-                                }}
-                                className="w-2.5 rounded-full bg-gradient-to-t from-sky-400 to-violet-400"
-                                style={{
-                                  opacity: 0.7 + index * 0.08,
-                                  transformOrigin: "bottom",
-                                }}
-                                transition={{
-                                  duration: 4.8 + index * 0.35,
-                                  repeat: Number.POSITIVE_INFINITY,
-                                  repeatType: "mirror",
-                                  ease: "easeInOut",
-                                }}
-                              />
-                            ))}
-                          </div>
-                        </div>
-                        <p className="mt-3 text-sm leading-6 text-slate-300">
-                          {t("stats.delivery")}
-                        </p>
+                      <motion.div variants={slideUp(0.05)}>
+                        <HeroMetricCard
+                          className="bg-gradient-to-br from-sky-500/14 via-slate-900 to-violet-500/12"
+                          title={t("panel.buildVelocity")}
+                        >
+                          <BuildVelocityCardContent
+                            description={t("stats.delivery")}
+                            value="2x"
+                          />
+                        </HeroMetricCard>
                       </motion.div>
 
-                      <motion.div
-                        className="rounded-[1.35rem] border border-white/10 p-5"
-                        variants={slideUp(0.12)}
-                      >
-                        <p className="text-xs uppercase tracking-[0.24em] text-slate-400">
-                          {t("panel.coverage")}
-                        </p>
-                        <CoverageMetrics stats={coverageStats} />
+                      <motion.div variants={slideUp(0.12)}>
+                        <HeroMetricCard title={t("panel.coverage")}>
+                          <CoverageMetrics stats={coverageStats} />
+                        </HeroMetricCard>
                       </motion.div>
                     </div>
 
@@ -381,5 +337,3 @@ export function Hero() {
     </section>
   );
 }
-
-

@@ -74,14 +74,26 @@
                                             }
                               },
                  "whyChooseUs":  {
-                                     "eyebrow":  "Why choose us",
-                                     "title":  "A small senior team that stays close to the work.",
-                                     "description":  "You work directly with the people making technical decisions, shaping the product and shipping the final result.",
+                                     "eyebrow":  "Why Nomadicoders",
+                                     "title":  "Senior execution without agency overhead.",
+                                     "description":  "We remove the layers that slow projects down and keep the people making decisions close to the work.",
                                      "items":  {
-                                                   "senior":  "Only senior developers on the work. No outsourcing, no junior handoff and no mystery team behind the scenes.",
-                                                   "communication":  "Fast, clear communication with the people actually building the product.",
-                                                   "execution":  "Product-minded delivery that balances UX, performance, maintainability and business goals.",
-                                                   "flexibility":  "Remote-first collaboration that fits async teams, founders on the move and growing companies."
+                                                   "layers":  {
+                                                                  "title":  "No management layers",
+                                                                  "description":  "You work directly with the senior developers planning and building the product, without outsourcing or junior handoff."
+                                                              },
+                                                   "decisions":  {
+                                                                     "title":  "Fast, clear decisions",
+                                                                     "description":  "Less handoff, fewer meetings, and quicker alignment when priorities, scope, or product details change."
+                                                                 },
+                                                   "quality":  {
+                                                                  "title":  "Product-minded engineering",
+                                                                  "description":  "We balance UX, performance, maintainability, and business goals from the first technical decision."
+                                                              },
+                                                   "flexibility":  {
+                                                                       "title":  "Remote-first flexibility",
+                                                                       "description":  "Async-friendly collaboration for founders, distributed teams, and growing companies that need senior momentum."
+                                                                   }
                                                }
                                  },
                  "projects":  {
