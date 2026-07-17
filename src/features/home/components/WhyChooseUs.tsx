@@ -2,10 +2,11 @@
 
 import { motion } from "framer-motion";
 import {
+  Code2,
   Layers3,
   MessageSquareText,
-  Route,
   ShieldCheck,
+  Zap,
 } from "lucide-react";
 import { useTranslations } from "next-intl";
 
@@ -14,7 +15,7 @@ import { Container } from "@/components/ui/Container";
 import { staggerContainer, slideUp } from "@/lib/animations";
 import { cn } from "@/lib/utils";
 
-type ReasonKey = "layers" | "decisions" | "quality" | "flexibility";
+type ReasonKey = "direct" | "speed" | "ownership" | "consistency";
 
 const reasons: Array<{
   accent: string;
@@ -24,22 +25,22 @@ const reasons: Array<{
   {
     accent: "border-sky-300/20 bg-sky-300/10 text-sky-200",
     icon: Layers3,
-    key: "layers",
+    key: "direct",
   },
   {
-    accent: "border-violet-300/20 bg-violet-300/10 text-violet-200",
-    icon: MessageSquareText,
-    key: "decisions",
+    accent: "border-brand-purple/20 bg-brand-purple/10 text-brand-purple",
+    icon: Zap,
+    key: "speed",
   },
   {
     accent: "border-cyan-300/20 bg-cyan-300/10 text-cyan-200",
     icon: ShieldCheck,
-    key: "quality",
+    key: "ownership",
   },
   {
     accent: "border-emerald-300/20 bg-emerald-300/10 text-emerald-200",
-    icon: Route,
-    key: "flexibility",
+    icon: Code2,
+    key: "consistency",
   },
 ];
 
@@ -60,7 +61,7 @@ export function WhyChooseUs() {
         />
         <motion.div
           animate={{ scale: [1, 0.96, 1.04], x: [0, -20, 12], y: [0, 18, -10] }}
-          className="absolute right-[-5rem] top-24 h-72 w-72 rounded-full bg-violet-500/10 blur-3xl"
+          className="absolute right-[-5rem] top-24 h-72 w-72 rounded-full bg-brand-purple/10 blur-3xl"
           transition={{
             duration: 15,
             ease: "easeInOut",

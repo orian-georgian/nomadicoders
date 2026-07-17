@@ -4,14 +4,10 @@ import { useEffect, useRef, useState } from "react";
 
 import { animate, motion, useInView } from "framer-motion";
 import {
-  Bug,
   Code2,
   FileText,
-  Gauge,
   RotateCcw,
   Sparkles,
-  Wrench,
-  type LucideIcon,
 } from "lucide-react";
 import { useTranslations } from "next-intl";
 
@@ -42,7 +38,6 @@ type MetricCardProps = {
   delay: number;
   end: number;
   fromWidth: number;
-  icon: LucideIcon;
   label: string;
   start: number;
   suffix?: string;
@@ -510,7 +505,6 @@ function MetricCard({
   delay,
   end,
   fromWidth,
-  icon: Icon,
   label,
   start,
   suffix,
@@ -540,42 +534,26 @@ function MetricCard({
   return (
     <motion.div
       animate={{ opacity: active ? 1 : 0.88, y: active ? 0 : 6 }}
-      className="rounded-[1.45rem] border border-white/10 bg-slate-950/72 p-5 shadow-[0_18px_50px_rgba(2,6,23,0.2)]"
+      className="py-2"
       transition={{
         delay: delay + 0.1,
         duration: 0.45,
         ease: [0.22, 1, 0.36, 1],
       }}
     >
-      <div className="relative">
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">
-            {label}
-          </p>
-          <p className="mt-3 text-3xl font-semibold tracking-tight text-white">
-            {value}
-            {suffix ? (
-              <span className="ml-0.5 text-slate-300">{suffix}</span>
-            ) : null}
-          </p>
-        </div>
-        <Icon
-          className={cn(
-            "absolute right-0 top-0 h-4 w-4",
-            toneClassName.includes("pink")
-              ? "text-pink-300"
-              : toneClassName.includes("emerald")
-                ? "text-emerald-300"
-                : "text-sky-300",
-          )}
-          strokeWidth={1.9}
-        />
+      <div className="flex items-end justify-between gap-4">
+        <p className="text-lg font-semibold tracking-tight text-white sm:text-xl">
+          {value}
+          {suffix ? <span className="ml-0.5 text-slate-300">{suffix}</span> : null}
+        </p>
+        <p className="text-right text-xs font-semibold uppercase leading-4 tracking-[0.12em] text-slate-400">
+          {label}
+        </p>
       </div>
-
-      <div className="mt-2 h-2 rounded-full bg-white/[0.06] shadow-inner shadow-black/20">
+      <div className="mt-2.5 h-1.5 rounded-full bg-white/[0.08] shadow-inner shadow-black/20">
         <motion.div
           animate={{ width: active ? `${toWidth}%` : `${fromWidth}%` }}
-          className={cn("h-2 rounded-full bg-gradient-to-r", toneClassName)}
+          className={cn("h-1.5 rounded-full bg-gradient-to-r", toneClassName)}
           transition={{
             delay: delay + 0.12,
             duration: 1.05,
@@ -587,7 +565,7 @@ function MetricCard({
   );
 }
 
-export function RefactorExperience() {
+export function RefactorExperience({ embedded = false }: { embedded?: boolean }) {
   const t = useTranslations("Home.refactorExperience");
   const [hasTransformed, setHasTransformed] = useState(false);
   const [isRefactoring, setIsRefactoring] = useState(false);
@@ -656,8 +634,10 @@ export function RefactorExperience() {
       setIsRefactoring(false);
     }, 1300);
   };
+  const Section = embedded ? motion.div : AnimatedSection;
+
   return (
-    <AnimatedSection
+    <Section
       className="relative overflow-hidden"
       id="refactor-experience"
     >
@@ -673,7 +653,7 @@ export function RefactorExperience() {
         />
         <motion.div
           animate={{ scale: [1, 0.94, 1.06], x: [0, -18, 14], y: [0, 20, -12] }}
-          className="absolute right-[-5rem] top-12 h-60 w-60 rounded-full bg-violet-500/12 blur-3xl"
+          className="absolute right-[-5rem] top-12 h-60 w-60 rounded-full bg-brand-purple/12 blur-3xl"
           transition={{
             duration: 13,
             ease: "easeInOut",
@@ -785,7 +765,7 @@ export function RefactorExperience() {
                         x: [12, -18, 10],
                         y: [-8, 14, -6],
                       }}
-                      className="pointer-events-none absolute bottom-[-2rem] right-[-1rem] z-20 h-56 w-56 rounded-full bg-violet-400/28 blur-3xl"
+                      className="pointer-events-none absolute bottom-[-2rem] right-[-1rem] z-20 h-56 w-56 rounded-full bg-brand-purple/28 blur-3xl"
                       transition={{
                         duration: 1.95,
                         ease: "easeInOut",
@@ -881,13 +861,12 @@ export function RefactorExperience() {
             ) : null}
           </div>
 
-          <div className="mt-12 grid gap-4 md:grid-cols-3">
+          <div className="mt-10 grid gap-x-8 gap-y-4 md:grid-cols-3">
             <MetricCard
               active={metricsActive}
               delay={0.05}
               end={92}
               fromWidth={45}
-              icon={Gauge}
               label={t("metrics.performance")}
               start={45}
               suffix="%"
@@ -899,7 +878,6 @@ export function RefactorExperience() {
               delay={0.14}
               end={91}
               fromWidth={30}
-              icon={Wrench}
               label={t("metrics.maintainability")}
               start={30}
               suffix="%"
@@ -911,7 +889,6 @@ export function RefactorExperience() {
               delay={0.24}
               end={0}
               fromWidth={72}
-              icon={Bug}
               label={t("metrics.bugs")}
               start={12}
               toWidth={0}
@@ -927,7 +904,7 @@ export function RefactorExperience() {
           </div>
         </div>
       </Container>
-    </AnimatedSection>
+    </Section>
   );
 }
 

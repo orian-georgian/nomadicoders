@@ -47,7 +47,10 @@ export function CoverageMetrics({ stats }: CoverageMetricsProps) {
   }, [inView, stats]);
 
   return (
-    <div ref={containerRef} className="mt-5 space-y-5">
+    <div
+      ref={containerRef}
+      className="flex flex-1 flex-col justify-center space-y-5"
+    >
       {stats.map((item, index) => (
         <div key={item.label}>
           <div className="flex items-center justify-between gap-3">
@@ -56,10 +59,10 @@ export function CoverageMetrics({ stats }: CoverageMetricsProps) {
               {`${values[index] ?? 0}${item.suffix ?? ""}`}
             </span>
           </div>
-          <div className="mt-2 h-2 rounded-full bg-white/5">
+          <div className="relative mt-3 h-3 overflow-hidden rounded-sm border border-white/10 bg-slate-950/70">
             <motion.div
               animate={{ width: ["20%", "86%", "74%"] }}
-              className="h-2 rounded-full bg-brand-gradient"
+              className="h-full rounded-sm bg-gradient-to-r from-sky-400 via-brand-purple to-brand-purple shadow-[0_0_14px_rgba(138,0,229,0.32)]"
               transition={{
                 duration: 5 + item.value.toString().length + index * 0.35,
                 delay: index * 0.45,

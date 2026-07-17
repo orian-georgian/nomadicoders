@@ -514,7 +514,7 @@ export function TeamSection() {
               ? undefined
               : { scale: [1, 1.06, 0.98], x: [0, 24, -10], y: [0, -18, 8] }
           }
-          className="absolute left-[-6rem] top-16 h-72 w-72 rounded-full bg-violet-500/9 blur-3xl"
+          className="absolute left-[-6rem] top-16 h-72 w-72 rounded-full bg-brand-purple/9 blur-3xl"
           transition={
             reducedMotion
               ? undefined
@@ -544,7 +544,7 @@ export function TeamSection() {
         />
       </div>
 
-      <Container className="max-w-[75rem]">
+      <Container>
         <div className="relative">
           <motion.div
             className="mx-auto max-w-3xl space-y-4 text-center"

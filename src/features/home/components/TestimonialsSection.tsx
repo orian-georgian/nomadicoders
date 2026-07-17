@@ -13,7 +13,6 @@ import { useEffect, useState, type KeyboardEvent } from "react";
 import { useTranslations } from "next-intl";
 
 import { AnimatedSection } from "@/app/[locale]/(marketing)/_components/AnimatedSection";
-import { buttonVariants } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { cn } from "@/lib/utils";
 
@@ -64,12 +63,15 @@ type CarouselPosition = "left" | "center" | "right";
 type SlideDirection = -1 | 1;
 
 type Testimonial = {
+  avatarSrc?: string;
   authorInitials: string;
   company: string;
   key: string;
   name: string;
   quote: string;
   recipient: keyof typeof profileMeta;
+  readMoreHref?: string;
+  reviewerHref?: string;
   role: string;
   source: string;
   sourceHref: string;
@@ -78,56 +80,127 @@ type Testimonial = {
 
 const testimonials: Testimonial[] = [
   {
-    authorInitials: "M",
-    company: "Product Studio",
+    avatarSrc: "/images/reviewers/santiago.jfif",
+    authorInitials: "SSG",
+    company: "Siemens Energy",
     key: "georgian",
-    name: "Mihai",
+    name: "Santiago Sorribes Guigó",
     quote:
-      "They don't just deliver features, they think through the entire product. The code quality and structure made a huge difference for our team.",
+      "I had the pleasure of working with Georgian, an excellent UI Developer with a strong eye for detail and a clear understanding of how to translate design requirements into clean, usable, and responsive interfaces. Georgian consistently delivered high-quality work, communicated clearly with both technical and non-technical stakeholders, and showed a strong commitment to improving the user experience. Their ability to balance visual precision, usability, and technical implementation made them a valuable member of the team. Beyond the technical skills, Georgian brings a very positive attitude to every project and is a genuine team player, always willing to support colleagues and contribute to a collaborative working environment. I would gladly recommend Georgian to any organization looking for a reliable, skilled, and collaborative team member that will help delivering any project.",
     recipient: "georgian",
-    role: "Senior Engineer",
+    readMoreHref:
+      "https://www.linkedin.com/in/georgian-orian/details/recommendations/",
+    reviewerHref: "https://www.linkedin.com/in/santiagosg/",
+    role: "Product Manager",
     source: "LinkedIn",
-    sourceHref: "https://www.linkedin.com/",
+    sourceHref:
+      "https://www.linkedin.com/in/georgian-orian/details/recommendations/",
     sourceType: "linkedin",
   },
   {
-    authorInitials: "R",
-    company: "HealthTech Platform",
+    avatarSrc: "/images/reviewers/bjorn.jfif",
+    authorInitials: "BK",
+    company: "TKD Solutions",
     key: "andreea",
-    name: "Raluca",
+    name: "Björn Kunze",
     quote:
-      "Working with them brought clarity to our project. What used to feel complex became structured and predictable.",
+      "I worked with Andreea on a web platform project for about two years and always appreciated working with her. Andreea is a smart and higly skilled professional. She is reliable and is getting things done. In complex scenarios she keeps things in perspective. She is actively participating in meetings and gives very qualified and valuable feedback. She was also coaching juniors besides her own work to improve other team memebers. I very much enjoyed working with Andreea and would recommend her for any project.",
     recipient: "andreea",
-    role: "Product Manager",
-    source: "Client feedback",
-    sourceHref: "",
-    sourceType: "feedback",
+    readMoreHref:
+      "https://www.linkedin.com/in/andreea-orian/details/recommendations/",
+    reviewerHref: "https://www.linkedin.com/in/bj%C3%B6rn-kunze-205ab4/",
+    role: "CTO",
+    source: "LinkedIn",
+    sourceHref: "https://www.linkedin.com/in/andreea-orian/",
+    sourceType: "linkedin",
   },
   {
-    authorInitials: "SF",
-    company: "B2B SaaS Company",
-    key: "startupFounder",
-    name: "Startup Founder",
+    avatarSrc: "/images/reviewers/sylvain.jfif",
+    authorInitials: "SL",
+    company: "Flowie",
+    key: "sylvain",
+    name: "Sylvain Leray",
     quote:
-      "Communication was clear, timelines were respected, and we always knew what was happening. That's rare.",
-    recipient: "nomadicoders",
-    role: "Founder",
-    source: "Website",
-    sourceHref: "",
-    sourceType: "website",
+      "I had the pleasure of working with Georgian Orian at Flowie, where he was a Senior Frontend Developer in my team. Georgian is one of those rare profiles who combines deep technical expertise with genuine integrity. He led the entire frontend scope related to payment, a critical and complex part of the product, with full autonomy and reliability. His work was rock-solid, and I always knew I could trust him to take ownership, ask the right questions, and deliver with quality. What stood out even more was his calm and professional attitude, even in challenging contexts. Whether it was navigating difficult backend integrations or moving across scopes with agility, Georgian always brought stability and focus. He also had a real talent for giving feedback clearly and respectfully, which made him a key contributor to the trust-based culture I wanted to build in the team. In short, Georgian is not just a strong developer. He’s someone you’re happy to have on your team, and even prouder to recommend.",
+    recipient: "georgian",
+    readMoreHref:
+      "https://www.linkedin.com/in/georgian-orian/details/recommendations/",
+    reviewerHref: "https://www.linkedin.com/in/sylvainleray",
+    role: "Project Manager",
+    source: "LinkedIn",
+    sourceHref:
+      "https://www.linkedin.com/in/georgian-orian/details/recommendations/",
+    sourceType: "linkedin",
   },
   {
-    authorInitials: "SC",
-    company: "Growth SaaS Platform",
-    key: "saasClient",
-    name: "SaaS Client",
+    avatarSrc: "/images/reviewers/cristina.jfif",
+    authorInitials: "CM",
+    company: "European Parliament",
+    key: "cristina",
+    name: "Cristina Mihailescu",
     quote:
-      "The improvements in performance and usability were immediately noticeable. Our product feels faster and easier to use.",
-    recipient: "nomadicoders",
-    role: "Product Team",
-    source: "Client feedback",
-    sourceHref: "",
-    sourceType: "feedback",
+      "I was impressed with Georgian's calm and and focus on solutions under any situation. Georgian is a dedicated professional, his expertise as a frontend developer is considerable and it helped our team come up with more efficient solutions on different projects. His ability to coach juniors and help others when needed were inspiring. I highly recommend Georgian and would love to work with him again.",
+    recipient: "georgian",
+    readMoreHref:
+      "https://www.linkedin.com/in/georgian-orian/details/recommendations/",
+    reviewerHref: "https://www.linkedin.com/in/cristina-mihailescu-18793b22/",
+    role: "Head of Service",
+    source: "LinkedIn",
+    sourceHref:
+      "https://www.linkedin.com/in/georgian-orian/details/recommendations/",
+    sourceType: "linkedin",
+  },
+  {
+    avatarSrc: "/images/reviewers/cristian.jfif",
+    authorInitials: "CB",
+    company: "dotWhite",
+    key: "cristian",
+    name: "Cristian Beje",
+    quote:
+      "From my experience working with him, I can say that Georgian is one of those rare people you can always trust to deliver quality code on time. He is one of the most dependable and independent software developers I have ever worked with. Always transparent, open and professional with both the team and the customers, Georgian is reliable and proactive. I’m glad we had Georgian working together with us, and I believe he would be a valuable asset to any company. Highly recommend working with Georgian if you get the chance!",
+    recipient: "georgian",
+    readMoreHref:
+      "https://www.linkedin.com/in/georgian-orian/details/recommendations/",
+    reviewerHref: "https://www.linkedin.com/in/cristianbeje/",
+    role: "CEO",
+    source: "LinkedIn",
+    sourceHref:
+      "https://www.linkedin.com/in/georgian-orian/details/recommendations/",
+    sourceType: "linkedin",
+  },
+  {
+    avatarSrc: "/images/reviewers/alina.jfif",
+    authorInitials: "AC",
+    company: "Globant",
+    key: "alina",
+    name: "Alina Chiorean",
+    quote:
+      "During our collaboration on different projects, Georgian proved a lot of proactivity, intellectual curiosity, engagement and professionalism. Results oriented and with a high sense of commitment towards delivering qualitative code, Georgian’s tech knowledge, motivation and way of being, rapidly stand out, making it a true pleasure to work with him.",
+    recipient: "georgian",
+    readMoreHref:
+      "https://www.linkedin.com/in/georgian-orian/details/recommendations/",
+    reviewerHref: "https://www.linkedin.com/in/alina-chiorean-709b2b3/",
+    role: "Country Manager",
+    source: "LinkedIn",
+    sourceHref:
+      "https://www.linkedin.com/in/georgian-orian/details/recommendations/",
+    sourceType: "linkedin",
+  },
+  {
+    avatarSrc: "/images/reviewers/julia.jfif",
+    authorInitials: "JH",
+    company: "Flowie",
+    key: "julia",
+    name: "Julia Hudson",
+    quote:
+      "Georgian is always very empathetic and human-centric in his work. I loved working with him because he is focused on the human experience of using a product, beyond simply the technical challenges.",
+    recipient: "georgian",
+    reviewerHref: "https://www.linkedin.com/in/julia-h-105b0810/",
+    role: "Product Owner",
+    source: "LinkedIn",
+    sourceHref:
+      "https://www.linkedin.com/in/georgian-orian/details/recommendations/",
+    sourceType: "linkedin",
   },
 ];
 
@@ -136,16 +209,18 @@ const cardTransition = {
   ease: [0.16, 1, 0.3, 1],
 } as const;
 
+const testimonialPreviewLength = 220;
+
 function getOffsets(viewportWidth: number) {
   if (viewportWidth < 640) {
-    return { edgeOffset: 390, sideOffset: 190 };
+    return { edgeOffset: 400, sideOffset: 200 };
   }
 
   if (viewportWidth < 1024) {
-    return { edgeOffset: 520, sideOffset: 250 };
+    return { edgeOffset: 540, sideOffset: 270 };
   }
 
-  return { edgeOffset: 650, sideOffset: 320 };
+  return { edgeOffset: 680, sideOffset: 340 };
 }
 
 function LinkedInBadge() {
@@ -285,16 +360,39 @@ export function TestimonialsSection() {
 
   const renderCard = (testimonial: Testimonial, position: CarouselPosition) => {
     const isCenter = position === "center";
+    const isLongQuote = testimonial.quote.length > testimonialPreviewLength;
+    const displayedQuote = isLongQuote
+      ? `${testimonial.quote
+          .slice(0, testimonialPreviewLength)
+          .replace(/\s+\S*$/, "")
+          .trimEnd()}…`
+      : testimonial.quote;
 
     const widthClassName = isCenter
       ? "w-[min(88vw,24rem)] sm:w-[min(70vw,26rem)] lg:w-[22rem] xl:w-[24rem]"
-      : "w-[min(72vw,18rem)] sm:w-[min(38vw,19rem)] lg:w-[18rem] xl:w-[19rem]";
+      : "w-[min(74vw,19rem)] sm:w-[min(40vw,20rem)] lg:w-[19rem] xl:w-[20rem]";
 
     const targetX = isCenter
       ? 0
       : position === "left"
         ? -sideOffset
         : sideOffset;
+
+    const reviewerAvatar = (
+      <span className="relative inline-flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden rounded-full border border-white/10 bg-white/[0.06] text-sm font-semibold text-white shadow-[0_10px_24px_rgba(2,6,23,0.2)]">
+        {testimonial.avatarSrc ? (
+          <Image
+            alt={testimonial.name}
+            className="object-cover object-top"
+            fill
+            sizes="44px"
+            src={testimonial.avatarSrc}
+          />
+        ) : (
+          testimonial.authorInitials
+        )}
+      </span>
+    );
 
     return (
       <motion.article
@@ -336,10 +434,13 @@ export function TestimonialsSection() {
         }}
         transition={cardTransition}
       >
-        <button
-          aria-label={`Focus testimonial from ${testimonial.name}`}
+        <div
+          aria-label={
+            !isCenter ? `Focus testimonial from ${testimonial.name}` : undefined
+          }
           className={cn(
-            "group relative h-[27rem] w-full overflow-hidden rounded-[1.75rem] border border-white/10 bg-[linear-gradient(180deg,rgba(15,23,42,0.92),rgba(15,23,42,0.72))] p-6 text-left shadow-[0_22px_55px_rgba(2,6,23,0.18)] transition-all duration-300 sm:h-[28rem] sm:p-7",
+            "group relative w-full overflow-hidden rounded-[1.75rem] border border-white/10 bg-[linear-gradient(180deg,rgba(15,23,42,0.92),rgba(15,23,42,0.72))] p-6 text-left shadow-[0_22px_55px_rgba(2,6,23,0.18)] transition-all duration-300 sm:p-7",
+            isCenter ? "h-[27rem] sm:h-[28rem]" : "h-[24rem] sm:h-[25rem]",
             isCenter
               ? "cursor-default"
               : "cursor-pointer hover:shadow-[0_28px_70px_rgba(2,6,23,0.26)]",
@@ -348,17 +449,37 @@ export function TestimonialsSection() {
             !isCenter &&
             goTo(testimonials.findIndex((item) => item.key === testimonial.key))
           }
-          type="button"
+          onKeyDown={(event) => {
+            if (!isCenter && (event.key === "Enter" || event.key === " ")) {
+              event.preventDefault();
+              goTo(
+                testimonials.findIndex((item) => item.key === testimonial.key),
+              );
+            }
+          }}
+          role={!isCenter ? "button" : undefined}
+          tabIndex={!isCenter ? 0 : undefined}
         >
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(125,211,252,0.14),transparent_38%)] opacity-70 transition-opacity duration-300 group-hover:opacity-100" />
           <div className="pointer-events-none absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-white/35 to-transparent" />
 
           <div className="relative flex h-full flex-col">
             <div className="flex items-start justify-between gap-4">
-              <div className="flex items-center gap-3">
-                <span className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/[0.06] text-sm font-semibold text-white shadow-[0_10px_24px_rgba(2,6,23,0.2)]">
-                  {testimonial.authorInitials}
-                </span>
+              <div className="flex items-start gap-3">
+                {testimonial.reviewerHref ? (
+                  <a
+                    aria-label={`View ${testimonial.name} on LinkedIn`}
+                    className="rounded-full outline-none ring-offset-2 ring-offset-slate-950 focus-visible:ring-2 focus-visible:ring-sky-300"
+                    href={testimonial.reviewerHref}
+                    onClick={(event) => event.stopPropagation()}
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    {reviewerAvatar}
+                  </a>
+                ) : (
+                  reviewerAvatar
+                )}
                 <div>
                   <p className="text-sm font-semibold text-white">
                     {testimonial.name}
@@ -395,9 +516,29 @@ export function TestimonialsSection() {
             </div>
 
             <div className="mt-8 flex-1">
-              <blockquote className="max-w-[34rem] text-[1.08rem] leading-8 text-slate-100 sm:text-[1.14rem]">
-                &ldquo;{testimonial.quote}&rdquo;
+              <blockquote
+                className={cn(
+                  "max-w-[34rem] overflow-hidden text-[1.08rem] leading-7 text-slate-100 [display:-webkit-box] [-webkit-box-orient:vertical] sm:text-[1.14rem]",
+                  isCenter
+                    ? "[-webkit-line-clamp:5] sm:[-webkit-line-clamp:6]"
+                    : "[-webkit-line-clamp:4]",
+                )}
+              >
+                &ldquo;{displayedQuote}&rdquo;
               </blockquote>
+              {isLongQuote && testimonial.readMoreHref ? (
+                <a
+                  className="mt-4 inline-flex items-center text-sm font-semibold text-sky-200 transition-colors hover:text-sky-100"
+                  href={testimonial.readMoreHref}
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  Read more{" "}
+                  <span aria-hidden="true" className="ml-1">
+                    →
+                  </span>
+                </a>
+              ) : null}
             </div>
 
             <div className="mt-8 border-t border-white/8 pt-5">
@@ -409,7 +550,7 @@ export function TestimonialsSection() {
               </div>
             </div>
           </div>
-        </button>
+        </div>
       </motion.article>
     );
   };
@@ -492,33 +633,6 @@ export function TestimonialsSection() {
               ))}
             </div>
           </div>
-
-          <motion.div
-            className="mt-12 flex flex-col items-center gap-5 text-center"
-            initial={{ opacity: 0, y: 20 }}
-            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-            viewport={{ amount: 0.4, once: true }}
-            whileInView={{ opacity: 1, y: 0 }}
-          >
-            <div className="space-y-2">
-              <h3 className="text-2xl font-semibold tracking-tight text-white sm:text-[2rem]">
-                {t("cta.title")}
-              </h3>
-              <p className="max-w-2xl text-base leading-7 text-slate-300">
-                {t("cta.description")}
-              </p>
-            </div>
-
-            <a
-              className={buttonVariants({
-                className: "px-6 shadow-[0_16px_45px_rgba(56,189,248,0.18)]",
-                size: "lg",
-              })}
-              href="#contact"
-            >
-              {t("cta.button")}
-            </a>
-          </motion.div>
         </div>
       </Container>
     </AnimatedSection>

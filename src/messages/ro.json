@@ -18,113 +18,204 @@
                    "email":  "Scrie-ne"
                },
     "Home":  {
+                 "clients":  {
+                                 "label":  "Logo-uri clienti",
+                                 "eyebrow":  "Apreciati de echipe de la"
+                             },
                  "hero":  {
-                              "eyebrow":  "Echipa senior remote",
-                              "title":  "Construim aplica?ii web performante de oriunde din lume.",
-                              "description":  "O echipa de dezvoltatori seniori care livreaza produse digitale rapide, scalabile ?i fiabile, fara overhead-ul unei agen?ii.",
-                              "primaryCta":  "Porne?te un proiect",
-                              "secondaryCta":  "Vezi proiectele",
+                              "eyebrowSenior":  "Seniori care construiesc",
+                              "eyebrowAi":  "Livrare accelerata de AI",
+                              "title":  "Produse web construite de <accent>dezvoltatori seniori</accent>, accelerate de AI.",
+                              "description":  "Combinam judecata de produs a seniorilor cu research, design, engineering si QA asistate de AI. Avansezi mai repede fara sa externalizezi deciziile care fac produsul fiabil.",
+                              "primaryCta":  "Construieste cu noi",
+                              "secondaryCta":  "Vezi proiecte selectate",
                               "badges":  {
-                                             "performanceTitle":  "Performan?a",
-                                             "performanceDescription":  "Livrare rapida ?i scalabila"
+                                             "performanceTitle":  "Echipa directa de build",
+                                             "performanceDescription":  "Georgian + Andreea"
                                          },
                               "panel":  {
-                                            "title":  "Motor senior de livrare",
-                                            "buildVelocity":  "Viteza de livrare",
-                                            "coverage":  "Acoperire"
+                                            "eyebrow":  "Cum livram",
+                                            "title":  "Decizii de produs clare. Executie mai rapida, accelerata de AI.",
+                                            "status":  "Condus de oameni, accelerat de AI",
+                                            "buildVelocity":  "Leverage de livrare prin AI",
+                                            "aiSignal":  "Ghidat de seniori",
+                                            "coverage":  "Experienta senior"
                                         },
                               "stats":  {
                                             "years":  "Ani de inginerie de produs",
                                             "projects":  "Produse livrate",
-                                            "delivery":  "Livrare mai rapida cu execu?ie exclusiv senior",
-                                            "timezone":  "Colaborare flexibila între fusuri orare",
-                                            "execution":  "Execu?ie exclusiv senior pe tot parcursul dezvoltarii",
-                                            "handoffs":  "Predari între strategie ?i dezvoltare",
-                                            "seniors":  "Dezvoltatori seniori de la pornirea proiectului pâna la lansare",
-                                            "direct":  "O singura echipa de livrare pe tot proiectul"
+                  "delivery":  "Workflow-uri asistate de AI, livrare verificata de seniori",
+                                            "timezone":  "Colaborare flexibila intre fusuri orare",
+                  "execution":  "Demo-uri, feedback si urmatorii pasi clari",
+                  "weeklyValue":  "Saptamanal",
+                  "handoffs":  "Straturi inutile intre tine si livrare",
+                  "seniors":  "Verificari de calitate in fiecare release",
+                  "qualityValue":  "QA",
+                  "direct":  "Colaborare flexibila intre fusuri orare",
+                  "globalValue":  "Global"
                                         }
                           },
                  "problem":  {
-                                 "eyebrow":  "Blocajul obi?nuit",
-                                 "title":  "Overhead-ul de tip agen?ie încetine?te produsele bune.",
-                                 "description":  "Prea multe straturi, predari lente ?i responsabilitate neclara fac chiar ?i proiectele simple sa para mai grele decât ar trebui.",
+                                 "eyebrow":  "Blocajul obisnuit",
+                                 "title":  "Setup-urile prea complicate incetinesc produsele bune.",
+                                 "description":  "Prea multe straturi, predari lente si responsabilitate neclara fac chiar si proiectele simple sa para mai grele decat ar trebui.",
                                  "items":  {
                                                "scope":  "Nu trebuie sa plate?ti pentru straturi inutile de management de proiect ca sa ob?ii un produs bine finisat.",
-                                               "speed":  "Deciziile ramân rapide pentru ca oamenii care planifica munca sunt aceia?i care livreaza produsul.",
-                                               "quality":  "Construim cu gândul la scalare, mentenan?a ?i performan?a chiar din prima zi."
+                                               "speed":  "Deciziile ramï¿½n rapide pentru ca oamenii care planifica munca sunt aceia?i care livreaza produsul.",
+                                               "quality":  "Construim cu gï¿½ndul la scalare, mentenan?a ?i performan?a chiar din prima zi."
                                            }
                              },
-                 "services":  {
-                                  "eyebrow":  "Ce construim",
-                                  "title":  "Execu?ie de produs la nivel senior pentru echipe care au nevoie de livrare buna.",
-                                  "description":  "De la aplica?ii web custom la site-uri de marketing ?i suport senior aplicat, construim produse digitale rapide, u?or de între?inut ?i pregatite sa creasca.",
+                "services":  {
+                                  "eyebrow":  "Ce Construim",
+                                  "title":  "Produsele digitale de care business-ul tau are nevoie acum.",
+                                  "description":  "De la o prima lansare concentrata pana la un sistem intern complex, proiectam si livram software care rezolva munca din fata ta.",
+                                  "labels":  {
+                                                 "delivery":  "Livram",
+                                                 "includes":  "Include",
+                                                 "idealFor":  "Potrivit pentru",
+                                                 "outcome":  "Rezultat"
+                                             },
                                   "items":  {
-                                                "apps":  {
-                                                             "title":  "Aplica?ii web custom",
-                                                             "description":  "Dashboard-uri, instrumente interne, portaluri pentru clien?i ?i produse SaaS construite cu o arhitectura solida ?i accent pe performan?a."
-                                                         },
                                                 "websites":  {
-                                                                 "title":  "Site-uri de marketing",
-                                                                 "description":  "Site-uri rapide ?i flexibile, cu aspect premium, mesaje clare ?i suport pentru con?inut, SEO ?i conversii."
+                                                                 "title":  "Website-uri care atrag atentia potrivita",
+                                                                 "summary":  "O prima impresie credibila pentru business-uri care vor sa transforme mai multi vizitatori relevanti in conversatii.",
+                                                                 "includes":  {
+                                                                                  "one":  "Structura de pagina si mesaj orientate spre conversie",
+                                                                                  "two":  "Design si dezvoltare responsive a interfetei",
+                                                                                  "three":  "Fundatie de performanta si SEO tehnic"
+                                                                              },
+                                                                 "idealFor":  "business-uri de servicii, consultanti si echipe de produs in crestere",
+                                                                 "delivery":  "Design orientat spre conversie, engineering rapid si fundatie SEO tehnica.",
+                                                                 "outcome":  "Un site care explica oferta clar, se incarca rapid si poate creste usor."
                                                              },
-                                                "fractional":  {
-                                                                   "title":  "Suport senior frac?ionat",
-                                                                   "description":  "Direc?ie tehnica, cura?area bazei de cod, sisteme de componente ?i ajutor la implementare pentru echipe care au nevoie acum de execu?ie senior."
-                                                               }
+                                                "apps":  {
+                                                             "title":  "Aplicatii web pentru munca reala",
+                                                             "summary":  "Software construit pentru workflow-urile, clientii si deciziile pe care tool-urile standard nu le pot sustine.",
+                                                             "includes":  {
+                                                                              "one":  "Portaluri pentru clienti, dashboard-uri si acces securizat",
+                                                                              "two":  "Workflow-uri esentiale, permisiuni si modelare de date",
+                                                                              "three":  "Arhitectura front-end scalabila"
+                                                                          },
+                                                             "idealFor":  "echipe care inlocuiesc munca manuala cu un produs real",
+                                                             "delivery":  "Portaluri securizate, dashboard-uri si workflow-uri de produs cu arhitectura curata.",
+                                                             "outcome":  "O aplicatie fiabila, folosita cu incredere de clienti si echipa ta."
+                                                         },
+                                                "mvp":  {
+                                                             "title":  "MVP-uri care valideaza ce conteaza",
+                                                             "summary":  "O prima lansare disciplinata care pune experienta esentiala in fata utilizatorilor fara sa construiasca tot roadmap-ul prea devreme.",
+                                                             "includes":  {
+                                                                              "one":  "Scope de produs in jurul workflow-ului cu cea mai mare valoare",
+                                                                              "two":  "Design si dezvoltare pentru experienta esentiala",
+                                                                              "three":  "Pregatire de lansare si fundatie extensibila"
+                                                                          },
+                                                             "idealFor":  "fondatori care valideaza un produs sau pregatesc prima lansare",
+                                                             "delivery":  "Scope de produs, workflow-uri esentiale si fundatie tehnica pregatita de lansare.",
+                                                             "outcome":  "Un produs concentrat pe care il poti testa, intelege si dezvolta."
+                                                         },
+                                                "rescue":  {
+                                                                "title":  "Produse aduse inapoi sub control",
+                                                                "summary":  "Cand un produs functional devine lent, fragil sau greu de schimbat, cream un drum practic inainte.",
+                                                                "includes":  {
+                                                                                 "one":  "Evaluare de codebase si arhitectura",
+                                                                                 "two":  "Refactorizare tintita si optimizari de performanta",
+                                                                                 "three":  "Stabilizare UI si workflow-uri de livrare mai sigure"
+                                                                             },
+                                                                "idealFor":  "echipe blocate de un produs fragil si greu de schimbat",
+                                                                "delivery":  "Refactorizare, optimizari de performanta si stabilizare UI acolo unde conteaza cel mai mult.",
+                                                                "outcome":  "Risc tehnic mai mic si un produs pe care echipa il poate duce mai departe."
+                                                            },
+                                                "internalTools":  {
+                                                                      "title":  "Sisteme interne care elimina blocajele",
+                                                                      "summary":  "Inlocuim foile de calcul, tool-urile deconectate si handoff-urile repetate cu un workflow construit pentru felul in care opereaza echipa ta.",
+                                                                      "includes":  {
+                                                                                       "one":  "Dashboard-uri operationale si interfete de administrare",
+                                                                                       "two":  "Automatizari de workflow si trasee de aprobare",
+                                                                                       "three":  "Integrari care conecteaza tool-urile critice"
+                                                                                   },
+                                                                      "idealFor":  "echipe operationale care petrec prea mult timp coordonand munca",
+                                                                      "delivery":  "Tool-uri admin, dashboard-uri operationale si automatizari de workflow bine tintite.",
+                                                                      "outcome":  "Mai putina munca manuala, vizibilitate mai clara si executie mai consecventa."
+                                                                  },
+                                                "aiFeatures":  {
+                                                                    "title":  "Functionalitati AI cu un scop clar",
+                                                                    "summary":  "Capabilitati AI practice pentru momentele in care pot reduce cu adevarat efortul, imbunatati deciziile sau accelera un workflow.",
+                                                                    "includes":  {
+                                                                                     "one":  "Workflow-uri asistate de AI, construite pentru utilizatori reali",
+                                                                                     "two":  "Tool-uri de continut, analiza si knowledge",
+                                                                                     "three":  "Guardrails, testare si integrare in produs"
+                                                                                 },
+                                                                    "idealFor":  "produse cu un caz de utilizare AI clar si valoros",
+                                                                    "delivery":  "Workflow-uri asistate, tool-uri de continut, straturi de analiza si copiloti interni.",
+                                                                    "outcome":  "AI util, potrivit produsului tau, nu o functionalitate adaugata doar pentru noutate."
+                                                                }
                                             }
                               },
                  "whyChooseUs":  {
                                      "eyebrow":  "De ce Nomadicoders",
-                                     "title":  "Executie senior fara overhead de agentie.",
-                                     "description":  "Eliminam straturile care incetinesc proiectele si pastram oamenii care iau deciziile aproape de munca efectiva.",
+                                     "title":  "Executia directa cu seniori este un mod mai bun de a construi.",
+                                     "description":  "Build-urile complexe se misca mai repede cand oamenii care iau deciziile tehnice sunt aceiasi care scriu codul si rafineaza produsul.",
                                      "items":  {
-                                                   "layers":  {
-                                                                  "title":  "Fara straturi de management",
-                                                                  "description":  "Lucrezi direct cu dezvoltatorii seniori care planifica si construiesc produsul, fara externalizare sau predare catre juniori."
+                                                   "direct":  {
+                                                                  "title":  "Acces direct la oamenii care construiesc",
+                                                                  "description":  "Intrebarile, compromisurile si deciziile de produs ajung direct la oamenii care construiesc website-ul sau aplicatia."
                                                               },
-                                                   "decisions":  {
-                                                                     "title":  "Decizii rapide si clare",
-                                                                     "description":  "Mai putine predari, mai putine sedinte si aliniere mai rapida cand prioritatile, scope-ul sau detaliile de produs se schimba."
+                                                   "speed":  {
+                                                                     "title":  "Decizii mai rapide, mai putine goluri",
+                                                                     "description":  "Echipele mici de seniori pastreaza contextul intact, astfel incat schimbarile de scope si detaliile de implementare nu se plimba intre straturi."
                                                                  },
-                                                   "quality":  {
-                                                                  "title":  "Inginerie orientata spre produs",
-                                                                  "description":  "Echilibram UX-ul, performanta, mentenanta si obiectivele de business de la prima decizie tehnica."
+                                                   "ownership":  {
+                                                                  "title":  "Ownership tehnic mai ridicat",
+                                                                  "description":  "Aceiasi seniori modeleaza arhitectura, implementarea, performanta si pregatirea pentru lansare."
                                                               },
-                                                   "flexibility":  {
-                                                                       "title":  "Flexibilitate remote-first",
-                                                                       "description":  "Colaborare potrivita pentru lucru asincron, fondatori mobili, echipe distribuite si companii in crestere."
+                                                   "consistency":  {
+                                                                       "title":  "Cod si design consecvent",
+                                                                       "description":  "Mai putine parti in miscare inseamna interfete mai curate, decizii tehnice mai stabile si un produs care se simte construit de o singura echipa."
                                                                    }
                                                }
                                  },
-                 "projects":  {
+                "projects":  {
                                   "eyebrow":  "Proiecte selectate",
-                                  "title":  "Câteva exemple din ce construim.",
-                                  "description":  "De la instrumente interne la site-uri orientate spre conversie, ajutam echipele sa transforme ideile în produse rapide ?i u?or de între?inut.",
+    "title":  "Produse complexe. Rezultate clare pentru business.",
+    "description":  "O selectie de proiecte in care gandirea de produs si executia senior au transformat frictiunea intr-o experienta mai rapida si mai clara.",
+                                  "framing":  "Proiect de productie anonimizat",
+                                  "cta":  "Discuta un proiect similar",
+                                  "labels":  {
+                                                 "problem":  "Problema",
+                                                 "built":  "Ce am construit",
+                                                 "stack":  "Stack tehnic",
+                                                 "outcome":  "Rezultat"
+                                             },
                                   "items":  {
                                                 "saas":  {
                                                              "category":  "B2B SaaS",
-                                                             "title":  "Dashboard opera?ional",
-                                                             "summary":  "O platforma interna în timp real pentru urmarirea volumului de lucru, aprobarilor ?i stadiului de livrare între regiuni.",
-                                                             "outcome":  "Mai pu?ina coordonare manuala ?i vizibilitate opera?ionala mai buna."
+                               "title":  "O singura sursa de adevar pentru operatiuni globale",
+                               "summary":  "Am inlocuit foile de calcul fragmentate si urmarirea manuala a statusului cu un produs pe care echipele se pot baza zilnic.",
+                                                             "problem":  "Statusul operational era imprastiat in foi de calcul, conversatii si actualizari manuale, ceea ce facea riscurile greu de vazut.",
+                               "built":  "Workload, aprobari si livrari urmarite in timp real intre regiuni.",
+                               "outcome":  "Decizii mai rapide si ownership clar, fara urmarirea manuala a statusului."
                                                          },
                                                 "booking":  {
                                                                 "category":  "Produs de calatorii",
-                                                                "title":  "Redesign pentru fluxul de rezervare",
-                                                                "summary":  "Un flux de rezervare mobile-first, cu pre?uri mai clare, checkout mai rapid ?i administrare mai simpla a con?inutului.",
-                                                                "outcome":  "Conversie îmbunata?ita printr-un flux mai simplu ?i mai credibil."
+                                  "title":  "Un parcurs de rezervare construit pentru incredere",
+                                  "summary":  "Am transformat un flux mobil lent si neclar intr-un drum direct de la explorare la rezervare confirmata.",
+                                                                "problem":  "Fluxul existent crea ezitare: preturile nu erau destul de clare, pasii pe mobil pareau greoi si actualizarile de continut depindeau prea mult de dezvoltatori.",
+                                  "built":  "Explorare mobile-first, preturi transparente si un checkout simplificat.",
+                                  "outcome":  "Mai putina ezitare si mai putine puncte de frictiune inainte de confirmare."
                                                             },
                                                 "marketing":  {
                                                                   "category":  "Business de servicii",
-                                                                  "title":  "Site de marketing performant",
-                                                                  "summary":  "Un site orientat spre performan?a, cu mesaje puternice, sec?iuni reutilizabile ?i o structura de con?inut scalabila.",
-                                                                  "outcome":  "Viteza mai buna, flux CMS mai curat ?i lead-uri de calitate mai buna."
+                                    "title":  "Un website mai rapid, cu un mesaj de vanzare mai clar",
+                                    "summary":  "Am reconstruit o prezenta slaba intr-o platforma credibila si concentrata pe cerere calificata.",
+                                                                  "problem":  "Website-ul vechi parea generic, se incarca lent si nu explica serviciul destul de clar pentru lead-uri mai bune.",
+                                    "built":  "Mesaj orientat spre conversie, sectiuni reutilizabile si fundatie SEO tehnica.",
+                                    "outcome":  "O prima impresie mai puternica, pagini mai rapide si lead-uri mai calificate."
                                                               }
                                             }
                               },
                  "cta":  {
-                             "eyebrow":  "Începe un proiect",
+                             "eyebrow":  "ï¿½ncepe un proiect",
                              "title":  "Ai nevoie de seniori fara overhead-ul unei agen?ii?",
-                             "description":  "Daca ai nevoie de comunicare clara, execu?ie rapida ?i o echipa care poate prelua ownership-ul de la gândirea de produs pâna la lansare, hai sa vorbim.",
+                             "description":  "Daca ai nevoie de comunicare clara, execu?ie rapida ?i o echipa care poate prelua ownership-ul de la gï¿½ndirea de produs pï¿½na la lansare, hai sa vorbim.",
                              "button":  "Porne?te un proiect",
                              "contact":  {
                                              "emailLabel":  "Email",
@@ -133,15 +224,22 @@
                                              "openLabel":  "Deschide"
                                          }
                          },
+                 "transformations":  {
+                                         "label":  "Exemple de transformare",
+                                         "tabs":  {
+                                                      "code":  "Transformare cod",
+                                                      "interface":  "Transformare interfata"
+                                                  }
+                                     },
                  "refactorExperience":  {
                                             "eyebrow":  "Transformarea Codului",
-                                            "title":  "Codul dezordonat te încetine?te.\nCodul curat te ajuta sa mergi mai departe.",
-                                            "description":  "Ceea ce pare o refactorizare mica elimina adesea complexitate ascunsa. Transformam logica fragila ?i duplicata în sisteme curate ?i fiabile, mai u?or de scalat, între?inut ?i extins.",
-                                            "before":  "Înainte",
+                                            "title":  "Codul dezordonat te ï¿½ncetine?te.\nCodul curat te ajuta sa mergi mai departe.",
+                                            "description":  "Ceea ce pare o refactorizare mica elimina adesea complexitate ascunsa. Transformam logica fragila ?i duplicata ï¿½n sisteme curate ?i fiabile, mai u?or de scalat, ï¿½ntre?inut ?i extins.",
+                                            "before":  "ï¿½nainte",
                                             "after":  "Dupa",
                                             "button":  "Refactorizeaza codul",
                                             "refactoringButton":  "Se refactorizeaza...",
-                                            "resetButton":  "Înapoi la înainte",
+                                            "resetButton":  "ï¿½napoi la ï¿½nainte",
                                             "metrics":  {
                                                             "performance":  "Performan?a",
                                                             "maintainability":  "Mentenabilitate",
@@ -149,15 +247,15 @@
                                                         },
                                             "insights":  {
                                                              "before":  {
-                                                                            "title":  "Ce nu este în regula în prima versiune",
+                                                                            "title":  "Ce nu este ï¿½n regula ï¿½n prima versiune",
                                                                             "items":  {
                                                                                           "detailsMixedTogether":  "Aceea?i lista de rezervari este parcursa de mai multe ori pentru lucruri apropiate.",
-                                                                                          "defaultsRepeated":  "Logica de pre? este repetata în loc sa fie reutilizata.",
-                                                                                          "changesFeelRisky":  "Chiar ?i o schimbare mica de pre? poate cere modificari în mai multe locuri."
+                                                                                          "defaultsRepeated":  "Logica de pre? este repetata ï¿½n loc sa fie reutilizata.",
+                                                                                          "changesFeelRisky":  "Chiar ?i o schimbare mica de pre? poate cere modificari ï¿½n mai multe locuri."
                                                                                       }
                                                                         },
                                                              "after":  {
-                                                                           "title":  "Ce se îmbunata?e?te dupa refactorizare",
+                                                                           "title":  "Ce se ï¿½mbunata?e?te dupa refactorizare",
                                                                            "items":  {
                                                                                          "fieldsAreCleaner":  "O constanta clara pentru micul dejun elimina numarul magic ?i face pre?ul mai u?or de schimbat.",
                                                                                          "goalsCollectedOnce":  "Destructurarea ?i un singur loop fac codul mai scurt ?i mai u?or de urmarit.",
@@ -167,15 +265,15 @@
                                                          },
                                             "intro":  {
                                                           "label":  "Exemplu simplu",
-                                                          "title":  "O func?ie de total pentru rezervari înainte ?i dupa refactorizare",
-                                                          "description":  "Prima versiune parcurge acelea?i rezervari de mai multe ori ?i repeta logica de pre?. Versiunea refactorizata pastreaza un flux clar, folose?te o constanta numita ?i este mai u?or de între?inut.",
+                                                          "title":  "O func?ie de total pentru rezervari ï¿½nainte ?i dupa refactorizare",
+                                                          "description":  "Prima versiune parcurge acelea?i rezervari de mai multe ori ?i repeta logica de pre?. Versiunea refactorizata pastreaza un flux clar, folose?te o constanta numita ?i este mai u?or de ï¿½ntre?inut.",
                                                           "chips":  {
                                                                         "example":  "JavaScript dezordonat cu munca duplicata",
                                                                         "outcome":  "TypeScript curat cu un singur flux clar"
                                                                     }
                                                       },
                                             "beforePanel":  {
-                                                                "helper":  "Func?ioneaza azi. Greu de schimbat mâine.",
+                                                                "helper":  "Func?ioneaza azi. Greu de schimbat mï¿½ine.",
                                                                 "annotations":  {
                                                                                     "responsibilities":  "Prea multe responsabilita?i",
                                                                                     "logic":  "Logica greu de urmarit",
@@ -184,7 +282,7 @@
                                                                                 }
                                                             },
                                             "afterPanel":  {
-                                                               "helper":  "Mai clar acum. Mai u?or de extins mai târziu.",
+                                                               "helper":  "Mai clar acum. Mai u?or de extins mai tï¿½rziu.",
                                                                "annotations":  {
                                                                                    "flow":  "Responsabilitate clara",
                                                                                    "reuse":  "Toate regulile aplicate consecvent",
@@ -195,19 +293,19 @@
                                         },
                  "uiFixExperience":  {
                                          "eyebrow":  "Transformarea Interfe?ei",
-                                         "title":  "Designul nu este doar decor. Este modul în care func?ioneaza produsul tau.",
-                                         "description":  "Ceea ce pare doar UI este adesea diferen?a dintre confuzie ?i claritate. Rafinam structura, spa?ierea ?i interac?iunile astfel încât produsul tau sa fie intuitiv, fiabil ?i pregatit sa scaleze.",
-                                         "before":  "Înainte",
+                                         "title":  "Designul nu este doar decor. Este modul ï¿½n care func?ioneaza produsul tau.",
+                                         "description":  "Ceea ce pare doar UI este adesea diferen?a dintre confuzie ?i claritate. Rafinam structura, spa?ierea ?i interac?iunile astfel ï¿½ncï¿½t produsul tau sa fie intuitiv, fiabil ?i pregatit sa scaleze.",
+                                         "before":  "ï¿½nainte",
                                          "after":  "Dupa",
                                          "button":  "Repara UI-ul",
                                          "fixingButton":  "Se repara...",
-                                         "resetButton":  "Înapoi la înainte",
+                                         "resetButton":  "ï¿½napoi la ï¿½nainte",
                                          "dashboardTitle":  "Rezervari",
                                          "dashboardSubtitle":  "Rezervari viitoare",
                                          "afterTitle":  "Un dashboard de rezervari mai u?or de scanat ?i gestionat.",
-                                         "afterSubtitle":  "Rezervarile, statusurile, pre?urile ?i ac?iunile sunt acum a?ezate într-un layout mai clar, mai consistent ?i mai u?or de folosit.",
+                                         "afterSubtitle":  "Rezervarile, statusurile, pre?urile ?i ac?iunile sunt acum a?ezate ï¿½ntr-un layout mai clar, mai consistent ?i mai u?or de folosit.",
                                          "issues":  {
-                                                        "cramped":  "Con?inutul pare înghesuit",
+                                                        "cramped":  "Con?inutul pare ï¿½nghesuit",
                                                         "misaligned":  "Layout inconsistent",
                                                         "hardToRead":  "Ierarhie vizuala slaba"
                                                     },
@@ -221,11 +319,11 @@
                                          "actions":  {
                                                          "view":  "Vezi",
                                                          "cancel":  "Anuleaza",
-                                                         "loadMore":  "Încarca mai mult"
+                                                         "loadMore":  "ï¿½ncarca mai mult"
                                                      },
                                          "statuses":  {
                                                           "confirmed":  "Confirmata",
-                                                          "pending":  "În a?teptare",
+                                                          "pending":  "ï¿½n a?teptare",
                                                           "cancelled":  "Anulata"
                                                       },
                                          "rowMeta":  "Rezervare client",
@@ -412,18 +510,18 @@
                   "privacy":  {
                                   "eyebrow":  "Confiden?ialitate",
                                   "title":  "Politica de confiden?ialitate",
-                                  "intro":  "Colectam cât mai pu?ine date ?i pastram doar informa?iile necesare pentru a raspunde solicitarilor ?i a livra serviciile noastre.",
-                                  "collection":  "Când ne contactezi, putem stoca numele, adresa de email, detaliile companiei ?i informa?iile despre proiect pe care alegi sa le trimi?i.",
-                                  "usage":  "Folosim aceste informa?ii pentru a comunica despre poten?iale colaborari, pentru a oferi estimari, pentru a livra serviciile contractate ?i pentru a ne îmbunata?i modul de lucru.",
-                                  "retention":  "Pastram informa?iile de contact ?i proiect doar atât timp cât este rezonabil necesar din motive opera?ionale, legale ?i de business."
+                                  "intro":  "Colectam cï¿½t mai pu?ine date ?i pastram doar informa?iile necesare pentru a raspunde solicitarilor ?i a livra serviciile noastre.",
+                                  "collection":  "Cï¿½nd ne contactezi, putem stoca numele, adresa de email, detaliile companiei ?i informa?iile despre proiect pe care alegi sa le trimi?i.",
+                                  "usage":  "Folosim aceste informa?ii pentru a comunica despre poten?iale colaborari, pentru a oferi estimari, pentru a livra serviciile contractate ?i pentru a ne ï¿½mbunata?i modul de lucru.",
+                                  "retention":  "Pastram informa?iile de contact ?i proiect doar atï¿½t timp cï¿½t este rezonabil necesar din motive opera?ionale, legale ?i de business."
                               },
                   "terms":  {
                                 "eyebrow":  "Termeni",
                                 "title":  "Termeni de colaborare",
-                                "intro":  "Scopul proiectului, costurile, etapele de livrare ?i responsabilita?ile sunt confirmate în scris înainte de începerea lucrului.",
+                                "intro":  "Scopul proiectului, costurile, etapele de livrare ?i responsabilita?ile sunt confirmate ï¿½n scris ï¿½nainte de ï¿½nceperea lucrului.",
                                 "scope":  "Orice termen sau livrabil depinde de feedback, acces ?i aprobari oferite la timp de client.",
                                 "delivery":  "Daca nu este agreat altfel, drepturile de proprietate intelectuala se transfera catre client dupa plata tuturor facturilor aferente proiectului.",
-                                "liability":  "Raspunderea noastra este limitata la valoarea serviciilor livrate în baza acordului activ, în masura permisa de lege."
+                                "liability":  "Raspunderea noastra este limitata la valoarea serviciilor livrate ï¿½n baza acordului activ, ï¿½n masura permisa de lege."
                             }
               }
 }

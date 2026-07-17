@@ -18,30 +18,41 @@
                    "email":  "Email us"
                },
     "Home":  {
+                 "clients":  {
+                                 "label":  "Client logos",
+                                 "eyebrow":  "Trusted by teams at"
+                             },
                  "hero":  {
-                              "eyebrow":  "Remote senior team",
-                              "title":  "We build high-performance web apps from anywhere in the world.",
-                              "description":  "A senior developer team delivering fast, scalable and reliable digital products without the overhead of an agency.",
-                              "primaryCta":  "Start a project",
-                              "secondaryCta":  "See our work",
+                              "eyebrowSenior":  "Senior builders",
+                              "eyebrowAi":  "AI-accelerated delivery",
+                              "title":  "Web products built by <accent>senior developers</accent>, accelerated by AI.",
+                              "description":  "We combine senior product judgment with AI-assisted research, design, engineering and QA. You move faster without outsourcing the decisions that make your product reliable.",
+                              "primaryCta":  "Build with us",
+                              "secondaryCta":  "See selected work",
                               "badges":  {
-                                             "performanceTitle":  "Performance",
-                                             "performanceDescription":  "Fast, scalable delivery"
+                                            "performanceTitle":  "Direct build team",
+                                            "performanceDescription":  "Georgian + Andreea"
                                          },
                               "panel":  {
-                                            "title":  "Senior shipping engine",
-                                            "buildVelocity":  "Build velocity",
-                                            "coverage":  "Coverage"
+                                            "eyebrow":  "How we deliver",
+                                            "title":  "Clear product decisions. Faster, AI-accelerated execution.",
+                                            "status":  "Human-led, AI-accelerated",
+                                            "buildVelocity":  "AI delivery leverage",
+                                            "aiSignal":  "Senior-directed",
+                                            "coverage":  "Senior experience"
                                         },
                               "stats":  {
                                             "years":  "Years of product engineering",
                                             "projects":  "Products shipped",
-                                            "delivery":  "Faster delivery with senior-only execution",
+                  "delivery":  "AI-assisted workflows, senior-reviewed delivery",
                                             "timezone":  "Flexible collaboration across time zones",
-                                            "execution":  "Senior-only execution across the full build",
-                                            "handoffs":  "Handoffs between strategy and build",
-                                            "seniors":  "Senior developers from kickoff to launch",
-                                            "direct":  "Direct delivery team across the project"
+                  "execution":  "Demos, feedback and clear next steps",
+                  "weeklyValue":  "Weekly",
+                  "handoffs":  "Unnecessary layers between you and delivery",
+                  "seniors":  "Quality checks built into every release",
+                  "qualityValue":  "QA",
+                  "direct":  "Flexible collaboration across time zones",
+                  "globalValue":  "Global"
                                         }
                           },
                  "problem":  {
@@ -54,70 +65,150 @@
                                                "quality":  "We build with scale, maintainability and performance in mind from day one."
                                            }
                              },
-                 "services":  {
-                                  "eyebrow":  "What we build",
-                                  "title":  "Senior product execution for teams that need things shipped well.",
-                                  "description":  "From custom web apps to marketing sites and hands-on senior support, we build digital products that are fast, maintainable and ready to grow.",
+                "services":  {
+                                  "eyebrow":  "What We Build",
+                                  "title":  "The digital products your business needs next.",
+                                  "description":  "From a focused first release to a complex internal system, we design and ship software that solves the work in front of you.",
+                                  "labels":  {
+                                                 "delivery":  "We deliver",
+                                                 "includes":  "Includes",
+                                                 "idealFor":  "Best for",
+                                                 "outcome":  "Outcome"
+                                             },
                                   "items":  {
-                                                "apps":  {
-                                                             "title":  "Custom web apps",
-                                                             "description":  "Dashboards, internal tools, customer portals and SaaS products built with strong architecture and performance-first thinking."
-                                                         },
                                                 "websites":  {
-                                                                 "title":  "Marketing websites",
-                                                                 "description":  "Fast, flexible websites that feel premium, communicate clearly and support content, SEO and conversions."
+                                                                 "title":  "Websites that earn attention",
+                                                                 "summary":  "A credible first impression for businesses ready to turn more of the right visitors into conversations.",
+                                                                 "includes":  {
+                                                                                  "one":  "Conversion-focused page structure and messaging",
+                                                                                  "two":  "Responsive interface design and development",
+                                                                                  "three":  "Performance and technical SEO foundations"
+                                                                              },
+                                                                 "idealFor":  "service businesses, consultants and growing product teams",
+                                                                 "delivery":  "Conversion-led design, fast engineering and technical SEO foundations.",
+                                                                 "outcome":  "A site that makes your offer clear, loads fast and is easy to grow."
                                                              },
-                                                "fractional":  {
-                                                                   "title":  "Fractional senior support",
-                                                                   "description":  "Technical direction, codebase cleanup, component systems and implementation help for teams that need senior execution now."
-                                                               }
+                                                "apps":  {
+                                                             "title":  "Web apps built for real work",
+                                                             "summary":  "Purpose-built software for the workflows, customers and decisions your off-the-shelf tools cannot support.",
+                                                             "includes":  {
+                                                                              "one":  "Customer portals, dashboards and secure access",
+                                                                              "two":  "Core workflows, permissions and data modelling",
+                                                                              "three":  "Scalable front-end architecture"
+                                                                          },
+                                                             "idealFor":  "teams replacing manual work with a real product",
+                                                             "delivery":  "Secure portals, dashboards and product workflows with clean architecture.",
+                                                             "outcome":  "A reliable application your customers and team can use with confidence."
+                                                         },
+                                                "mvp":  {
+                                                             "title":  "MVPs that prove the right thing",
+                                                             "summary":  "A disciplined first release that gets your core experience into users' hands without building the whole roadmap first.",
+                                                             "includes":  {
+                                                                              "one":  "Product scoping around the highest-value workflow",
+                                                                              "two":  "Design and build of the essential experience",
+                                                                              "three":  "Launch preparation and a foundation to extend"
+                                                                          },
+                                                             "idealFor":  "founders validating a product or preparing a first launch",
+                                                             "delivery":  "Product scope, essential workflows and a launch-ready technical foundation.",
+                                                             "outcome":  "A focused product you can test, learn from and build on."
+                                                         },
+                                                "rescue":  {
+                                                                "title":  "Products brought back under control",
+                                                                "summary":  "When working software becomes slow, fragile or difficult to change, we create a practical path forward.",
+                                                                "includes":  {
+                                                                                 "one":  "Codebase and architecture assessment",
+                                                                                 "two":  "Targeted refactoring and performance improvements",
+                                                                                 "three":  "UI stabilization and safer delivery workflows"
+                                                                             },
+                                                                "idealFor":  "teams held back by a brittle, difficult-to-change product",
+                                                                "delivery":  "Refactoring, performance fixes and UI stabilization where they matter most.",
+                                                                "outcome":  "Lower technical risk and a product your team can move forward with."
+                                                            },
+                                                "internalTools":  {
+                                                                      "title":  "Internal systems that remove drag",
+                                                                      "summary":  "Replace spreadsheets, disconnected tools and repeated handoffs with a workflow built around how your team operates.",
+                                                                      "includes":  {
+                                                                                       "one":  "Operations dashboards and admin interfaces",
+                                                                                       "two":  "Workflow automation and approval paths",
+                                                                                       "three":  "Integrations that connect critical tools"
+                                                                                   },
+                                                                      "idealFor":  "operations teams spending too much time coordinating work",
+                                                                      "delivery":  "Admin tools, operational dashboards and targeted workflow automation.",
+                                                                      "outcome":  "Less manual work, clearer visibility and more consistent execution."
+                                                                  },
+                                                "aiFeatures":  {
+                                                                    "title":  "AI features with a clear job to do",
+                                                                    "summary":  "Practical AI capability for moments where it can genuinely remove effort, improve judgement or speed up a workflow.",
+                                                                    "includes":  {
+                                                                                     "one":  "AI-assisted workflows designed around real users",
+                                                                                     "two":  "Content, analysis and knowledge tools",
+                                                                                     "three":  "Guardrails, testing and product integration"
+                                                                                 },
+                                                                    "idealFor":  "products with a clear, high-value use case for AI",
+                                                                    "delivery":  "Assisted workflows, content tools, analysis layers and internal copilots.",
+                                                                    "outcome":  "Useful AI that fits your product instead of a feature added for novelty."
+                                                                }
                                             }
                               },
                  "whyChooseUs":  {
                                      "eyebrow":  "Why Nomadicoders",
-                                     "title":  "Senior execution without agency overhead.",
-                                     "description":  "We remove the layers that slow projects down and keep the people making decisions close to the work.",
+                                     "title":  "Direct senior execution is a better way to build.",
+                                     "description":  "Complex builds move faster when the people making technical decisions are the same people writing the code and refining the product.",
                                      "items":  {
-                                                   "layers":  {
-                                                                  "title":  "No management layers",
-                                                                  "description":  "You work directly with the senior developers planning and building the product, without outsourcing or junior handoff."
+                                                   "direct":  {
+                                                                  "title":  "Direct access to the builders",
+                                                                  "description":  "Questions, tradeoffs, and product decisions go straight to the people building the website or app."
                                                               },
-                                                   "decisions":  {
-                                                                     "title":  "Fast, clear decisions",
-                                                                     "description":  "Less handoff, fewer meetings, and quicker alignment when priorities, scope, or product details change."
+                                                   "speed":  {
+                                                                     "title":  "Faster decisions, fewer gaps",
+                                                                     "description":  "Small senior teams keep context intact, so scope changes and implementation details do not bounce between layers."
                                                                  },
-                                                   "quality":  {
-                                                                  "title":  "Product-minded engineering",
-                                                                  "description":  "We balance UX, performance, maintainability, and business goals from the first technical decision."
+                                                   "ownership":  {
+                                                                  "title":  "Higher technical ownership",
+                                                                  "description":  "The same senior hands shape architecture, implementation, performance, and launch readiness."
                                                               },
-                                                   "flexibility":  {
-                                                                       "title":  "Remote-first flexibility",
-                                                                       "description":  "Async-friendly collaboration for founders, distributed teams, and growing companies that need senior momentum."
+                                                   "consistency":  {
+                                                                       "title":  "Consistent code and design",
+                                                                       "description":  "Fewer moving parts means cleaner interfaces, steadier engineering decisions, and a product that feels built by one team."
                                                                    }
                                                }
                                  },
-                 "projects":  {
+                "projects":  {
                                   "eyebrow":  "Selected work",
-                                  "title":  "A few examples of what we build.",
-                                  "description":  "From internal tools to conversion-focused websites, we help teams turn ideas into fast, maintainable products.",
+    "title":  "Complex products. Clear business wins.",
+    "description":  "A selection of client work where senior product thinking and focused engineering turned friction into a faster, clearer experience.",
+                                  "framing":  "Anonymized production project",
+                                  "cta":  "Discuss similar work",
+                                  "labels":  {
+                                                 "problem":  "Problem",
+                                                 "built":  "What we built",
+                                                 "stack":  "Technical stack",
+                                                 "outcome":  "Outcome"
+                                             },
                                   "items":  {
                                                 "saas":  {
                                                              "category":  "B2B SaaS",
-                                                             "title":  "Operations dashboard",
-                                                             "summary":  "A real-time internal platform for tracking team workloads, approvals and delivery status across regions.",
-                                                             "outcome":  "Reduced manual coordination and improved operational visibility."
+                               "title":  "One source of truth for global operations",
+                               "summary":  "We replaced fragmented spreadsheets and status chasing with a product teams could rely on every day.",
+                               "problem":  "Operational status lived across spreadsheets, chat threads and manual updates, making ownership and delivery risk hard to see.",
+                               "built":  "Realtime workload, approval and delivery tracking across regions.",
+                               "outcome":  "Faster decisions and clear ownership without manual status chasing."
                                                          },
                                                 "booking":  {
                                                                 "category":  "Travel product",
-                                                                "title":  "Booking flow redesign",
-                                                                "summary":  "A mobile-first booking flow with clearer pricing, faster checkout and smoother content management for the client team.",
-                                                                "outcome":  "Improved conversion with a simpler and more trustworthy flow."
+                                  "title":  "A booking journey built for confidence",
+                                  "summary":  "We turned a slow, uncertain mobile flow into a direct path from discovery to confirmed booking.",
+                                  "problem":  "The existing booking flow created hesitation: pricing was unclear, mobile steps felt heavy and content updates depended too much on developers.",
+                                  "built":  "Mobile-first discovery, transparent pricing and a leaner checkout.",
+                                  "outcome":  "Less hesitation and fewer points of friction before confirmation."
                                                             },
                                                 "marketing":  {
                                                                   "category":  "Service business",
-                                                                  "title":  "High-performance marketing site",
-                                                                  "summary":  "A performance-focused website with strong messaging, reusable sections and a scalable content structure.",
-                                                                  "outcome":  "Better page speed, cleaner CMS workflows and stronger lead quality."
+                                    "title":  "A faster website with a sharper sales story",
+                                    "summary":  "We rebuilt an underperforming presence into a credible, focused platform for qualified demand.",
+                                    "problem":  "The old website looked generic, loaded slowly and did not explain the service clearly enough to attract higher-quality leads.",
+                                    "built":  "Conversion-led messaging, reusable sections and technical SEO foundations.",
+                                    "outcome":  "A stronger first impression, faster pages and better-qualified leads."
                                                               }
                                             }
                               },
@@ -133,6 +224,13 @@
                                              "openLabel":  "Open"
                                          }
                          },
+                 "transformations":  {
+                                         "label":  "Transformation examples",
+                                         "tabs":  {
+                                                      "code":  "Code transformation",
+                                                      "interface":  "Interface transformation"
+                                                  }
+                                     },
                  "refactorExperience":  {
                                             "eyebrow":  "Code Transformation",
                                             "title":  "Messy code slows you down.\nClean code moves you forward.",

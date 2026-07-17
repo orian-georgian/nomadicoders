@@ -12,10 +12,7 @@ html {
 
 body {
   min-height: 100vh;
-  background:
-    radial-gradient(circle at top left, rgba(56, 189, 248, 0.18), transparent 28%),
-    radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.18), transparent 24%),
-    #0b0f19;
+  background: #0b0f19;
   color: #e5eef8;
 }
 
@@ -84,6 +81,12 @@ body {
   }
 }
 
+@keyframes logo-marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 @layer components {
   .float-badge-card {
     transform: translateZ(0);
@@ -100,6 +103,23 @@ body {
   .float-badge-down {
     animation: float-badge-down 5.2s linear infinite alternate;
     will-change: transform;
+  }
+
+  .logo-marquee-track {
+    display: flex;
+    width: max-content;
+    animation: logo-marquee 30s linear infinite;
+  }
+
+  .logo-marquee-viewport {
+    -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .logo-marquee-track {
+      animation: none;
+    }
   }
 }
 

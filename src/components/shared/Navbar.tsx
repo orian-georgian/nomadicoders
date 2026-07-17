@@ -1,7 +1,4 @@
-﻿import Image from "next/image";
 import { useTranslations } from "next-intl";
-
-import logoImage from "../../../public/images/logo.png";
 
 import { Link } from "@/i18n/navigation";
 
@@ -24,16 +21,10 @@ export function Navbar() {
       <Container className="flex h-20 items-center justify-between gap-4">
         <Link
           aria-label="Nomadicoders home"
-          className="block w-[13rem]"
+          className="text-xl font-semibold tracking-tight text-white"
           href="/"
         >
-          <Image
-            alt="Nomadicoders"
-            className="h-auto w-full"
-            priority
-            sizes="208px"
-            src={logoImage}
-          />
+          Nomadicoders
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">

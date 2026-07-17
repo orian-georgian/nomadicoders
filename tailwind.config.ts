@@ -12,14 +12,14 @@ const config: Config = {
         muted: "#94A3B8",
         brand: {
           blue: "#38BDF8",
-          purple: "#8B5CF6"
+          purple: "#8a00e5"
         }
       },
       backgroundImage: {
-        "brand-gradient": "linear-gradient(135deg, #38BDF8 0%, #8B5CF6 100%)"
+        "brand-gradient": "linear-gradient(135deg, #38BDF8 0%, #8a00e5 100%)"
       },
       maxWidth: {
-        container: "72rem"
+        container: "87.5rem"
       }
     }
   },

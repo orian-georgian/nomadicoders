@@ -17,7 +17,7 @@ export function HeroMetricCard({
 }: HeroMetricCardProps) {
   return (
     <div
-      className={`relative overflow-hidden rounded-[1.35rem] border border-white/10 p-5 ${className ?? ""}`}
+      className={`relative flex h-full flex-col overflow-hidden rounded-[1.35rem] border border-white/10 p-5 ${className ?? ""}`}
     >
       {animatedTopBorder ? (
         <motion.div
@@ -33,7 +33,7 @@ export function HeroMetricCard({
       <p className="relative text-xs uppercase tracking-[0.24em] text-slate-400">
         {title}
       </p>
-      <div className="relative mt-5">{children}</div>
+      <div className="relative mt-5 flex flex-1 flex-col">{children}</div>
     </div>
   );
 }

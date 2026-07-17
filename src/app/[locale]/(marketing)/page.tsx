@@ -3,11 +3,10 @@ import {getTranslations} from "next-intl/server";
 import {CTA} from "@/components/shared/CTA";
 import {Hero} from "@/features/home/components/Hero";
 import {ProjectsPreview} from "@/features/home/components/ProjectsPreview";
-import {RefactorExperience} from "@/features/home/components/RefactorExperience";
 import {Services} from "@/features/home/components/Services";
 import {TeamSection} from "@/features/home/components/TeamSection";
 import {TestimonialsSection} from "@/features/home/components/TestimonialsSection";
-import {UIFixExperience} from "@/features/home/components/UIFixExperience";
+import {TransformationsSection} from "@/features/home/components/TransformationsSection";
 import {WorkflowSection} from "@/features/home/components/WorkflowSection";
 import {WhyChooseUs} from "@/features/home/components/WhyChooseUs";
 
@@ -18,13 +17,12 @@ export default async function MarketingHomePage() {
     <>
       <Hero />
       <WhyChooseUs />
+      <ProjectsPreview />
       <Services />
-      <RefactorExperience />
-      <UIFixExperience />
+      <TransformationsSection />
       <WorkflowSection />
       <TestimonialsSection />
       <TeamSection />
-      <ProjectsPreview />
       <CTA
         buttonHref="mailto:hello@nomadicoders.dev"
         buttonLabel={cta("button")}

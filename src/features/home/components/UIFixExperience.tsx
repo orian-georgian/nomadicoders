@@ -195,7 +195,7 @@ function BeforeDashboard({ t }: { t: ReturnType<typeof useTranslations> }) {
                     index === 1 && "bg-sky-500/25 text-[11px] text-sky-100",
                     index === 2 && "bg-lime-500/30 text-[10px] text-lime-100",
                     index === 3 &&
-                      "bg-violet-500/25 text-[9px] uppercase text-violet-100",
+                      "bg-brand-purple/25 text-[9px] uppercase text-brand-purple",
                   )}
                 >
                   {getStatusText(t, booking.status)}
@@ -225,7 +225,7 @@ function BeforeDashboard({ t }: { t: ReturnType<typeof useTranslations> }) {
                 <div
                   className={cn(index % 2 === 0 ? "text-left" : "text-right")}
                 >
-                  <p className="text-[9px] font-semibold uppercase tracking-[0.12em] text-violet-300">
+                  <p className="text-[9px] font-semibold uppercase tracking-[0.12em] text-brand-purple">
                     {t("columns.price")}
                   </p>
                   <p
@@ -429,7 +429,7 @@ function AfterDashboard({ t }: { t: ReturnType<typeof useTranslations> }) {
     </BrowserFrame>
   );
 }
-export function UIFixExperience() {
+export function UIFixExperience({ embedded = false }: { embedded?: boolean }) {
   const t = useTranslations("Home.uiFixExperience");
   const [isFixed, setIsFixed] = useState(false);
   const [isFixing, setIsFixing] = useState(false);
@@ -450,8 +450,10 @@ export function UIFixExperience() {
     }, 2500);
   };
 
+  const Section = embedded ? motion.div : AnimatedSection;
+
   return (
-    <AnimatedSection
+    <Section
       className="relative overflow-hidden"
       id="ui-fix-experience"
     >
@@ -467,7 +469,7 @@ export function UIFixExperience() {
         />
         <motion.div
           animate={{ scale: [1, 0.94, 1.04], x: [0, -24, 14], y: [0, 18, -10] }}
-          className="absolute right-[-4rem] top-24 h-60 w-60 rounded-full bg-violet-500/10 blur-3xl"
+          className="absolute right-[-4rem] top-24 h-60 w-60 rounded-full bg-brand-purple/10 blur-3xl"
           transition={{
             duration: 13,
             ease: "easeInOut",
@@ -568,7 +570,7 @@ export function UIFixExperience() {
                           x: [12, -18, 10],
                           y: [-8, 14, -6],
                         }}
-                        className="pointer-events-none absolute bottom-[-2rem] right-[-1rem] z-20 h-56 w-56 rounded-full bg-violet-400/28 blur-3xl"
+                        className="pointer-events-none absolute bottom-[-2rem] right-[-1rem] z-20 h-56 w-56 rounded-full bg-brand-purple/28 blur-3xl"
                         transition={{
                           duration: 1.95,
                           ease: "easeInOut",
@@ -684,7 +686,7 @@ export function UIFixExperience() {
           </div>
         </div>
       </Container>
-    </AnimatedSection>
+    </Section>
   );
 }
 

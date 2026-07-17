@@ -176,7 +176,7 @@ export function TeamMemberGrowthTimeline({
               <defs>
                 <linearGradient id="growthCurveGradient" x1="0" x2="1">
                   <stop offset="0%" stopColor="#38BDF8" />
-                  <stop offset="100%" stopColor="#8B5CF6" />
+                  <stop offset="100%" stopColor="#8a00e5" />
                 </linearGradient>
                 <linearGradient
                   id="growthPointGradient"
@@ -186,7 +186,7 @@ export function TeamMemberGrowthTimeline({
                   y2="1"
                 >
                   <stop offset="0%" stopColor="#38BDF8" />
-                  <stop offset="100%" stopColor="#8B5CF6" />
+                  <stop offset="100%" stopColor="#8a00e5" />
                 </linearGradient>
               </defs>
 

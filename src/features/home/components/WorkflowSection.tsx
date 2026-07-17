@@ -1,6 +1,6 @@
 "use client";
 
-import {useState} from "react";
+import {useEffect, useRef, useState} from "react";
 
 import {AnimatePresence, motion} from "framer-motion";
 import {
@@ -22,7 +22,6 @@ import {
 import {useTranslations} from "next-intl";
 
 import {AnimatedSection} from "@/app/[locale]/(marketing)/_components/AnimatedSection";
-import {buttonVariants} from "@/components/ui/Button";
 import {Container} from "@/components/ui/Container";
 import {cn} from "@/lib/utils";
 
@@ -51,6 +50,96 @@ const buildTrackMeta = [
 
 const buildStepIndex = stepMeta.findIndex(({key}) => key === "build");
 const buildBranchCenter = `${((buildStepIndex + 0.5) / stepMeta.length) * 100}%`;
+
+function StepperParticleStream({
+  activeStep,
+  stepCount
+}: {
+  activeStep: number;
+  stepCount: number;
+}) {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const activeStepRef = useRef(activeStep);
+  const stepCountRef = useRef(stepCount);
+
+  useEffect(() => {
+    activeStepRef.current = activeStep;
+    stepCountRef.current = stepCount;
+  }, [activeStep, stepCount]);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    const context = canvas.getContext("2d");
+    if (!context) return;
+
+    const particles = Array.from({length: 22}, () => ({
+      lane: (Math.random() - 0.5) * 6,
+      purple: Math.random() > 0.45,
+      speed: 0.0016 + 0.0022 * Math.random(),
+      t: Math.random()
+    }));
+    let frameId = 0;
+    let width = 0;
+    let height = 0;
+    let pixelRatio = 1;
+
+    const resize = () => {
+      const bounds = canvas.getBoundingClientRect();
+      pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
+      width = bounds.width;
+      height = bounds.height;
+      canvas.width = Math.round(width * pixelRatio);
+      canvas.height = Math.round(height * pixelRatio);
+      context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+    };
+
+    const render = () => {
+      context.clearRect(0, 0, width, height);
+
+      const activeX = stepCountRef.current > 1
+        ? (activeStepRef.current / (stepCountRef.current - 1)) * width
+        : 0;
+
+      for (const particle of particles) {
+        particle.t += particle.speed;
+        if (particle.t > 1) particle.t -= 1;
+
+        const x = particle.t * width;
+        const emphasis = 1 - Math.min(1, Math.abs(x - activeX) / 140);
+        const opacity = 0.28 + 0.55 * emphasis;
+        const radius = 1.4 + 1.8 * emphasis;
+
+        context.beginPath();
+        context.arc(x, height / 2 + particle.lane, radius, 0, Math.PI * 2);
+        context.fillStyle = particle.purple
+          ? `rgba(192, 132, 252, ${opacity * 0.8})`
+          : `rgba(186, 230, 253, ${opacity})`;
+        context.shadowBlur = 10 * emphasis;
+        context.shadowColor = particle.purple
+          ? "rgba(192, 132, 252, 0.55)"
+          : "rgba(186, 230, 253, 0.65)";
+        context.fill();
+        context.shadowBlur = 0;
+      }
+
+      frameId = window.requestAnimationFrame(render);
+    };
+
+    const observer = new ResizeObserver(resize);
+    observer.observe(canvas);
+    resize();
+    frameId = window.requestAnimationFrame(render);
+
+    return () => {
+      observer.disconnect();
+      window.cancelAnimationFrame(frameId);
+    };
+  }, []);
+
+  return <canvas aria-hidden="true" className="pointer-events-none h-full w-full" ref={canvasRef} />;
+}
 
 function getBuildTitleLines(
   key: (typeof buildTrackMeta)[number]["key"],
@@ -125,7 +214,7 @@ export function WorkflowSection() {
         />
         <motion.div
           animate={{scale: [1, 0.96, 1.05], x: [0, -18, 14], y: [0, 22, -10]}}
-          className="absolute right-[-5rem] top-24 h-72 w-72 rounded-full bg-violet-500/10 blur-3xl"
+          className="absolute right-[-5rem] top-24 h-72 w-72 rounded-full bg-brand-purple/10 blur-3xl"
           transition={{duration: 14, ease: "easeInOut", repeat: Number.POSITIVE_INFINITY}}
         />
       </div>
@@ -146,15 +235,18 @@ export function WorkflowSection() {
             <p className="subheading">{t("description")}</p>
           </motion.div>
 
-          <div className="relative mt-12 overflow-hidden rounded-[2.2rem] border border-white/12 bg-[linear-gradient(180deg,rgba(15,23,42,0.82),rgba(30,41,59,0.72))] px-4 py-6 shadow-[0_20px_80px_rgba(2,6,23,0.28)] sm:px-6 sm:py-8 lg:px-8 lg:py-10">
-            <div className="relative hidden lg:block">
+          <div className="relative mt-12">
+            <div className="relative hidden py-5 sm:py-6 lg:block">
               <div className="relative px-2 xl:px-4">
-                <div className="absolute left-[calc(100%/16)] right-[calc(100%/16)] top-6 h-px bg-white/10">
+                <div className="absolute left-[calc(100%/16)] right-[calc(100%/16)] top-8 h-px bg-white/10">
                   <motion.div
                     animate={{width: progress}}
-                    className="h-full rounded-full bg-gradient-to-r from-sky-300 via-cyan-200 to-white/20"
+                    className="h-full rounded-full bg-sky-300 shadow-[0_0_8px_rgba(125,211,252,0.45)]"
                     transition={{duration: 0.35, ease: [0.22, 1, 0.36, 1]}}
                   />
+                  <div className="pointer-events-none absolute inset-x-0 -top-[1.125rem] h-7 overflow-hidden">
+                    <StepperParticleStream activeStep={activeStep} stepCount={steps.length} />
+                  </div>
                 </div>
 
                 <div className="grid grid-cols-8 gap-2 xl:gap-4">
@@ -185,22 +277,22 @@ export function WorkflowSection() {
                               : "0 8px 24px rgba(2, 6, 23, 0.14)",
                             scale: isActive ? 1.04 : 1
                           }}
-                          className="relative z-10 inline-flex h-12 w-12 items-center justify-center rounded-full border backdrop-blur-sm"
+                          className="relative z-10 inline-flex h-[4.25rem] w-[4.25rem] items-center justify-center rounded-2xl border backdrop-blur-sm"
                           transition={{duration: 0.22, ease: [0.22, 1, 0.36, 1]}}
                         >
                           <Icon
-                            className={cn("h-4 w-4", isActive ? "text-sky-100" : "text-slate-300")}
+                            className={cn("h-7 w-7", isActive ? "text-sky-100" : "text-slate-300")}
                             strokeWidth={1.85}
                           />
                         </motion.span>
 
-                        <div className="mt-2 flex max-w-[8rem] flex-col items-center gap-1 px-1">
+                        <div className="mt-3 flex max-w-[9rem] flex-col items-center gap-1 px-1">
                           <span className="text-[0.62rem] font-semibold uppercase tracking-[0.24em] text-slate-500">
                             {String(index + 1).padStart(2, "0")}
                           </span>
                           <span
                             className={cn(
-                              "text-sm font-medium leading-5 transition-colors duration-200",
+                              "text-base font-medium leading-5 transition-colors duration-200",
                               isActive ? "text-white" : "text-slate-400"
                             )}
                           >
@@ -214,7 +306,7 @@ export function WorkflowSection() {
               </div>
             </div>
 
-            <div className="relative lg:hidden">
+            <div className="relative py-5 sm:py-6 lg:hidden">
               <div className="absolute bottom-2 left-4 top-2 w-px bg-white/10" />
 
               <div className="space-y-1.5">
@@ -229,21 +321,21 @@ export function WorkflowSection() {
                       onClick={() => setActiveStep(index)}
                       type="button"
                     >
-                      <div className="flex items-center gap-3 pl-10 pr-2">
+                      <div className="flex items-center gap-3 pl-12 pr-2">
                         <span
                           className={cn(
-                            "absolute left-0 top-1/2 inline-flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full border",
+                            "absolute left-0 top-1/2 inline-flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border",
                             isActive
                               ? "border-sky-300/40 bg-sky-300/15 text-sky-100"
                               : "border-white/10 bg-white/[0.04] text-slate-300"
                           )}
                         >
-                          <Icon className="h-3.5 w-3.5" strokeWidth={1.85} />
+                          <Icon className="h-4 w-4" strokeWidth={1.85} />
                         </span>
                         <span className="text-[0.62rem] font-semibold uppercase tracking-[0.22em] text-slate-500">
                           {String(index + 1).padStart(2, "0")}
                         </span>
-                        <span className={cn("text-sm font-medium", isActive ? "text-white" : "text-slate-400")}>
+                        <span className={cn("text-base font-medium", isActive ? "text-white" : "text-slate-400")}>
                           {step.title}
                         </span>
                       </div>
@@ -270,7 +362,7 @@ export function WorkflowSection() {
                   <div className="hidden lg:block">
                     <div className="pt-8">
                       <div className="relative px-2 xl:px-4">
-                        <div className="absolute left-[calc(100%/16)] right-[calc(100%/16)] top-4 h-px bg-white/10">
+                        <div className="absolute left-[calc(100%/16)] right-[calc(100%/16)] top-7 h-px bg-white/10">
                           <div className="h-full rounded-full bg-gradient-to-r from-sky-300/70 via-cyan-200/50 to-white/15" />
                         </div>
 
@@ -280,10 +372,10 @@ export function WorkflowSection() {
 
                             return (
                               <div key={item.title} className="relative flex flex-col items-center text-center">
-                                <span className="relative z-10 inline-flex h-8 w-8 items-center justify-center rounded-full border border-sky-300/20 bg-[#0b0f19] text-sky-100">
-                                  <BranchIcon className="h-3.5 w-3.5" strokeWidth={1.8} />
+                                <span className="relative z-10 inline-flex h-14 w-14 items-center justify-center rounded-2xl border border-sky-300/20 bg-[#0b0f19] text-sky-100">
+                                  <BranchIcon className="h-5 w-5" strokeWidth={1.8} />
                                 </span>
-                                <span className="h-5 w-px bg-gradient-to-b from-sky-300/70 to-transparent" />
+                                <span className="h-6 w-px bg-gradient-to-b from-sky-300/70 to-transparent" />
 
                                 <div className="flex min-h-[8.5rem] max-w-[10rem] flex-col gap-1.5 px-1">
                                   <p className="mx-auto min-h-[2.5rem] max-w-[6.5rem] text-sm font-medium leading-5 text-white">
@@ -332,7 +424,8 @@ export function WorkflowSection() {
                 </motion.div>
               ) : null}
             </AnimatePresence>
-            <div className="mt-8 border-t border-white/8 pt-10">
+            <div className="mt-10 overflow-hidden rounded-[2.2rem] border border-white/12 bg-[linear-gradient(180deg,rgba(15,23,42,0.82),rgba(30,41,59,0.72))] px-5 py-7 shadow-[0_20px_80px_rgba(2,6,23,0.28)] sm:px-6 sm:py-8 lg:px-8 lg:py-10">
+              <div>
               <AnimatePresence mode="wait">
                 <motion.div
                   key={selectedStep.key}
@@ -367,8 +460,6 @@ export function WorkflowSection() {
                     </div>
 
                     <div className="relative lg:pl-10">
-                      <div className="absolute inset-y-0 left-0 hidden w-px bg-gradient-to-b from-transparent via-white/10 to-transparent lg:block" />
-
                       <div className="rounded-[1.4rem] border border-white/8 bg-slate-950/28 p-5 sm:p-6">
                         <p className="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-slate-500">
                           {detailPanel.principleLabel}
@@ -387,7 +478,7 @@ export function WorkflowSection() {
                             </p>
                           </div>
 
-                          <div className="space-y-2 sm:border-l sm:border-white/8 sm:pl-4">
+                          <div className="space-y-2 sm:pl-4">
                             <p className="text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-slate-500">
                               {detailPanel.outcomeLabel}
                             </p>
@@ -403,30 +494,8 @@ export function WorkflowSection() {
               </AnimatePresence>
             </div>
 
-            <div className="mt-8 border-t border-white/8 pt-8">
-              <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-                <div className="max-w-2xl space-y-3">
-                  <h3 className="text-2xl font-semibold tracking-tight text-white sm:text-[2rem]">
-                    {t("cta.title")}
-                  </h3>
-                  <p className="text-base leading-7 text-slate-300">
-                    {t("cta.description")}
-                  </p>
-                </div>
-
-                <a
-                  className={buttonVariants({
-                    className:
-                      "self-start px-6 shadow-[0_16px_45px_rgba(56,189,248,0.18)] lg:self-auto",
-                    size: "lg"
-                  })}
-                  href="#contact"
-                >
-                  {t("cta.button")}
-                </a>
-              </div>
-            </div>
           </div>
+        </div>
         </div>
       </Container>
     </AnimatedSection>

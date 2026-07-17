@@ -4,11 +4,13 @@ import { useMemo } from "react";
 
 import { motion } from "framer-motion";
 import {
+  Check,
   Helicopter,
   MapPin,
+  MoveRight,
   PlaneTakeoff,
   Radar,
-  UsersRound,
+  ShieldCheck,
 } from "lucide-react";
 import { useTranslations } from "next-intl";
 
@@ -20,7 +22,7 @@ import { fadeIn, slideUp, staggerContainer } from "@/lib/animations";
 
 import { CoverageMetrics } from "./CoverageMetrics";
 
-type KpiVisual = "execution" | "handoffs" | "seniors" | "direct";
+type KpiVisual = "execution" | "handoffs" | "quality" | "direct";
 
 export function Hero() {
   const t = useTranslations("Home.hero");
@@ -38,10 +40,10 @@ export function Hero() {
     value: string;
     visual: KpiVisual;
   }> = [
-    { label: t("stats.execution"), value: "100%", visual: "execution" },
+    { label: t("stats.execution"), value: t("stats.weeklyValue"), visual: "execution" },
     { label: t("stats.handoffs"), value: "0", visual: "handoffs" },
-    { label: t("stats.seniors"), value: "2", visual: "seniors" },
-    { label: t("stats.direct"), value: "1", visual: "direct" },
+    { label: t("stats.seniors"), value: t("stats.qualityValue"), visual: "quality" },
+    { label: t("stats.direct"), value: t("stats.globalValue"), visual: "direct" },
   ];
 
   const renderKpiVisual = (visual: KpiVisual) => {
@@ -74,7 +76,7 @@ export function Hero() {
         return (
           <div className="relative h-11 w-16">
             <div className="absolute left-2 right-2 top-1/2 h-px -translate-y-1/2 border-t border-dashed border-white/20" />
-            <span className="absolute left-2 top-1/2 h-1.5 w-1.5 -translate-y-1/2 rounded-full bg-violet-300" />
+            <span className="absolute left-2 top-1/2 h-1.5 w-1.5 -translate-y-1/2 rounded-full bg-brand-purple" />
             <motion.span
               animate={{ scale: [1, 1.18, 1], opacity: [0.45, 0.9, 0.45] }}
               className="absolute right-1.5 top-1/2 h-3.5 w-3.5 -translate-y-1/2 rounded-full border border-sky-300/35"
@@ -93,14 +95,11 @@ export function Hero() {
                 ease: "linear",
               }}
             >
-              <PlaneTakeoff
-                className="h-4 w-4 text-sky-300"
-                strokeWidth={1.75}
-              />
+              <PlaneTakeoff className="h-4 w-4 text-sky-300" strokeWidth={1.75} />
             </motion.div>
           </div>
         );
-      case "seniors":
+      case "quality":
         return (
           <div className="relative flex h-11 w-16 items-center justify-center">
             <motion.div
@@ -112,14 +111,11 @@ export function Hero() {
                 ease: "easeInOut",
               }}
             >
-              <UsersRound
-                className="h-6 w-6 text-slate-100"
-                strokeWidth={1.8}
-              />
+              <ShieldCheck className="h-6 w-6 text-emerald-300" strokeWidth={1.8} />
             </motion.div>
             <motion.span
               animate={{ scale: [1, 1.2, 1], opacity: [0.35, 0.75, 0.35] }}
-              className="absolute right-1 top-1 h-2.5 w-2.5 rounded-full bg-gradient-to-r from-sky-300 to-violet-300"
+              className="absolute right-1 top-1 h-2.5 w-2.5 rounded-full bg-emerald-300"
               transition={{
                 duration: 2.6,
                 repeat: Number.POSITIVE_INFINITY,
@@ -160,11 +156,11 @@ export function Hero() {
   };
 
   return (
-    <section className="section relative overflow-hidden pb-10 pt-12 sm:pt-16 lg:pb-16 lg:pt-20">
+    <section className="section relative flex min-h-[calc(100svh-5rem)] items-center overflow-hidden pb-10 pt-12 sm:pt-16 lg:pb-16 lg:pt-20">
       <div className="pointer-events-none absolute inset-0">
         <motion.div
           animate={{ scale: [1, 1.1, 0.98], x: [0, 24, -8], y: [0, -18, 10] }}
-          className="absolute -left-20 top-6 h-56 w-56 rounded-full bg-sky-400/18 blur-3xl sm:h-72 sm:w-72"
+          className="absolute -left-20 top-6 h-56 w-56 rounded-full bg-sky-400/12 blur-3xl sm:h-72 sm:w-72"
           transition={{
             duration: 11,
             ease: "easeInOut",
@@ -173,14 +169,13 @@ export function Hero() {
         />
         <motion.div
           animate={{ scale: [1, 0.92, 1.08], x: [0, -22, 12], y: [0, 20, -10] }}
-          className="absolute right-[-4rem] top-20 h-64 w-64 rounded-full bg-violet-500/16 blur-3xl sm:h-80 sm:w-80"
+          className="absolute right-[-4rem] top-20 h-64 w-64 rounded-full bg-brand-purple/10 blur-3xl sm:h-80 sm:w-80"
           transition={{
             duration: 13,
             ease: "easeInOut",
             repeat: Number.POSITIVE_INFINITY,
           }}
         />
-        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-sky-300/50 to-transparent" />
       </div>
 
       <Container>
@@ -193,20 +188,28 @@ export function Hero() {
         >
           <div className="relative z-10 space-y-8">
             <motion.div className="space-y-6" variants={slideUp()}>
-              <motion.span
-                className="glass relative inline-flex overflow-hidden rounded-full px-4 py-2 text-sky-100"
+              <motion.div
+                className="flex flex-wrap gap-2"
                 variants={fadeIn()}
               >
-                <span className="relative text-xs font-semibold uppercase tracking-[0.28em] text-sky-100">
-                  {t("eyebrow")}
-                </span>
-              </motion.span>
+                {[t("eyebrowSenior"), t("eyebrowAi")].map((label) => (
+                  <span
+                    className="glass inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-sky-100"
+                    key={label}
+                  >
+                    <Check className="h-3.5 w-3.5 text-emerald-300" strokeWidth={2.5} />
+                    {label}
+                  </span>
+                ))}
+              </motion.div>
 
               <div className="relative max-w-3xl">
-                <div className="absolute -left-4 top-8 -z-10 h-28 w-28 rounded-full bg-sky-400/18 blur-3xl" />
-                <div className="absolute bottom-0 right-0 -z-10 h-24 w-24 rounded-full bg-violet-400/16 blur-3xl" />
+                <div className="absolute -left-4 top-8 -z-10 h-28 w-28 rounded-full bg-sky-400/12 blur-3xl" />
+                <div className="absolute bottom-0 right-0 -z-10 h-24 w-24 rounded-full bg-brand-purple/10 blur-3xl" />
                 <h1 className="heading max-w-3xl text-4xl leading-tight sm:text-5xl lg:text-6xl lg:leading-[1.02]">
-                  {t("title")}
+                  {t.rich("title", {
+                    accent: (chunks) => <span className="text-brand-purple">{chunks}</span>,
+                  })}
                 </h1>
               </div>
 
@@ -217,8 +220,15 @@ export function Hero() {
               className="flex flex-col gap-4 sm:flex-row sm:flex-wrap"
               variants={fadeIn(0.08)}
             >
-              <a className={buttonVariants({ size: "lg" })} href="#contact">
+              <a
+                className={buttonVariants({
+                  className: "group inline-flex items-center gap-2",
+                  size: "lg",
+                })}
+                href="#contact"
+              >
                 {t("primaryCta")}
+                <MoveRight className="h-5 w-5 transition-transform duration-200 group-hover:translate-x-0.5" />
               </a>
               <a
                 className={buttonVariants({ size: "lg", variant: "secondary" })}
@@ -227,75 +237,57 @@ export function Hero() {
                 {t("secondaryCta")}
               </a>
             </motion.div>
+
           </div>
 
           <motion.div className="relative" variants={fadeIn(0.14)}>
-            <motion.div
-              animate={{ rotate: [0, 6, 0], scale: [1, 1.04, 1] }}
-              className="absolute inset-4 -z-10 rounded-[2.5rem] bg-brand-gradient opacity-20 blur-2xl"
-              transition={{
-                duration: 10,
-                repeat: Number.POSITIVE_INFINITY,
-                ease: "easeInOut",
-              }}
-            />
-
-            <div className="relative mx-auto max-w-xl">
-              <div className="absolute right-4 top-3 z-20 hidden sm:block">
-                <div className="rounded-2xl border border-white/10  px-3 py-3 shadow-[0_16px_40px_rgba(2,6,23,0.38)]">
-                  <p className="text-xs uppercase tracking-[0.24em] text-sky-300">
-                    {t("badges.performanceTitle")}
-                  </p>
-                  <p className="mt-1 text-sm font-medium text-white">
-                    {t("badges.performanceDescription")}
-                  </p>
-                </div>
-              </div>
-
+            <div className="relative mx-auto max-w-xl lg:ml-auto lg:mr-0">
               <motion.div
-                className="relative overflow-hidden rounded-[1.7rem] border border-white/10 bg-slate-950/70 p-4 shadow-[0_20px_80px_rgba(2,6,23,0.32)] sm:p-5"
-                initial={{ rotateX: 10, rotateY: -8, opacity: 0, y: 26 }}
+                className="relative overflow-hidden rounded-[1.6rem] border border-white/10 bg-[#0b1120]/90 shadow-[0_24px_80px_rgba(2,6,23,0.28)]"
+                initial={{ opacity: 0, y: 26 }}
                 transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                 viewport={{ once: true }}
-                whileInView={{ rotateX: 0, rotateY: 0, opacity: 1, y: 0 }}
+                whileInView={{ opacity: 1, y: 0 }}
               >
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.12),transparent_32%)]" />
-                <motion.div
-                  animate={{ x: ["-120%", "140%"] }}
-                  className="absolute top-0 h-px w-1/2 bg-gradient-to-r from-transparent via-sky-200 to-transparent opacity-70"
-                  transition={{
-                    duration: 3.8,
-                    repeat: Number.POSITIVE_INFINITY,
-                    ease: "linear",
-                  }}
-                />
-
                 <div className="relative">
-                  <div className="border-b border-white/10 pb-4">
-                    <p className="text-xs uppercase tracking-[0.24em] text-sky-300">
-                      Nomadicoders
-                    </p>
-                    <p className="mt-2 text-lg font-semibold text-white">
-                      {t("panel.title")}
-                    </p>
+                  <div className="border-b border-white/8 px-5 py-4 sm:px-6">
+                    <div className="flex items-center justify-between gap-3">
+                      <div className="flex items-center gap-3">
+                        <div className="flex gap-1.5" aria-hidden="true">
+                          <span className="h-2.5 w-2.5 rounded-full bg-rose-400/80" />
+                          <span className="h-2.5 w-2.5 rounded-full bg-amber-300/80" />
+                          <span className="h-2.5 w-2.5 rounded-full bg-emerald-300/80" />
+                        </div>
+                        <p className="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-slate-400">
+                          {t("panel.eyebrow")}
+                        </p>
+                      </div>
+                      <span className="rounded-full bg-brand-purple/10 px-2.5 py-1 text-[0.68rem] font-medium text-brand-purple">
+                        {t("panel.status")}
+                      </span>
+                    </div>
                   </div>
 
-                  <div className="mt-4 grid gap-4">
+                  <div className="grid gap-4 p-4 sm:p-5">
                     <div className="grid gap-4 sm:grid-cols-2">
-                      <motion.div variants={slideUp(0.05)}>
+                      <motion.div className="h-full" variants={slideUp(0.05)}>
                         <HeroMetricCard
-                          className="bg-gradient-to-br from-sky-500/14 via-slate-900 to-violet-500/12"
+                          className="bg-white/[0.035]"
                           title={t("panel.buildVelocity")}
                         >
                           <BuildVelocityCardContent
                             description={t("stats.delivery")}
-                            value="2x"
+                            signal={t("panel.aiSignal")}
+                            value="AI"
                           />
                         </HeroMetricCard>
                       </motion.div>
 
-                      <motion.div variants={slideUp(0.12)}>
-                        <HeroMetricCard title={t("panel.coverage")}>
+                      <motion.div className="h-full" variants={slideUp(0.12)}>
+                        <HeroMetricCard
+                          className="bg-white/[0.035]"
+                          title={t("panel.coverage")}
+                        >
                           <CoverageMetrics stats={coverageStats} />
                         </HeroMetricCard>
                       </motion.div>
@@ -308,12 +300,12 @@ export function Hero() {
                       {additionalStats.map((item, index) => (
                         <motion.div
                           key={item.label}
-                          className={`rounded-[1.25rem] border border-white/10 p-4 ${index === 0 || index === 3 ? "sm:col-span-7" : "sm:col-span-5"}`}
+                          className={`group relative overflow-hidden rounded-[1.25rem] border border-white/10 bg-white/[0.035] p-4 transition-colors duration-300 hover:border-white/20 hover:bg-white/[0.06] ${index === 0 || index === 3 ? "sm:col-span-7" : "sm:col-span-5"}`}
                           variants={slideUp(index * 0.04)}
                         >
-                          <div className="grid gap-3">
+                          <div className="relative grid gap-3">
                             <div className="flex items-center justify-between gap-3">
-                              <p className="text-[1.85rem] font-semibold leading-none tabular-nums text-white">
+                              <p className="text-[1.8rem] font-semibold leading-none tabular-nums text-white">
                                 {item.value}
                               </p>
                               <div className="flex h-11 w-16 items-center justify-center">
@@ -327,6 +319,7 @@ export function Hero() {
                         </motion.div>
                       ))}
                     </motion.div>
+
                   </div>
                 </div>
               </motion.div>
