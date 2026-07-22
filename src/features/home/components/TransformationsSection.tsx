@@ -20,8 +20,18 @@ export function TransformationsSection() {
   const t = useTranslations("Home.transformations");
 
   const tabs = [
-    { icon: Code2, id: "code" as const, label: t("tabs.code") },
-    { icon: LayoutPanelTop, id: "interface" as const, label: t("tabs.interface") },
+    {
+      compactLabel: t("tabs.codeCompact"),
+      icon: Code2,
+      id: "code" as const,
+      label: t("tabs.code"),
+    },
+    {
+      compactLabel: t("tabs.interfaceCompact"),
+      icon: LayoutPanelTop,
+      id: "interface" as const,
+      label: t("tabs.interface"),
+    },
   ];
 
   return (
@@ -53,7 +63,8 @@ export function TransformationsSection() {
                 type="button"
               >
                 <Icon className="h-4 w-4" strokeWidth={1.9} />
-                {tab.label}
+                <span className="max-[479px]:hidden">{tab.label}</span>
+                <span className="hidden max-[479px]:inline">{tab.compactLabel}</span>
               </button>
             );
           })}

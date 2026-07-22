@@ -405,9 +405,9 @@ function CodeBlock({
   surfaceLabel: string;
 }) {
   return (
-    <div className="flex h-full min-h-[24rem] flex-col overflow-hidden rounded-[1.6rem] border border-white/10 bg-[#0b1120]/90 shadow-[0_24px_80px_rgba(2,6,23,0.28)]">
-      <div className="flex items-center justify-between border-b border-white/8 px-5 py-4">
-        <div className="flex items-center gap-3">
+    <div className="flex h-full min-h-[21rem] flex-col overflow-hidden rounded-[1.6rem] border border-white/10 bg-[#0b1120]/90 shadow-[0_24px_80px_rgba(2,6,23,0.28)] sm:min-h-[24rem]">
+      <div className="flex items-center justify-between border-b border-white/8 px-3 py-3 sm:px-5 sm:py-4">
+        <div className="flex items-center gap-2 sm:gap-3">
           <div className="flex gap-1.5">
             <span className="h-2.5 w-2.5 rounded-full bg-rose-400/80" />
             <span className="h-2.5 w-2.5 rounded-full bg-amber-300/80" />
@@ -427,7 +427,7 @@ function CodeBlock({
         </span>
       </div>
 
-      <div className="relative flex-1 overflow-hidden px-5 py-4">
+      <div className="relative flex-1 overflow-hidden px-3 py-3 sm:px-5 sm:py-4">
         <div className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-white/[0.03] to-transparent" />
         <div className="relative h-full">
           {helperText ? (
@@ -449,7 +449,7 @@ function CodeBlock({
                   opacity: active ? 1 : muted ? 0.36 : 1,
                   x: active ? 0 : muted ? -8 : 0,
                 }}
-                className="flex items-start gap-4 whitespace-pre-wrap"
+                className="flex items-start gap-2.5 whitespace-pre-wrap sm:gap-4"
                 transition={{
                   delay: index * 0.035,
                   duration: 0.45,
@@ -678,7 +678,7 @@ export function RefactorExperience({ embedded = false }: { embedded?: boolean })
               <motion.div
                 className={cn(
                   "h-full",
-                  hasTransformed && "pointer-events-none select-none",
+                  hasTransformed && "pointer-events-none select-none max-lg:hidden",
                 )}
                 animate={{
                   opacity: hasTransformed ? 0.65 : 1,
@@ -715,7 +715,7 @@ export function RefactorExperience({ embedded = false }: { embedded?: boolean })
               <motion.div
                 className={cn(
                   "relative h-full",
-                  !hasTransformed && "pointer-events-none select-none",
+                  !hasTransformed && "pointer-events-none select-none max-lg:hidden",
                 )}
                 animate={{
                   opacity: hasTransformed ? 1 : 0.45,
@@ -810,7 +810,7 @@ export function RefactorExperience({ embedded = false }: { embedded?: boolean })
               </motion.div>
             </div>
 
-            <div className="mt-6 flex justify-center lg:absolute lg:left-1/2 lg:top-1/2 lg:z-20 lg:mt-0 lg:-translate-x-1/2 lg:-translate-y-1/2">
+            <div className="hidden justify-center lg:absolute lg:left-1/2 lg:top-1/2 lg:flex lg:mt-0 lg:-translate-x-1/2 lg:-translate-y-1/2 lg:z-20">
               <motion.button
                 className={buttonVariants({
                   className:
@@ -894,6 +894,48 @@ export function RefactorExperience({ embedded = false }: { embedded?: boolean })
               toWidth={0}
               toneClassName="from-emerald-400 to-teal-300"
             />
+          </div>
+
+          <div className="mt-8 flex justify-center lg:hidden">
+            <motion.button
+              className={buttonVariants({
+                className:
+                  "relative overflow-hidden px-6 shadow-[0_16px_45px_rgba(56,189,248,0.18)] before:absolute before:inset-0 before:bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.28),transparent_58%)] before:opacity-0 before:transition-opacity before:duration-300 hover:before:opacity-100 disabled:pointer-events-none disabled:opacity-90",
+                size: "lg",
+              })}
+              disabled={isRefactoring}
+              onClick={handleRefactorToggle}
+              type="button"
+              whileHover={isRefactoring ? undefined : { scale: 1.03, y: -1 }}
+              whileTap={isRefactoring ? undefined : { scale: 0.98 }}
+            >
+              <span className="relative z-10 inline-flex items-center gap-2">
+                {hasTransformed ? (
+                  <RotateCcw className="h-4 w-4" strokeWidth={2} />
+                ) : (
+                  <motion.span
+                    animate={
+                      isRefactoring
+                        ? { rotate: [0, 20, -16, 0], scale: [1, 1.1, 1] }
+                        : undefined
+                    }
+                    className="inline-flex"
+                    transition={{
+                      duration: 0.7,
+                      ease: "easeInOut",
+                      repeat: isRefactoring ? Number.POSITIVE_INFINITY : 0,
+                    }}
+                  >
+                    <Sparkles className="h-4 w-4" strokeWidth={2} />
+                  </motion.span>
+                )}
+                {hasTransformed
+                  ? t("resetButton")
+                  : isRefactoring
+                    ? t("refactoringButton")
+                    : t("button")}
+              </span>
+            </motion.button>
           </div>
 
           <div className="mt-6 flex justify-center">

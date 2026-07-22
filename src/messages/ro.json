@@ -7,15 +7,39 @@
                 "services":  "Servicii",
                 "whyUs":  "De ce noi",
                 "projects":  "Proiecte",
+                "portfolio":  "Portofoliu",
+                "team":  "Echipa",
                 "contact":  "Contact",
                 "cta":  "Porne?te un proiect",
                 "language":  "Selector de limba"
             },
     "Footer":  {
-                   "tagline":  "Doi dezvoltatori seniori care construiesc produse digitale remarcabile, de la distan?a.",
-                   "privacy":  "Confiden?ialitate",
-                   "terms":  "Termeni",
-                   "email":  "Scrie-ne"
+                   "tagline":  "O echipa de doi dezvoltatori seniori care proiecteaza si livreaza produse web fiabile, fara straturi de agentie.",
+                   "availability":  "Disponibili pentru proiecte selectate",
+                   "location":  "Remote-first · La nivel global",
+                   "navigation":  {
+                                       "title":  "Exploreaza",
+                                       "services":  "Ce construim",
+                                       "work":  "Proiecte selectate",
+                                       "process":  "Proces",
+                                       "team":  "Echipa"
+                                   },
+                   "capabilities":  {
+                                         "title":  "Capabilitati",
+                                         "websites":  "Website-uri orientate spre conversie",
+                                         "webApps":  "Aplicatii web si tool-uri interne",
+                                         "mvps":  "MVP-uri si lansari de produs",
+                                         "aiFeatures":  "Functionalitati AI practice"
+                                     },
+                   "contact":  {
+                                    "title":  "Incepe o conversatie",
+                                    "description":  "Spune-ne ce construiesti, repari sau pregatesti pentru lansare.",
+                                    "call":  "Programeaza un apel introductiv"
+                                },
+                   "deliveryNote":  "Condus de seniori · Accelerat de AI",
+                   "copyright":  "© {year} Nomadicoders. Toate drepturile rezervate.",
+                   "privacy":  "Confidentialitate",
+                   "terms":  "Termeni"
                },
     "Home":  {
                  "clients":  {
@@ -39,7 +63,11 @@
                                             "status":  "Condus de oameni, accelerat de AI",
                                             "buildVelocity":  "Leverage de livrare prin AI",
                                             "aiSignal":  "Ghidat de seniori",
-                                            "coverage":  "Experienta senior"
+                                            "coverage":  "Experienta senior",
+                                            "weeklyRhythm":  "Ritm saptamanal",
+                                            "directDelivery":  "Livrare directa",
+                                            "releaseQuality":  "Calitatea lansarii",
+                                            "timezoneCoverage":  "Acoperire de fus orar"
                                         },
                               "stats":  {
                                             "years":  "Ani de inginerie de produs",
@@ -77,6 +105,7 @@
                                              },
                                   "items":  {
                                                 "websites":  {
+                                                                 "shortTitle":  "Website-uri",
                                                                  "title":  "Website-uri care atrag atentia potrivita",
                                                                  "summary":  "O prima impresie credibila pentru business-uri care vor sa transforme mai multi vizitatori relevanti in conversatii.",
                                                                  "includes":  {
@@ -89,6 +118,7 @@
                                                                  "outcome":  "Un site care explica oferta clar, se incarca rapid si poate creste usor."
                                                              },
                                                 "apps":  {
+                                                             "shortTitle":  "Aplicatii Web",
                                                              "title":  "Aplicatii web pentru munca reala",
                                                              "summary":  "Software construit pentru workflow-urile, clientii si deciziile pe care tool-urile standard nu le pot sustine.",
                                                              "includes":  {
@@ -101,6 +131,7 @@
                                                              "outcome":  "O aplicatie fiabila, folosita cu incredere de clienti si echipa ta."
                                                          },
                                                 "mvp":  {
+                                                             "shortTitle":  "MVP-uri",
                                                              "title":  "MVP-uri care valideaza ce conteaza",
                                                              "summary":  "O prima lansare disciplinata care pune experienta esentiala in fata utilizatorilor fara sa construiasca tot roadmap-ul prea devreme.",
                                                              "includes":  {
@@ -137,6 +168,7 @@
                                                                       "outcome":  "Mai putina munca manuala, vizibilitate mai clara si executie mai consecventa."
                                                                   },
                                                 "aiFeatures":  {
+                                                                    "shortTitle":  "Functionalitati AI",
                                                                     "title":  "Functionalitati AI cu un scop clar",
                                                                     "summary":  "Capabilitati AI practice pentru momentele in care pot reduce cu adevarat efortul, imbunatati deciziile sau accelera un workflow.",
                                                                     "includes":  {
@@ -209,6 +241,14 @@
                                                                   "problem":  "Website-ul vechi parea generic, se incarca lent si nu explica serviciul destul de clar pentru lead-uri mai bune.",
                                     "built":  "Mesaj orientat spre conversie, sectiuni reutilizabile si fundatie SEO tehnica.",
                                     "outcome":  "O prima impresie mai puternica, pagini mai rapide si lead-uri mai calificate."
+                                                              },
+                                                "operations":  {
+                                                                   "category":  "Platforma operationala",
+                                                                   "title":  "Un singur workflow in locul administrarii fragmentate",
+                                                                   "summary":  "Am transformat handoff-urile repetate si tool-urile deconectate intr-un sistem operational clar.",
+                                                                   "problem":  "Munca esentiala trecea prin foi de calcul, inbox-uri si actualizari manuale, cu vizibilitate limitata.",
+                                                                   "built":  "Un dashboard unificat, handoff-uri automatizate si integrari cu tool-urile principale ale echipei.",
+                                                                   "outcome":  "Mai putina coordonare manuala, responsabilitate clara si executie zilnica mai rapida."
                                                               }
                                             }
                               },
@@ -228,7 +268,9 @@
                                          "label":  "Exemple de transformare",
                                          "tabs":  {
                                                       "code":  "Transformare cod",
-                                                      "interface":  "Transformare interfata"
+                                                      "codeCompact":  "Cod",
+                                                      "interface":  "Transformare interfata",
+                                                      "interfaceCompact":  "Interfata"
                                                   }
                                      },
                  "refactorExperience":  {
@@ -342,6 +384,7 @@
                                          "detailPanel":  {
                                                               "stepLabel":  "Pasul",
                                                               "principleLabel":  "Principiul de baza",
+                                                              "overviewLabel":  "Pe scurt",
                                                               "focusLabel":  "Pe ce ne concentram",
                                                               "outcomeLabel":  "Ce obtii"
                                                           },

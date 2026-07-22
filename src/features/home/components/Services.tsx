@@ -5,6 +5,7 @@ import {
   Bot,
   Gauge,
   LayoutDashboard,
+  Rocket,
   type LucideIcon,
 } from "lucide-react";
 import { useTranslations } from "next-intl";
@@ -15,6 +16,7 @@ import { Container } from "@/components/ui/Container";
 type ServiceKey =
   | "websites"
   | "apps"
+  | "mvp"
   | "aiFeatures";
 
 type Service = {
@@ -34,12 +36,17 @@ const services: Service[] = [
     key: "websites",
   },
   {
-    accent: { dot: "bg-brand-purple", icon: "bg-brand-purple/10 text-brand-purple", panel: "border-brand-purple/15 bg-brand-purple/[0.06]" },
+    accent: { dot: "bg-sky-300", icon: "bg-sky-300/10 text-sky-200", panel: "border-sky-300/15 bg-sky-300/[0.06]" },
     icon: LayoutDashboard,
     key: "apps",
   },
   {
-    accent: { dot: "bg-fuchsia-300", icon: "bg-fuchsia-300/10 text-fuchsia-200", panel: "border-fuchsia-300/15 bg-fuchsia-300/[0.06]" },
+    accent: { dot: "bg-sky-300", icon: "bg-sky-300/10 text-sky-200", panel: "border-sky-300/15 bg-sky-300/[0.06]" },
+    icon: Rocket,
+    key: "mvp",
+  },
+  {
+    accent: { dot: "bg-sky-300", icon: "bg-sky-300/10 text-sky-200", panel: "border-sky-300/15 bg-sky-300/[0.06]" },
     icon: Bot,
     key: "aiFeatures",
   },
@@ -56,7 +63,7 @@ export function Services() {
     <AnimatedSection id="services">
       <Container>
         <motion.div
-          className="max-w-3xl space-y-4"
+          className="max-w-3xl space-y-4 text-center sm:text-left"
           initial={{ opacity: 0, y: 18 }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           viewport={{ amount: 0.45, once: true }}
@@ -69,7 +76,7 @@ export function Services() {
           <p className="subheading">{t("description")}</p>
         </motion.div>
 
-        <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+        <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {services.map((service, index) => {
             const Icon = service.icon;
 
@@ -91,7 +98,7 @@ export function Services() {
                       <span className="h-2.5 w-2.5 rounded-full bg-emerald-300/80" />
                     </div>
                     <span className="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-slate-400">
-                      {t("eyebrow")}
+                      {t(`items.${service.key}.shortTitle`)}
                     </span>
                   </div>
                   <span className={`flex h-8 w-8 items-center justify-center rounded-lg ${service.accent.icon}`}>
@@ -121,13 +128,15 @@ export function Services() {
                   </ul>
                 </div>
 
-                <div className={`mt-6 rounded-xl border px-3.5 py-3 pt-3.5 ${service.accent.panel}`}>
-                  <p className="text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-slate-300">
-                    {t("labels.idealFor")}
-                  </p>
-                  <p className="mt-1.5 text-sm leading-5 text-slate-200">
-                    {t(`items.${service.key}.idealFor`)}
-                  </p>
+                <div className="mt-auto pt-6">
+                  <div className={`rounded-xl border px-3.5 py-3 pt-3.5 ${service.accent.panel}`}>
+                    <p className="text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-slate-300">
+                      {t("labels.idealFor")}
+                    </p>
+                    <p className="mt-1.5 text-sm leading-5 text-slate-200">
+                      {t(`items.${service.key}.idealFor`)}
+                    </p>
+                  </div>
                 </div>
                 </div>
               </motion.article>

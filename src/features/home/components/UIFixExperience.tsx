@@ -497,7 +497,7 @@ export function UIFixExperience({ embedded = false }: { embedded?: boolean }) {
                   y: isFixed ? -4 : 0,
                   filter: isFixed ? "blur(6px)" : "blur(0px)",
                 }}
-                className={cn("flex h-full flex-col gap-3", isFixed && "pointer-events-none select-none")}
+                className={cn("flex h-full flex-col gap-3", isFixed && "pointer-events-none select-none max-lg:hidden")}
                 transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
               >
                 <div className="flex-1">
@@ -525,7 +525,7 @@ export function UIFixExperience({ embedded = false }: { embedded?: boolean }) {
                   scale: isFixed ? 1 : 0.985,
                   y: isFixed ? 0 : 4,
                 }}
-                className={cn("flex h-full flex-col gap-3", !isFixed && "pointer-events-none select-none")}
+                className={cn("flex h-full flex-col gap-3", !isFixed && "pointer-events-none select-none max-lg:hidden")}
                 transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
               >
                 <div className="relative flex-1 overflow-hidden rounded-[1.6rem]">

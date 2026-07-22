@@ -24,14 +24,14 @@ export function LanguageSwitcher() {
   return (
     <div
       aria-label={t("language")}
-      className="glass inline-flex rounded-full p-1 text-xs font-medium text-slate-200"
+      className="glass inline-flex h-11 items-center rounded-full p-1 text-xs font-medium text-slate-200"
       role="group"
     >
       {routing.locales.map((option) => (
         <button
           key={option}
           className={cn(
-            "rounded-full px-3 py-2 uppercase transition-colors",
+            "h-9 rounded-full px-3 uppercase transition-colors",
             locale === option
               ? "bg-white text-slate-950"
               : "text-slate-300 hover:text-white",

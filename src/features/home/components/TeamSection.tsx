@@ -72,26 +72,26 @@ const techBadges: TechBadge[] = [
   },
   {
     alt: "React",
-    className: "left-[4%] top-6 sm:left-[8%] sm:top-10 lg:left-[12%] lg:top-16",
+    className: "left-0 top-[8%] sm:left-[22%] sm:top-10 lg:left-[12%] lg:top-16",
     delay: 0.05,
     duration: 6.1,
     imageSrc: "/images/techs/react.png",
-    sizeClassName: "h-12 w-12 sm:h-14 sm:w-14 lg:h-16 lg:w-16",
+    sizeClassName: "h-10 w-10 sm:h-14 sm:w-14 lg:h-16 lg:w-16",
     startsAbove: true,
   },
   {
     alt: "Tailwind CSS",
-    className: "left-[1%] top-[34%] hidden sm:block lg:left-[4%] lg:top-[42%]",
+    className: "left-0 top-[38%] sm:left-[20%] sm:top-[34%] lg:left-[4%] lg:top-[42%]",
     delay: 0.12,
     duration: 6.8,
     imageSrc: "/images/techs/tailwind.png",
-    sizeClassName: "sm:h-12 sm:w-12 lg:h-14 lg:w-14",
+    sizeClassName: "h-9 w-9 sm:h-12 sm:w-12 lg:h-14 lg:w-14",
     startsAbove: false,
   },
   {
     alt: "Git",
     className:
-      "left-[7%] bottom-[24%] hidden md:block lg:left-[7%] lg:bottom-[28%]",
+      "left-[22%] bottom-[24%] hidden md:block lg:left-[7%] lg:bottom-[28%]",
     delay: 0.15,
     duration: 6.6,
     imageSrc: "/images/techs/git.png",
@@ -101,11 +101,11 @@ const techBadges: TechBadge[] = [
   {
     alt: "AWS",
     className:
-      "left-[10%] bottom-[8%] sm:left-[14%] sm:bottom-[10%] lg:left-[14%] lg:bottom-[14%]",
+      "left-0 bottom-[8%] sm:left-[24%] sm:bottom-[10%] lg:left-[14%] lg:bottom-[14%]",
     delay: 0.14,
     duration: 6.7,
     imageSrc: "/images/techs/aws.png",
-    sizeClassName: "h-12 w-12 sm:h-14 sm:w-14 lg:h-16 lg:w-16",
+    sizeClassName: "h-10 w-10 sm:h-14 sm:w-14 lg:h-16 lg:w-16",
     startsAbove: false,
   },
   {
@@ -120,7 +120,7 @@ const techBadges: TechBadge[] = [
   {
     alt: "Node.js",
     className:
-      "left-[24%] top-[-12%] hidden md:block lg:left-[30%] lg:top-[-8%]",
+      "left-[32%] top-[-12%] hidden md:block lg:left-[30%] lg:top-[-8%]",
     delay: 0.18,
     duration: 7.1,
     imageSrc: "/images/techs/nodejs.png",
@@ -149,7 +149,7 @@ const techBadges: TechBadge[] = [
   {
     alt: ".NET",
     className:
-      "right-[24%] top-[-6%] hidden md:block lg:right-[23%] lg:top-[-2%]",
+      "right-[32%] top-[-6%] hidden md:block lg:right-[23%] lg:top-[-2%]",
     delay: 0.28,
     duration: 6.7,
     imageSrc: "/images/techs/net.png",
@@ -159,11 +159,11 @@ const techBadges: TechBadge[] = [
   {
     alt: "Docker",
     className:
-      "right-[7%] top-4 sm:right-[10%] sm:top-8 lg:right-[10%] lg:top-14",
+      "right-0 top-[8%] sm:right-[22%] sm:top-8 lg:right-[10%] lg:top-14",
     delay: 0.08,
     duration: 6.4,
     imageSrc: "/images/techs/docker.png",
-    sizeClassName: "h-12 w-12 sm:h-14 sm:w-14 lg:h-16 lg:w-16",
+    sizeClassName: "h-10 w-10 sm:h-14 sm:w-14 lg:h-16 lg:w-16",
     startsAbove: false,
   },
   {
@@ -178,17 +178,17 @@ const techBadges: TechBadge[] = [
   {
     alt: "Figma",
     className:
-      "right-[2%] top-[36%] hidden sm:block lg:right-[4%] lg:top-[44%]",
+      "right-0 top-[40%] sm:right-[20%] sm:top-[36%] lg:right-[4%] lg:top-[44%]",
     delay: 0.2,
     duration: 7.6,
     imageSrc: "/images/techs/figma.png",
-    sizeClassName: "sm:h-12 sm:w-12 lg:h-14 lg:w-14",
+    sizeClassName: "h-9 w-9 sm:h-12 sm:w-12 lg:h-14 lg:w-14",
     startsAbove: true,
   },
   {
     alt: "Sass",
     className:
-      "right-[6%] bottom-[24%] hidden md:block lg:right-[10%] lg:bottom-[29%]",
+      "right-[22%] bottom-[24%] hidden md:block lg:right-[10%] lg:bottom-[29%]",
     delay: 0.33,
     duration: 6.8,
     imageSrc: "/images/techs/sass.png",
@@ -198,12 +198,12 @@ const techBadges: TechBadge[] = [
   {
     alt: "Azure",
     className:
-      "right-[16%] bottom-[10%] sm:right-[18%] sm:bottom-[11%] lg:right-[18%] lg:bottom-[16%]",
+      "right-0 bottom-[8%] sm:right-[24%] sm:bottom-[11%] lg:right-[18%] lg:bottom-[16%]",
     delay: 0.16,
     duration: 6.9,
     imageClassName: "scale-[0.82]",
     imageSrc: "/images/techs/azure.png",
-    sizeClassName: "h-12 w-12 sm:h-14 sm:w-14 lg:h-16 lg:w-16",
+    sizeClassName: "h-10 w-10 sm:h-14 sm:w-14 lg:h-16 lg:w-16",
     startsAbove: false,
   },
   {
@@ -228,7 +228,7 @@ const techBadges: TechBadge[] = [
   {
     alt: "MongoDB",
     className:
-      "left-[30%] bottom-0 hidden md:block lg:left-[40%] lg:bottom-[2%]",
+      "left-[32%] bottom-0 hidden md:block lg:left-[40%] lg:bottom-[2%]",
     delay: 0.26,
     duration: 7.2,
     imageSrc: "/images/techs/mongoDB.png",
@@ -236,6 +236,27 @@ const techBadges: TechBadge[] = [
     startsAbove: true,
   },
 ];
+
+const mobileBadgePositions = [
+  "left-[20%] top-[3%]",
+  "left-[38%] top-[1%]",
+  "right-[38%] top-[4%]",
+  "right-[20%] top-[2%]",
+  "left-[1%] top-[20%]",
+  "right-[1%] top-[23%]",
+  "left-[4%] top-[35%]",
+  "right-[5%] top-[38%]",
+  "left-[12%] top-[28%]",
+  "right-[12%] top-[31%]",
+  "left-[28%] top-[42%]",
+  "left-[1%] top-[61%]",
+  "right-[2%] top-[64%]",
+  "left-[5%] top-[76%]",
+  "right-[3%] top-[79%]",
+  "left-[20%] top-[89%]",
+  "left-[45%] top-[91%]",
+  "right-[18%] top-[89%]",
+] as const;
 
 const revealTransition = {
   duration: 0.7,
@@ -354,10 +375,14 @@ function TeamMemberOrb({
 function FloatingTechBadge({
   badge,
   badgeIndex,
+  compact = false,
+  compactPosition,
   reducedMotion,
 }: {
   badge: TechBadge;
   badgeIndex: number;
+  compact?: boolean;
+  compactPosition?: string;
   reducedMotion: boolean;
 }) {
   const fadeControls = useAnimationControls();
@@ -452,7 +477,12 @@ function FloatingTechBadge({
               y: badge.startsAbove ? [-8, 8, -8] : [8, -8, 8],
             }
       }
-      className={cn("absolute z-30", badge.className, badge.sizeClassName)}
+      className={cn(
+        compact ? "absolute h-8 w-8" : "absolute z-30",
+        compact && compactPosition,
+        !compact && badge.className,
+        !compact && badge.sizeClassName,
+      )}
       transition={
         reducedMotion
           ? undefined
@@ -469,7 +499,10 @@ function FloatingTechBadge({
         className="h-full w-full"
         initial={{ opacity: 1 }}
       >
-        <div className="h-full w-full rounded-full border border-white/10 bg-transparent p-2 shadow-[0_18px_45px_rgba(2,6,23,0.25)]">
+        <div className={cn(
+          "h-full w-full rounded-full border border-white/10 bg-transparent shadow-[0_18px_45px_rgba(2,6,23,0.25)]",
+          compact ? "p-1" : "p-2",
+        )}>
           <div className="relative h-full w-full overflow-hidden rounded-full bg-white/[0.04]">
             <div className="absolute inset-[18%]">
               <Image
@@ -494,14 +527,14 @@ export function TeamSection() {
   const reducedMotion = Boolean(useReducedMotion());
   const badgeStageRef = useRef<HTMLDivElement | null>(null);
   const badgesVisible = useInView(badgeStageRef, {
-    amount: 0.7,
-    margin: "-18% 0px -18% 0px",
+    amount: "some",
+    margin: "0px",
     once: false,
   });
 
   return (
     <AnimatedSection
-      className="relative overflow-hidden py-24"
+      className="relative overflow-hidden pb-32 pt-24 sm:pb-36 lg:pb-40"
       id="team-section"
     >
       <div className="pointer-events-none absolute inset-0">
@@ -566,7 +599,7 @@ export function TeamSection() {
           </motion.div>
 
           <div
-            className="relative mx-auto mt-16 max-w-[66rem] pb-16 pt-8 sm:pb-20 sm:pt-10 lg:pb-24 lg:pt-12"
+            className="relative mx-auto mt-16 max-w-[66rem] pb-12 pt-14 sm:pb-24 sm:pt-16 lg:pb-28 lg:pt-28"
             ref={badgeStageRef}
           >
             <motion.div
@@ -575,9 +608,33 @@ export function TeamSection() {
                   ? { opacity: badgesVisible ? 1 : 0 }
                   : badgesVisible
                     ? { filter: "blur(0px)", opacity: 1, scale: 1 }
+                    : { filter: "blur(8px)", opacity: 0, scale: 0.94 }
+              }
+              className="pointer-events-none absolute inset-0 z-30 sm:hidden"
+              initial={false}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            >
+              {techBadges.map((badge, index) => (
+                <FloatingTechBadge
+                  badge={badge}
+                  badgeIndex={index}
+                  compact
+                  compactPosition={mobileBadgePositions[index]}
+                  key={badge.alt}
+                  reducedMotion={reducedMotion}
+                />
+              ))}
+            </motion.div>
+
+            <motion.div
+              animate={
+                reducedMotion
+                  ? { opacity: badgesVisible ? 1 : 0 }
+                  : badgesVisible
+                    ? { filter: "blur(0px)", opacity: 1, scale: 1 }
                     : { filter: "blur(12px)", opacity: 0, scale: 0.92 }
               }
-              className="pointer-events-none absolute inset-0 z-30"
+              className="pointer-events-none absolute inset-0 z-30 hidden sm:block"
               initial={false}
               transition={{
                 duration: reducedMotion ? 0.55 : 1.05,
@@ -594,10 +651,10 @@ export function TeamSection() {
               ))}
             </motion.div>
 
-            <div className="relative z-20 flex flex-col items-center gap-12 md:gap-14 lg:flex-row lg:items-center lg:justify-center lg:gap-20">
+            <div className="relative z-20 flex flex-col items-center gap-8 sm:gap-12 md:gap-14 lg:flex-row lg:items-center lg:justify-center lg:gap-20">
               {teamMembers.map((member, index) => (
                 <div
-                  className="w-[min(72vw,16rem)] sm:w-[min(58vw,16.5rem)] lg:w-[min(30vw,16rem)]"
+                  className="w-[min(52vw,12rem)] sm:w-[13.5rem] md:w-56 lg:w-[min(30vw,16rem)]"
                   key={member.name}
                 >
                   <TeamMemberOrb

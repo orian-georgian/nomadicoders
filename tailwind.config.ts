@@ -20,6 +20,26 @@ const config: Config = {
       },
       maxWidth: {
         container: "87.5rem"
+      },
+      fontSize: {
+        xs: ["0.75rem", {lineHeight: "0.95rem"}],
+        sm: ["0.875rem", {lineHeight: "1.15rem"}],
+        base: ["1rem", {lineHeight: "1.4rem"}],
+        lg: ["1.125rem", {lineHeight: "1.6rem"}],
+        xl: ["1.25rem", {lineHeight: "1.65rem"}],
+        "2xl": ["1.5rem", {lineHeight: "1.85rem"}],
+        "3xl": ["1.875rem", {lineHeight: "2.1rem"}],
+        "4xl": ["2.25rem", {lineHeight: "2.35rem"}],
+        "5xl": ["3rem", {lineHeight: "3.05rem"}],
+        "6xl": ["3.75rem", {lineHeight: "3.7rem"}]
+      },
+      lineHeight: {
+        5: "1.15rem",
+        6: "1.35rem",
+        7: "1.6rem",
+        8: "1.8rem",
+        normal: "1.4",
+        relaxed: "1.55"
       }
     }
   },

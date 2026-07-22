@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowUpRight, Gauge, Layers3, Route, type LucideIcon } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
 import { useTranslations } from "next-intl";
 
@@ -9,10 +9,9 @@ import { Container } from "@/components/ui/Container";
 
 import { ClientLogos } from "./ClientLogos";
 
-type ProjectKey = "saas" | "booking" | "marketing";
+type ProjectKey = "saas" | "booking" | "marketing" | "operations";
 
 type Project = {
-  icon: LucideIcon;
   key: ProjectKey;
   stack: string[];
   year: string;
@@ -20,22 +19,24 @@ type Project = {
 
 const projects: Project[] = [
   {
-    icon: Layers3,
     key: "saas",
     stack: ["Next.js", "TypeScript", "PostgreSQL"],
     year: "2025",
   },
   {
-    icon: Route,
     key: "booking",
     stack: ["React", "Mobile UX", "CMS"],
     year: "2025",
   },
   {
-    icon: Gauge,
     key: "marketing",
     stack: ["Next.js", "Performance", "SEO"],
     year: "2024",
+  },
+  {
+    key: "operations",
+    stack: ["TypeScript", "Automation", "APIs"],
+    year: "2025",
   },
 ];
 
@@ -49,14 +50,14 @@ export function ProjectsPreview() {
   const reducedMotion = Boolean(useReducedMotion());
 
   return (
-    <AnimatedSection className="relative overflow-hidden py-20 sm:py-24" id="projects">
+    <AnimatedSection className="relative overflow-hidden py-10 sm:py-24" id="projects">
       <div aria-hidden="true" className="pointer-events-none absolute inset-0">
         <div className="absolute right-[-8rem] top-24 h-72 w-72 rounded-full bg-sky-400/[0.06] blur-3xl" />
       </div>
 
       <Container className="relative">
         <motion.div
-          className="max-w-3xl space-y-4"
+          className="max-w-3xl space-y-4 text-center sm:text-left"
           initial={{ opacity: 0, y: 18 }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           viewport={{ amount: 0.45, once: true }}
@@ -69,10 +70,8 @@ export function ProjectsPreview() {
           <p className="subheading max-w-2xl">{t("description")}</p>
         </motion.div>
 
-        <div className="mt-10 grid gap-4 lg:grid-cols-3">
+        <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {projects.map((project, index) => {
-            const Icon = project.icon;
-
             return (
               <motion.article
                 className="group relative flex min-h-[25rem] flex-col overflow-hidden rounded-[1.6rem] border border-white/10 bg-[#0b1120]/90 shadow-[0_24px_80px_rgba(2,6,23,0.28)] transition-[border-color,box-shadow,transform] duration-300 hover:border-white/15 hover:shadow-[0_28px_88px_rgba(2,6,23,0.34)]"
@@ -103,19 +102,12 @@ export function ProjectsPreview() {
                 </div>
 
                 <div className="flex flex-1 flex-col p-5 sm:p-6">
-                  <div className="flex items-start gap-3">
-                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/[0.055] text-sky-200">
-                      <Icon className="h-[1.1rem] w-[1.1rem]" strokeWidth={1.8} />
-                    </span>
-                    <div>
-                      <h3 className="text-[1.45rem] font-semibold tracking-tight text-white">
-                        {t(`items.${project.key}.title`)}
-                      </h3>
-                      <p className="mt-2 text-sm leading-6 text-slate-400">
-                        {t(`items.${project.key}.summary`)}
-                      </p>
-                    </div>
-                  </div>
+                  <h3 className="text-[1.45rem] font-semibold tracking-tight text-white">
+                    {t(`items.${project.key}.title`)}
+                  </h3>
+                  <p className="mt-3 text-sm leading-6 text-slate-400">
+                    {t(`items.${project.key}.summary`)}
+                  </p>
 
                 <dl className="mt-6 space-y-4 border-t border-white/10 pt-5">
                   <div className="grid grid-cols-[4.5rem_1fr] gap-3">

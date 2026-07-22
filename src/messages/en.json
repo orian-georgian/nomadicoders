@@ -7,15 +7,39 @@
                 "services":  "Services",
                 "whyUs":  "Why us",
                 "projects":  "Projects",
+                "portfolio":  "Portfolio",
+                "team":  "Team",
                 "contact":  "Contact",
                 "cta":  "Start a project",
                 "language":  "Language switcher"
             },
     "Footer":  {
-                   "tagline":  "Two senior developers building standout digital products, remotely.",
+                   "tagline":  "A two-person senior development team designing and shipping reliable web products without agency layers.",
+                   "availability":  "Available for select projects",
+                   "location":  "Remote-first · Worldwide",
+                   "navigation":  {
+                                       "title":  "Explore",
+                                       "services":  "What we build",
+                                       "work":  "Selected work",
+                                       "process":  "Process",
+                                       "team":  "Team"
+                                   },
+                   "capabilities":  {
+                                         "title":  "Capabilities",
+                                         "websites":  "Conversion-focused websites",
+                                         "webApps":  "Web apps & internal tools",
+                                         "mvps":  "MVPs & product launches",
+                                         "aiFeatures":  "Practical AI features"
+                                     },
+                   "contact":  {
+                                    "title":  "Start a conversation",
+                                    "description":  "Tell us what you are building, fixing or preparing to launch.",
+                                    "call":  "Book an intro call"
+                                },
+                   "deliveryNote":  "Senior-led · AI-accelerated",
+                   "copyright":  "© {year} Nomadicoders. All rights reserved.",
                    "privacy":  "Privacy",
-                   "terms":  "Terms",
-                   "email":  "Email us"
+                   "terms":  "Terms"
                },
     "Home":  {
                  "clients":  {
@@ -39,7 +63,11 @@
                                             "status":  "Human-led, AI-accelerated",
                                             "buildVelocity":  "AI delivery leverage",
                                             "aiSignal":  "Senior-directed",
-                                            "coverage":  "Senior experience"
+                                            "coverage":  "Senior experience",
+                                            "weeklyRhythm":  "Weekly rhythm",
+                                            "directDelivery":  "Direct delivery",
+                                            "releaseQuality":  "Release quality",
+                                            "timezoneCoverage":  "Timezone coverage"
                                         },
                               "stats":  {
                                             "years":  "Years of product engineering",
@@ -77,6 +105,7 @@
                                              },
                                   "items":  {
                                                 "websites":  {
+                                                                 "shortTitle":  "Websites",
                                                                  "title":  "Websites that earn attention",
                                                                  "summary":  "A credible first impression for businesses ready to turn more of the right visitors into conversations.",
                                                                  "includes":  {
@@ -89,6 +118,7 @@
                                                                  "outcome":  "A site that makes your offer clear, loads fast and is easy to grow."
                                                              },
                                                 "apps":  {
+                                                             "shortTitle":  "Web Apps",
                                                              "title":  "Web apps built for real work",
                                                              "summary":  "Purpose-built software for the workflows, customers and decisions your off-the-shelf tools cannot support.",
                                                              "includes":  {
@@ -101,6 +131,7 @@
                                                              "outcome":  "A reliable application your customers and team can use with confidence."
                                                          },
                                                 "mvp":  {
+                                                             "shortTitle":  "MVP Builds",
                                                              "title":  "MVPs that prove the right thing",
                                                              "summary":  "A disciplined first release that gets your core experience into users' hands without building the whole roadmap first.",
                                                              "includes":  {
@@ -137,6 +168,7 @@
                                                                       "outcome":  "Less manual work, clearer visibility and more consistent execution."
                                                                   },
                                                 "aiFeatures":  {
+                                                                    "shortTitle":  "AI Features",
                                                                     "title":  "AI features with a clear job to do",
                                                                     "summary":  "Practical AI capability for moments where it can genuinely remove effort, improve judgement or speed up a workflow.",
                                                                     "includes":  {
@@ -209,6 +241,14 @@
                                     "problem":  "The old website looked generic, loaded slowly and did not explain the service clearly enough to attract higher-quality leads.",
                                     "built":  "Conversion-led messaging, reusable sections and technical SEO foundations.",
                                     "outcome":  "A stronger first impression, faster pages and better-qualified leads."
+                                                              },
+                                                "operations":  {
+                                                                   "category":  "Operations platform",
+                                                                   "title":  "One workflow instead of scattered admin work",
+                                                                   "summary":  "We turned repeated handoffs and disconnected tools into a clear operational system.",
+                                                                   "problem":  "Critical work moved through spreadsheets, inboxes and manual status updates with limited visibility.",
+                                                                   "built":  "A unified dashboard, automated handoffs and integrations with the team's core tools.",
+                                                                   "outcome":  "Less coordination overhead, clearer ownership and faster daily execution."
                                                               }
                                             }
                               },
@@ -228,7 +268,9 @@
                                          "label":  "Transformation examples",
                                          "tabs":  {
                                                       "code":  "Code transformation",
-                                                      "interface":  "Interface transformation"
+                                                      "codeCompact":  "Code",
+                                                      "interface":  "Interface transformation",
+                                                      "interfaceCompact":  "Interface"
                                                   }
                                      },
                  "refactorExperience":  {
@@ -342,6 +384,7 @@
                                          "detailPanel":  {
                                                               "stepLabel":  "Step",
                                                               "principleLabel":  "Core principle",
+                                                              "overviewLabel":  "Overview",
                                                               "focusLabel":  "What we focus on",
                                                               "outcomeLabel":  "What you get"
                                                           },

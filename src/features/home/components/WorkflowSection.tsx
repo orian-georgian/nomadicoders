@@ -98,8 +98,8 @@ function StepperParticleStream({
     const render = () => {
       context.clearRect(0, 0, width, height);
 
-      const activeX = stepCountRef.current > 1
-        ? (activeStepRef.current / (stepCountRef.current - 1)) * width
+      const activeX = stepCountRef.current > 0
+        ? ((activeStepRef.current + 0.5) / stepCountRef.current) * width
         : 0;
 
       for (const particle of particles) {
@@ -170,13 +170,11 @@ export function WorkflowSection() {
 
   const steps = stepMeta.map(({icon, key}, index) => ({
     description: t(`steps.${key}.description`),
-    detail: t(`steps.${key}.detail`),
     focus: t(`steps.${key}.focus`),
     icon,
     index,
     key,
     outcome: t(`steps.${key}.outcome`),
-    principle: t(`steps.${key}.principle`),
     title: t(`steps.${key}.title`)
   }));
 
@@ -194,14 +192,14 @@ export function WorkflowSection() {
 
   const detailPanel = {
     focusLabel: t("detailPanel.focusLabel"),
+    overviewLabel: t("detailPanel.overviewLabel"),
     outcomeLabel: t("detailPanel.outcomeLabel"),
-    principleLabel: t("detailPanel.principleLabel"),
     stepLabel: t("detailPanel.stepLabel")
   };
 
   const selectedStep = steps[activeStep];
   const SelectedIcon = selectedStep.icon;
-  const progress = `${(activeStep / (steps.length - 1)) * 100}%`;
+  const progress = `${((activeStep + 0.5) / steps.length) * 100}%`;
   const isBuildStep = activeStep === buildStepIndex;
 
   return (
@@ -236,20 +234,39 @@ export function WorkflowSection() {
           </motion.div>
 
           <div className="relative mt-12">
-            <div className="relative hidden py-5 sm:py-6 lg:block">
+            <div className="relative py-5 sm:py-6">
               <div className="relative px-2 xl:px-4">
-                <div className="absolute left-[calc(100%/16)] right-[calc(100%/16)] top-8 h-px bg-white/10">
+                <div className="absolute inset-x-0 top-7 h-px bg-white/10 sm:top-8">
                   <motion.div
                     animate={{width: progress}}
-                    className="h-full rounded-full bg-sky-300 shadow-[0_0_8px_rgba(125,211,252,0.45)]"
+                    className="hidden h-full rounded-full bg-sky-300 shadow-[0_0_8px_rgba(125,211,252,0.45)] lg:block"
                     transition={{duration: 0.35, ease: [0.22, 1, 0.36, 1]}}
                   />
-                  <div className="pointer-events-none absolute inset-x-0 -top-[1.125rem] h-7 overflow-hidden">
+                  <div className="pointer-events-none absolute inset-x-0 -top-[1.375rem] hidden h-7 overflow-hidden lg:block">
                     <StepperParticleStream activeStep={activeStep} stepCount={steps.length} />
+                  </div>
+                  <div className="pointer-events-none absolute inset-x-0 -top-[1.375rem] h-7 overflow-hidden sm:hidden">
+                    <StepperParticleStream activeStep={Math.min(activeStep, 2)} stepCount={3} />
+                  </div>
+                  <div className="pointer-events-none absolute inset-x-0 -top-[1.375rem] hidden h-7 overflow-hidden sm:block lg:hidden">
+                    <StepperParticleStream activeStep={Math.min(activeStep, 3)} stepCount={4} />
+                  </div>
+                </div>
+                <div className="absolute inset-x-0 top-[12.25rem] h-px bg-white/10 sm:top-[12.5rem] lg:hidden">
+                  <div className="pointer-events-none absolute inset-x-0 -top-[1.375rem] h-7 overflow-hidden sm:hidden">
+                    <StepperParticleStream activeStep={Math.min(Math.max(activeStep - 3, 0), 2)} stepCount={3} />
+                  </div>
+                  <div className="pointer-events-none absolute inset-x-0 -top-[1.375rem] hidden h-7 overflow-hidden sm:block">
+                    <StepperParticleStream activeStep={Math.min(Math.max(activeStep - 4, 0), 3)} stepCount={4} />
+                  </div>
+                </div>
+                <div className="absolute inset-x-0 top-[22.75rem] h-px bg-white/10 sm:hidden">
+                  <div className="pointer-events-none absolute inset-x-0 -top-[1.375rem] h-7 overflow-hidden">
+                    <StepperParticleStream activeStep={Math.min(Math.max(activeStep - 6, 0), 1)} stepCount={2} />
                   </div>
                 </div>
 
-                <div className="grid grid-cols-8 gap-2 xl:gap-4">
+                <div className="grid grid-cols-3 gap-x-2 gap-y-6 sm:grid-cols-4 lg:grid-cols-8 lg:gap-y-0 xl:gap-x-4">
                   {steps.map((step, index) => {
                     const isActive = index === activeStep;
                     const Icon = step.icon;
@@ -257,7 +274,7 @@ export function WorkflowSection() {
                     return (
                       <motion.button
                         key={step.key}
-                        className="group relative flex flex-col items-center pt-0 text-center outline-none"
+                        className="group relative flex min-h-36 flex-col items-center pt-0 text-center outline-none lg:min-h-0"
                         onClick={() => setActiveStep(index)}
                         onFocus={() => setActiveStep(index)}
                         onMouseEnter={() => setActiveStep(index)}
@@ -277,11 +294,27 @@ export function WorkflowSection() {
                               : "0 8px 24px rgba(2, 6, 23, 0.14)",
                             scale: isActive ? 1.04 : 1
                           }}
-                          className="relative z-10 inline-flex h-[4.25rem] w-[4.25rem] items-center justify-center rounded-2xl border backdrop-blur-sm"
+                          className="relative z-10 inline-flex h-14 w-14 items-center justify-center rounded-2xl border backdrop-blur-sm sm:h-[4.25rem] sm:w-[4.25rem]"
                           transition={{duration: 0.22, ease: [0.22, 1, 0.36, 1]}}
                         >
+                          {isActive ? (
+                            <>
+                              <motion.span
+                                animate={{opacity: [0, 0.52, 0], scale: [0.88, 1, 1.24]}}
+                                aria-hidden="true"
+                                className="pointer-events-none absolute inset-[-0.3rem] rounded-[1.2rem] border border-sky-300/50"
+                                transition={{duration: 2.4, ease: "easeInOut", repeat: Number.POSITIVE_INFINITY, times: [0, 0.22, 1]}}
+                              />
+                              <motion.span
+                                animate={{opacity: [0, 0.38, 0], scale: [0.9, 1.02, 1.3]}}
+                                aria-hidden="true"
+                                className="pointer-events-none absolute inset-[-0.55rem] rounded-[1.4rem] border border-sky-200/35"
+                                transition={{delay: 0.8, duration: 2.4, ease: "easeInOut", repeat: Number.POSITIVE_INFINITY, times: [0, 0.22, 1]}}
+                              />
+                            </>
+                          ) : null}
                           <Icon
-                            className={cn("h-7 w-7", isActive ? "text-sky-100" : "text-slate-300")}
+                            className={cn("h-6 w-6 sm:h-7 sm:w-7", isActive ? "text-sky-100" : "text-slate-300")}
                             strokeWidth={1.85}
                           />
                         </motion.span>
@@ -306,45 +339,6 @@ export function WorkflowSection() {
               </div>
             </div>
 
-            <div className="relative py-5 sm:py-6 lg:hidden">
-              <div className="absolute bottom-2 left-4 top-2 w-px bg-white/10" />
-
-              <div className="space-y-1.5">
-                {steps.map((step, index) => {
-                  const isActive = index === activeStep;
-                  const Icon = step.icon;
-
-                  return (
-                    <button
-                      key={step.key}
-                      className="relative block w-full py-2 text-left"
-                      onClick={() => setActiveStep(index)}
-                      type="button"
-                    >
-                      <div className="flex items-center gap-3 pl-12 pr-2">
-                        <span
-                          className={cn(
-                            "absolute left-0 top-1/2 inline-flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border",
-                            isActive
-                              ? "border-sky-300/40 bg-sky-300/15 text-sky-100"
-                              : "border-white/10 bg-white/[0.04] text-slate-300"
-                          )}
-                        >
-                          <Icon className="h-4 w-4" strokeWidth={1.85} />
-                        </span>
-                        <span className="text-[0.62rem] font-semibold uppercase tracking-[0.22em] text-slate-500">
-                          {String(index + 1).padStart(2, "0")}
-                        </span>
-                        <span className={cn("text-base font-medium", isActive ? "text-white" : "text-slate-400")}>
-                          {step.title}
-                        </span>
-                      </div>
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-
             <AnimatePresence>
               {isBuildStep ? (
                 <motion.div
@@ -359,19 +353,25 @@ export function WorkflowSection() {
                     style={{left: buildBranchCenter}}
                   />
 
-                  <div className="hidden lg:block">
+                  <div>
                     <div className="pt-8">
                       <div className="relative px-2 xl:px-4">
-                        <div className="absolute left-[calc(100%/16)] right-[calc(100%/16)] top-7 h-px bg-white/10">
+                        <div className="absolute inset-x-0 top-7 h-px bg-white/10">
+                          <div className="h-full rounded-full bg-gradient-to-r from-sky-300/70 via-cyan-200/50 to-white/15" />
+                        </div>
+                        <div className="absolute inset-x-0 top-[16.75rem] h-px bg-white/10 lg:hidden">
+                          <div className="h-full rounded-full bg-gradient-to-r from-sky-300/70 via-cyan-200/50 to-white/15" />
+                        </div>
+                        <div className="absolute inset-x-0 top-[32.5rem] h-px bg-white/10 sm:hidden">
                           <div className="h-full rounded-full bg-gradient-to-r from-sky-300/70 via-cyan-200/50 to-white/15" />
                         </div>
 
-                        <div className="grid grid-cols-8 gap-2 xl:gap-4">
+                        <div className="grid grid-cols-3 gap-x-2 gap-y-6 sm:grid-cols-4 lg:grid-cols-8 lg:gap-y-0 xl:gap-x-4">
                           {buildTrack.map((item) => {
                             const BranchIcon = item.icon;
 
                             return (
-                              <div key={item.title} className="relative flex flex-col items-center text-center">
+                              <div key={item.title} className="relative flex min-h-36 flex-col items-center text-center lg:min-h-0">
                                 <span className="relative z-10 inline-flex h-14 w-14 items-center justify-center rounded-2xl border border-sky-300/20 bg-[#0b0f19] text-sky-100">
                                   <BranchIcon className="h-5 w-5" strokeWidth={1.8} />
                                 </span>
@@ -395,37 +395,10 @@ export function WorkflowSection() {
                     </div>
                   </div>
 
-                  <div className="pt-6 lg:hidden">
-                    <div className="space-y-1.5 border-l border-white/10 pl-5">
-                      {buildTrack.map((item) => {
-                        const BranchIcon = item.icon;
-
-                        return (
-                          <div key={item.title} className="relative pb-5">
-                            <span className="absolute -left-[1.45rem] top-0.5 inline-flex h-7 w-7 items-center justify-center rounded-full border border-sky-300/20 bg-[#0b0f19] text-sky-100">
-                              <BranchIcon className="h-3 w-3" strokeWidth={1.8} />
-                            </span>
-                            <span className="absolute left-[0.45rem] top-[1.875rem] h-4 w-px bg-gradient-to-b from-sky-300/70 to-transparent" />
-                            <div>
-                              <p className="min-h-[2.5rem] max-w-[8.5rem] text-sm font-medium leading-5 text-white">
-                              {item.titleLines.map((line, lineIndex) => (
-                                <span className="block" key={lineIndex}>
-                                  {line}
-                                </span>
-                              ))}
-                            </p>
-                              <p className="mt-1.5 text-sm leading-6 text-slate-400">{item.description}</p>
-                            </div>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </div>
                 </motion.div>
               ) : null}
             </AnimatePresence>
-            <div className="mt-10 overflow-hidden rounded-[2.2rem] border border-white/12 bg-[linear-gradient(180deg,rgba(15,23,42,0.82),rgba(30,41,59,0.72))] px-5 py-7 shadow-[0_20px_80px_rgba(2,6,23,0.28)] sm:px-6 sm:py-8 lg:px-8 lg:py-10">
-              <div>
+            <div className="mt-8 overflow-hidden rounded-[1.5rem] border border-white/10 bg-[#0b1120]/80 shadow-[0_18px_50px_rgba(2,6,23,0.2)]">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={selectedStep.key}
@@ -435,64 +408,50 @@ export function WorkflowSection() {
                   initial={{opacity: 0, y: 10}}
                   transition={{duration: 0.28, ease: [0.22, 1, 0.36, 1]}}
                 >
-                  <div className="flex flex-col gap-8 lg:grid lg:grid-cols-[minmax(0,1.2fr)_minmax(18rem,0.9fr)] lg:gap-0">
-                    <div className="lg:pr-10">
-                      <p className="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-sky-300/80">
-                        {detailPanel.stepLabel} {String(activeStep + 1).padStart(2, "0")} / {String(steps.length).padStart(2, "0")}
-                      </p>
-
-                      <div className="mt-4 flex items-center gap-3">
-                        <span className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-sky-100 shadow-[0_10px_24px_rgba(15,23,42,0.22)]">
-                          <SelectedIcon className="h-4 w-4" strokeWidth={1.85} />
-                        </span>
-                        <h3 className="text-2xl font-semibold tracking-tight text-white sm:text-[2rem]">
+                  <div className="grid sm:grid-cols-2 lg:grid-cols-[0.9fr_1.25fr_0.9fr_0.9fr]">
+                    <div className="flex items-start gap-3 p-4 sm:p-5">
+                      <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-sky-300/20 bg-sky-300/[0.08] text-sky-100">
+                        <SelectedIcon className="h-[1.1rem] w-[1.1rem]" strokeWidth={1.85} />
+                      </span>
+                      <div className="min-w-0">
+                        <p className="text-[0.65rem] font-semibold uppercase tracking-[0.22em] text-sky-300/75">
+                          {detailPanel.stepLabel} {String(activeStep + 1).padStart(2, "0")} / {String(steps.length).padStart(2, "0")}
+                        </p>
+                        <h3 className="mt-2 text-sm font-medium leading-6 text-slate-200">
                           {selectedStep.title}
                         </h3>
                       </div>
+                    </div>
 
-                      <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-200">
-                        {selectedStep.description}
+                    <div className="border-t border-white/8 p-4 sm:border-l sm:border-t-0 sm:p-5">
+                      <p className="text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-slate-500">
+                        {detailPanel.overviewLabel}
                       </p>
-
-                      <p className="mt-4 max-w-2xl text-base leading-7 text-slate-400">
-                        {selectedStep.detail}
+                      <p className="mt-2 text-sm leading-6 text-slate-300">
+                        {selectedStep.description}
                       </p>
                     </div>
 
-                    <div className="relative lg:pl-10">
-                      <div className="rounded-[1.4rem] border border-white/8 bg-slate-950/28 p-5 sm:p-6">
-                        <p className="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-slate-500">
-                          {detailPanel.principleLabel}
-                        </p>
-                        <p className="mt-3 text-lg font-medium leading-8 tracking-tight text-slate-100">
-                          {selectedStep.principle}
-                        </p>
+                    <div className="border-t border-white/8 bg-white/[0.018] p-4 sm:p-5 lg:border-l lg:border-t-0">
+                      <p className="text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-slate-500">
+                        {detailPanel.focusLabel}
+                      </p>
+                      <p className="mt-2 text-sm leading-6 text-slate-300">
+                        {selectedStep.focus}
+                      </p>
+                    </div>
 
-                        <div className="mt-6 grid gap-4 sm:grid-cols-2">
-                          <div className="space-y-2">
-                            <p className="text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-slate-500">
-                              {detailPanel.focusLabel}
-                            </p>
-                            <p className="text-sm leading-6 text-slate-300">
-                              {selectedStep.focus}
-                            </p>
-                          </div>
-
-                          <div className="space-y-2 sm:pl-4">
-                            <p className="text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-slate-500">
-                              {detailPanel.outcomeLabel}
-                            </p>
-                            <p className="text-sm leading-6 text-slate-300">
-                              {selectedStep.outcome}
-                            </p>
-                          </div>
-                        </div>
-                      </div>
+                    <div className="border-t border-white/8 bg-emerald-300/[0.025] p-4 sm:border-l sm:p-5 lg:border-t-0">
+                      <p className="text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-emerald-300/75">
+                        {detailPanel.outcomeLabel}
+                      </p>
+                      <p className="mt-2 text-sm font-medium leading-6 text-slate-200">
+                        {selectedStep.outcome}
+                      </p>
                     </div>
                   </div>
                 </motion.div>
               </AnimatePresence>
-            </div>
 
           </div>
         </div>

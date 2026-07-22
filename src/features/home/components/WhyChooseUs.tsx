@@ -72,7 +72,7 @@ export function WhyChooseUs() {
 
       <Container>
         <div className="relative grid gap-10 lg:grid-cols-[0.86fr_1.14fr] lg:items-start">
-          <div className="space-y-4">
+          <div className="space-y-4 text-center lg:text-left">
             <span className="text-sm font-semibold uppercase tracking-[0.24em] text-sky-300">
               {t("eyebrow")}
             </span>

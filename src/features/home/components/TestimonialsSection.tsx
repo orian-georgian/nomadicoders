@@ -352,11 +352,14 @@ export function TestimonialsSection() {
   const visibleCards: Array<{
     position: CarouselPosition;
     testimonial: Testimonial;
-  }> = [
-    { position: "left", testimonial: testimonials[prevIndex] },
-    { position: "center", testimonial: testimonials[activeIndex] },
-    { position: "right", testimonial: testimonials[nextIndex] },
-  ];
+  }> =
+    viewportWidth < 1024
+      ? [{ position: "center", testimonial: testimonials[activeIndex] }]
+      : [
+          { position: "left", testimonial: testimonials[prevIndex] },
+          { position: "center", testimonial: testimonials[activeIndex] },
+          { position: "right", testimonial: testimonials[nextIndex] },
+        ];
 
   const renderCard = (testimonial: Testimonial, position: CarouselPosition) => {
     const isCenter = position === "center";
@@ -404,8 +407,23 @@ export function TestimonialsSection() {
           x: targetX,
           y: isCenter ? 0 : 16,
         }}
+        drag={viewportWidth < 1024 && isCenter ? "x" : false}
+        dragConstraints={{ left: 0, right: 0 }}
+        dragElastic={0.16}
+        onDragEnd={(_, info) => {
+          if (viewportWidth >= 1024 || !isCenter) return;
+
+          if (info.offset.x <= -56) {
+            goBy(1);
+          }
+
+          if (info.offset.x >= 56) {
+            goBy(-1);
+          }
+        }}
         className={cn(
           "absolute left-1/2 top-0 will-change-transform",
+          viewportWidth < 1024 && isCenter && "cursor-grab active:cursor-grabbing",
           isCenter ? "z-20" : "z-10",
           widthClassName,
         )}
@@ -584,14 +602,14 @@ export function TestimonialsSection() {
           <div className="mt-12">
             <div
               aria-label="Testimonials carousel"
-              className="relative h-[32rem] overflow-hidden outline-none sm:h-[34rem] lg:h-[32rem]"
+              className="relative h-[29rem] overflow-hidden outline-none sm:h-[30rem] lg:h-[32rem]"
               onKeyDown={handleKeyDown}
               role="region"
               tabIndex={0}
             >
               <button
                 aria-label="Previous testimonial"
-                className="absolute left-2 top-1/2 z-30 inline-flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-slate-950/65 text-slate-100 backdrop-blur transition-colors duration-200 hover:border-white/20 hover:bg-slate-900/80 sm:left-4"
+                className="absolute left-2 top-[13.5rem] z-30 inline-flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-slate-950/65 text-slate-100 backdrop-blur transition-colors duration-200 hover:border-white/20 hover:bg-slate-900/80 max-[479px]:hidden sm:left-4 sm:top-[14rem]"
                 onClick={() => goBy(-1)}
                 type="button"
               >
@@ -599,7 +617,7 @@ export function TestimonialsSection() {
               </button>
               <button
                 aria-label="Next testimonial"
-                className="absolute right-2 top-1/2 z-30 inline-flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-slate-950/65 text-slate-100 backdrop-blur transition-colors duration-200 hover:border-white/20 hover:bg-slate-900/80 sm:right-4"
+                className="absolute right-2 top-[13.5rem] z-30 inline-flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-slate-950/65 text-slate-100 backdrop-blur transition-colors duration-200 hover:border-white/20 hover:bg-slate-900/80 max-[479px]:hidden sm:right-4 sm:top-[14rem]"
                 onClick={() => goBy(1)}
                 type="button"
               >
@@ -616,7 +634,7 @@ export function TestimonialsSection() {
               </div>
             </div>
 
-            <div className="mt-5 flex items-center justify-center gap-2">
+            <div className="mt-4 flex items-center justify-center gap-2 lg:mt-0">
               {testimonials.map((testimonial, index) => (
                 <button
                   key={testimonial.key}
