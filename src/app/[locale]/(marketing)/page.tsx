@@ -9,6 +9,7 @@ import {TestimonialsSection} from "@/features/home/components/TestimonialsSectio
 import {TransformationsSection} from "@/features/home/components/TransformationsSection";
 import {WorkflowSection} from "@/features/home/components/WorkflowSection";
 import {WhyChooseUs} from "@/features/home/components/WhyChooseUs";
+import {WorldPresenceMap} from "@/features/home/components/WorldPresenceMap";
 
 export default async function MarketingHomePage() {
   const cta = await getTranslations("Home.cta");
@@ -23,10 +24,11 @@ export default async function MarketingHomePage() {
       <WorkflowSection />
       <TestimonialsSection />
       <TeamSection />
+      <WorldPresenceMap />
       <CTA
         buttonHref="mailto:hello@nomadicoders.dev"
         buttonLabel={cta("button")}
-        className="pt-0"
+        className="pt-14 sm:pt-28"
         contained
         contacts={[
           {

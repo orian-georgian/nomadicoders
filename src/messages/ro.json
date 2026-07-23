@@ -70,7 +70,7 @@
                                             "timezoneCoverage":  "Acoperire de fus orar"
                                         },
                               "stats":  {
-                                            "years":  "Ani de inginerie de produs",
+                                            "years":  "Ani de experienta",
                                             "projects":  "Produse livrate",
                   "delivery":  "Workflow-uri asistate de AI, livrare verificata de seniori",
                                             "timezone":  "Colaborare flexibila intre fusuri orare",
@@ -186,6 +186,67 @@
                                      "eyebrow":  "De ce Nomadicoders",
                                      "title":  "Executia directa cu seniori este un mod mai bun de a construi.",
                                      "description":  "Build-urile complexe se misca mai repede cand oamenii care iau deciziile tehnice sunt aceiasi care scriu codul si rafineaza produsul.",
+                                     "interactionHint":  "Hover sau tap pentru a deschide",
+                                     "directTeam":  "Principiu de echipa senior",
+                                     "modelLabel":  "Model de livrare direct",
+                                     "activePrinciple":  "Ce se schimba cand lucrezi cu noi",
+                                     "clientLabel":  "Echipa ta",
+                                     "buildersLabel":  "Dezvoltatori seniori",
+                                     "directLine":  "Linie directa",
+                                     "signalOne":  "Mai putin context pierdut",
+                                     "signalTwo":  "Decizii luate mai rapid",
+                                     "signalThree":  "Responsabilitate clara",
+                                     "comparison":  {
+                                                            "windowLabel":  "Comparatie modele de livrare",
+                                                            "windowStatus":  "Fata in fata",
+                                                            "title":  "Diferenta nu inseamna mai multi oameni. Inseamna mai putine straturi.",
+                                                            "description":  "Vezi unde livrarea conventionala pierde context, timp si responsabilitate si ce se schimba cand dezvoltatorii seniori raman implicati direct.",
+                                                            "typical":  {
+                                                                            "eyebrow":  "Agentie conventionala",
+                                                                            "title":  "Livrare pe straturi",
+                                                                            "status":  "Mai multe transferuri",
+                                                                            "note":  "Fiecare strat suplimentar este un loc in care contextul produsului poate fi diluat sau intarziat."
+                                                                        },
+                                                            "nomadicoders":  {
+                                                                                  "eyebrow":  "Nomadicoders",
+                                                                                  "title":  "Livrare condusa de seniori",
+                                                                                  "status":  "Acces direct",
+                                                                                  "direct":  "O singura bucla de lucru",
+                                                                                  "note":  "Lucrezi cu seniorii care iau deciziile de produs si construiesc solutia."
+                                                                              },
+                                                            "roles":  {
+                                                                          "client":  "Echipa ta",
+                                                                          "manager":  "Manager",
+                                                                          "lead":  "Lead tehnic",
+                                                                          "developer":  "Dezvoltator",
+                                                                          "seniorTeam":  "Echipa senior"
+                                                                      },
+                                                            "table":  {
+                                                                          "criteria":  "Ce conteaza",
+                                                                          "team":  {
+                                                                                       "label":  "Cine construieste",
+                                                                                       "typical":  "Echipa de vanzari preda proiectul unei echipe separate de livrare.",
+                                                                                       "nomadicoders":  "Seniorii pe care ii cunosti raman implicati direct pe tot parcursul proiectului."
+                                                                                   },
+                                                                          "communication":  {
+                                                                                                    "label":  "Comunicare",
+                                                                                                    "typical":  "Cerintele trec prin straturi de account si project management.",
+                                                                                                    "nomadicoders":  "Intrebarile si compromisurile ajung direct la oamenii care le implementeaza."
+                                                                                                },
+                                                                          "decisions":  {
+                                                                                            "label":  "Decizii",
+                                                                                            "typical":  "Mai multe aprobari incetinesc alegerile mici, dar importante.",
+                                                                                            "nomadicoders":  "Deciziile tehnice si de produs se iau in aceeasi bucla de lucru."
+                                                                                        },
+                                                                          "ownership":  {
+                                                                                            "label":  "Responsabilitate",
+                                                                                            "typical":  "Responsabilitatea este impartita intre roluri, echipe si puncte de predare.",
+                                                                                            "nomadicoders":  "O singura echipa senior detine calitatea de la arhitectura pana la lansare."
+                                                                                        }
+                                                                      },
+                                                            "closing":  "Primesti capacitatea unei agentii fara distanta unei agentii.",
+                                                            "proofCta":  "Vezi proiectele"
+                                                        },
                                      "items":  {
                                                    "direct":  {
                                                                   "title":  "Acces direct la oamenii care construiesc",
@@ -205,6 +266,42 @@
                                                                    }
                                                }
                                  },
+                "worldMap":  {
+                                    "eyebrow":  "Remote prin design",
+                                    "title":  "Construit in Europa. Pregatit pentru colaborare globala.",
+                                    "description":  "Colaborare directa cu seniori, indiferent de locatie, cu suficienta suprapunere de fus orar pentru decizii si livrare eficiente.",
+                                    "tabs":  {
+                                                   "label":  "Locatii pe harta",
+                                                   "worked":  "Locuri din care am lucrat",
+                                                   "workedCompact":  "Locatiile noastre",
+                                                   "clients":  "De unde sunt clientii nostri",
+                                                   "clientsCompact":  "Locatii clienti"
+                                               },
+                                    "locations":  {
+                                                        "argentina":  "Argentina",
+                                                        "belgium":  "Belgia",
+                                                        "china":  "China",
+                                                        "egypt":  "Egipt",
+                                                        "france":  "Franta",
+                                                        "germany":  "Germania",
+                                                        "greece":  "Grecia",
+                                                        "indonesia":  "Indonezia",
+                                                        "israel":  "Israel",
+                                                        "italy":  "Italia",
+                                                        "japan":  "Japonia",
+                                                        "malaysia":  "Malaezia",
+                                                        "poland":  "Polonia",
+                                                        "romania":  "Romania",
+                                                        "southKorea":  "Coreea de Sud",
+                                                        "spain":  "Spania",
+                                                        "sweden":  "Suedia",
+                                                        "thailand":  "Thailanda",
+                                                        "uae":  "Emiratele Arabe Unite",
+                                                        "uk":  "Regatul Unit",
+                                                        "usa":  "Statele Unite",
+                                                        "vietnam":  "Vietnam"
+                                                    }
+                                },
                 "projects":  {
                                   "eyebrow":  "Proiecte selectate",
     "title":  "Produse complexe. Rezultate clare pentru business.",

@@ -62,7 +62,7 @@
                                             "title":  "Clear product decisions. Faster, AI-accelerated execution.",
                                             "status":  "Human-led, AI-accelerated",
                                             "buildVelocity":  "AI delivery leverage",
-                                            "aiSignal":  "Senior-directed",
+                                            "aiSignal":  "Senior directed",
                                             "coverage":  "Senior experience",
                                             "weeklyRhythm":  "Weekly rhythm",
                                             "directDelivery":  "Direct delivery",
@@ -70,7 +70,7 @@
                                             "timezoneCoverage":  "Timezone coverage"
                                         },
                               "stats":  {
-                                            "years":  "Years of product engineering",
+                                            "years":  "Years of experience",
                                             "projects":  "Products shipped",
                   "delivery":  "AI-assisted workflows, senior-reviewed delivery",
                                             "timezone":  "Flexible collaboration across time zones",
@@ -186,6 +186,67 @@
                                      "eyebrow":  "Why Nomadicoders",
                                      "title":  "Direct senior execution is a better way to build.",
                                      "description":  "Complex builds move faster when the people making technical decisions are the same people writing the code and refining the product.",
+                                     "interactionHint":  "Hover or tap to open",
+                                     "directTeam":  "Senior team principle",
+                                     "modelLabel":  "Direct delivery model",
+                                     "activePrinciple":  "What changes when you work with us",
+                                     "clientLabel":  "Your team",
+                                     "buildersLabel":  "Senior builders",
+                                     "directLine":  "Direct line",
+                                     "signalOne":  "Less context lost",
+                                     "signalTwo":  "Decisions made faster",
+                                     "signalThree":  "Accountability stays clear",
+                                     "comparison":  {
+                                                            "windowLabel":  "Delivery model comparison",
+                                                            "windowStatus":  "Side by side",
+                                                            "title":  "The difference is not more people. It is fewer layers.",
+                                                            "description":  "See where conventional agency delivery loses context, time and accountability—and what changes when senior builders stay directly involved.",
+                                                            "typical":  {
+                                                                            "eyebrow":  "Conventional agency",
+                                                                            "title":  "Layered delivery",
+                                                                            "status":  "More handoffs",
+                                                                            "note":  "Every extra layer introduces another place for product context to be diluted or delayed."
+                                                                        },
+                                                            "nomadicoders":  {
+                                                                                  "eyebrow":  "Nomadicoders",
+                                                                                  "title":  "Senior-led delivery",
+                                                                                  "status":  "Direct access",
+                                                                                  "direct":  "One working loop",
+                                                                                  "note":  "You work with the senior people making the product decisions and building the solution."
+                                                                              },
+                                                            "roles":  {
+                                                                          "client":  "Your team",
+                                                                          "manager":  "Manager",
+                                                                          "lead":  "Tech lead",
+                                                                          "developer":  "Developer",
+                                                                          "seniorTeam":  "Senior team"
+                                                                      },
+                                                            "table":  {
+                                                                          "criteria":  "What matters",
+                                                                          "team":  {
+                                                                                       "label":  "Who builds",
+                                                                                       "typical":  "The pitch team hands work to a separate delivery team.",
+                                                                                       "nomadicoders":  "The senior people you meet remain hands-on throughout the build."
+                                                                                   },
+                                                                          "communication":  {
+                                                                                                    "label":  "Communication",
+                                                                                                    "typical":  "Requirements move through account and project-management layers.",
+                                                                                                    "nomadicoders":  "Questions and tradeoffs go directly to the people implementing them."
+                                                                                                },
+                                                                          "decisions":  {
+                                                                                            "label":  "Decisions",
+                                                                                            "typical":  "More approvals slow down small but important product choices.",
+                                                                                            "nomadicoders":  "Technical and product decisions happen in the same working loop."
+                                                                                        },
+                                                                          "ownership":  {
+                                                                                            "label":  "Ownership",
+                                                                                            "typical":  "Responsibility is divided across roles, teams and handover points.",
+                                                                                            "nomadicoders":  "One senior team owns quality from architecture through launch."
+                                                                                        }
+                                                                      },
+                                                            "closing":  "You get agency-level capability without agency-level distance.",
+                                                            "proofCta":  "See the work"
+                                                        },
                                      "items":  {
                                                    "direct":  {
                                                                   "title":  "Direct access to the builders",
@@ -205,6 +266,42 @@
                                                                    }
                                                }
                                  },
+                "worldMap":  {
+                                    "eyebrow":  "Remote by design",
+                                    "title":  "Built in Europe. Ready to work worldwide.",
+                                    "description":  "Direct senior collaboration across locations, with enough timezone overlap to keep decisions and delivery moving.",
+                                    "tabs":  {
+                                                   "label":  "Map locations",
+                                                   "worked":  "Places we worked from",
+                                                   "workedCompact":  "Our locations",
+                                                   "clients":  "Where our clients are from",
+                                                   "clientsCompact":  "Client locations"
+                                               },
+                                    "locations":  {
+                                                        "argentina":  "Argentina",
+                                                        "belgium":  "Belgium",
+                                                        "china":  "China",
+                                                        "egypt":  "Egypt",
+                                                        "france":  "France",
+                                                        "germany":  "Germany",
+                                                        "greece":  "Greece",
+                                                        "indonesia":  "Indonesia",
+                                                        "israel":  "Israel",
+                                                        "italy":  "Italy",
+                                                        "japan":  "Japan",
+                                                        "malaysia":  "Malaysia",
+                                                        "poland":  "Poland",
+                                                        "romania":  "Romania",
+                                                        "southKorea":  "South Korea",
+                                                        "spain":  "Spain",
+                                                        "sweden":  "Sweden",
+                                                        "thailand":  "Thailand",
+                                                        "uae":  "United Arab Emirates",
+                                                        "uk":  "United Kingdom",
+                                                        "usa":  "United States",
+                                                        "vietnam":  "Vietnam"
+                                                    }
+                                },
                 "projects":  {
                                   "eyebrow":  "Selected work",
     "title":  "Complex products. Clear business wins.",

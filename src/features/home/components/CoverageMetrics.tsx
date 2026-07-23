@@ -50,14 +50,14 @@ export function CoverageMetrics({stats}: CoverageMetricsProps) {
             <p className="text-2xl font-bold leading-none tabular-nums text-white">
               {`${values[index] ?? 0}${item.suffix ?? ""}`}
             </p>
-            <p className={`mt-1.5 text-[0.65rem] leading-4 text-slate-400 ${index === 1 ? "max-w-[4.5rem]" : ""}`}>
+            <p className="mt-1.5 whitespace-nowrap text-[0.65rem] leading-4 text-slate-300">
               {item.label}
             </p>
           </div>
         ))}
       </div>
 
-      <div className="relative mt-4 h-20 w-full border-b border-white/15 pb-1">
+      <div className="relative mt-2 h-20 w-full border-b border-white/15 pb-1">
         <div className="pointer-events-none absolute inset-x-0 top-3 border-t border-dashed border-white/10" />
         <div className="pointer-events-none absolute inset-x-0 top-9 border-t border-dashed border-white/10" />
         <div className="pointer-events-none absolute inset-x-0 top-[3.75rem] border-t border-dashed border-white/10" />

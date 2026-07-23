@@ -19,12 +19,7 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative overflow-hidden border-t border-white/[0.07] bg-[#080d17]">
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-        <div className="absolute -left-24 top-0 h-64 w-64 rounded-full bg-sky-400/[0.055] blur-3xl" />
-        <div className="absolute -right-24 bottom-0 h-64 w-64 rounded-full bg-brand-purple/[0.055] blur-3xl" />
-      </div>
-
+    <footer className="relative overflow-hidden border-t border-white/[0.07] bg-background">
       <Container className="relative py-12 sm:py-14">
         <div className="grid gap-10 border-b border-white/[0.08] pb-10 sm:grid-cols-2 lg:grid-cols-[1.25fr_0.7fr_0.8fr_1fr] lg:gap-8">
           <div className="max-w-sm">

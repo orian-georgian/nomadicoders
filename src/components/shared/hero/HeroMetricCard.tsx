@@ -6,6 +6,7 @@ type HeroMetricCardProps = {
   title: string;
   animatedTopBorder?: boolean;
   className?: string;
+  titleClassName?: string;
   children: ReactNode;
 };
 
@@ -13,6 +14,7 @@ export function HeroMetricCard({
   title,
   animatedTopBorder = false,
   className,
+  titleClassName,
   children,
 }: HeroMetricCardProps) {
   return (
@@ -30,7 +32,7 @@ export function HeroMetricCard({
           }}
         />
       ) : null}
-      <p className="relative text-xs uppercase tracking-[0.24em] text-slate-400">
+      <p className={`relative text-xs uppercase tracking-[0.24em] text-slate-400 ${titleClassName ?? ""}`}>
         {title}
       </p>
       <div className="relative mt-5 flex flex-1 flex-col">{children}</div>

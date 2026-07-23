@@ -534,7 +534,7 @@ export function TeamSection() {
 
   return (
     <AnimatedSection
-      className="relative overflow-hidden pb-32 pt-24 sm:pb-36 lg:pb-40"
+      className="relative overflow-hidden pb-12 pt-24 sm:pb-16 lg:pb-20"
       id="team-section"
     >
       <div className="pointer-events-none absolute inset-0">
@@ -654,7 +654,7 @@ export function TeamSection() {
             <div className="relative z-20 flex flex-col items-center gap-8 sm:gap-12 md:gap-14 lg:flex-row lg:items-center lg:justify-center lg:gap-20">
               {teamMembers.map((member, index) => (
                 <div
-                  className="w-[min(52vw,12rem)] sm:w-[13.5rem] md:w-56 lg:w-[min(30vw,16rem)]"
+                  className="w-[min(46vw,10.5rem)] sm:w-48 md:w-52 lg:w-[min(27vw,14.5rem)]"
                   key={member.name}
                 >
                   <TeamMemberOrb

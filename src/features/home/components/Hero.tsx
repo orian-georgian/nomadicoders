@@ -1,8 +1,8 @@
 "use client";
 
-import { useMemo } from "react";
+import { type MouseEvent, useMemo } from "react";
 
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useReducedMotion, useSpring, useTransform } from "framer-motion";
 import {
   Check,
   MoveRight,
@@ -21,6 +21,26 @@ type KpiVisual = "execution" | "handoffs" | "quality" | "direct";
 
 export function Hero() {
   const t = useTranslations("Home.hero");
+  const reducedMotion = Boolean(useReducedMotion());
+  const tiltX = useMotionValue(0);
+  const tiltY = useMotionValue(0);
+  const tiltXSpring = useSpring(tiltX, { damping: 30, stiffness: 300 });
+  const tiltYSpring = useSpring(tiltY, { damping: 30, stiffness: 300 });
+  const dashboardRotateX = useTransform(tiltYSpring, [-0.5, 0.5], ["6deg", "-6deg"]);
+  const dashboardRotateY = useTransform(tiltXSpring, [-0.5, 0.5], ["-6deg", "6deg"]);
+
+  const handleDashboardMouseMove = (event: MouseEvent<HTMLDivElement>) => {
+    if (reducedMotion) return;
+
+    const bounds = event.currentTarget.getBoundingClientRect();
+    tiltX.set((event.clientX - bounds.left) / bounds.width - 0.5);
+    tiltY.set((event.clientY - bounds.top) / bounds.height - 0.5);
+  };
+
+  const resetDashboardTilt = () => {
+    tiltX.set(0);
+    tiltY.set(0);
+  };
 
   const coverageStats = useMemo(
     () => [
@@ -116,10 +136,10 @@ export function Hero() {
           <div className="pointer-events-none absolute inset-x-0 top-8 border-t border-dashed border-white/10" />
           <div className="pointer-events-none absolute inset-x-0 top-[3.25rem] border-t border-dashed border-white/10" />
           <svg aria-hidden="true" className="absolute inset-0 h-full w-full" viewBox="0 0 220 64">
-            <circle cx="38" cy="30" fill="rgb(110 231 183)" fillOpacity="0.035" r="21" stroke="white" strokeOpacity="0.1" strokeWidth="5" />
-            <motion.circle animate={{strokeDashoffset: [132, 18]}} cx="38" cy="30" fill="none" r="21" stroke="rgb(110 231 183)" strokeDasharray="132" strokeLinecap="round" strokeWidth="5" transform="rotate(-90 38 30)" transition={{duration: 2.8, ease: "easeInOut", repeat: Number.POSITIVE_INFINITY, repeatType: "mirror"}} />
-            <text fill="white" fontSize="11" fontWeight="700" letterSpacing="0.7" textAnchor="middle" x="38" y="34">QA</text>
-            {[15, 30, 45].map((y, index) => (
+            <circle cx="38" cy="34" fill="rgb(110 231 183)" fillOpacity="0.035" r="21" stroke="white" strokeOpacity="0.1" strokeWidth="5" />
+            <motion.circle animate={{strokeDashoffset: [132, 18]}} cx="38" cy="34" fill="none" r="21" stroke="rgb(110 231 183)" strokeDasharray="132" strokeLinecap="round" strokeWidth="5" transform="rotate(-90 38 34)" transition={{duration: 2.8, ease: "easeInOut", repeat: Number.POSITIVE_INFINITY, repeatType: "mirror"}} />
+            <text fill="white" fontSize="11" fontWeight="700" letterSpacing="0.7" textAnchor="middle" x="38" y="38">QA</text>
+            {[19, 34, 49].map((y, index) => (
               <g key={y}>
                 <rect fill="rgb(11 17 32)" fillOpacity="0.98" height="14" rx="3.5" width="38" x="68" y={y - 7} />
                 <text fill="rgb(255 255 255)" fontSize="8" fontWeight="700" textAnchor="middle" x="87" y={y + 2.75}>{index === 0 ? "UNIT" : index === 1 ? "API" : "E2E"}</text>
@@ -270,15 +290,22 @@ export function Hero() {
           </div>
 
           <motion.div className="relative" variants={fadeIn(0.14)}>
-            <div className="relative mx-auto max-w-xl lg:ml-auto lg:mr-0">
+            <div className="relative mx-auto max-w-xl [perspective:1200px] lg:ml-auto lg:mr-0">
               <motion.div
                 className="relative overflow-hidden rounded-[1.6rem] border border-white/10 bg-[#0b1120]/90 shadow-[0_24px_80px_rgba(2,6,23,0.28)]"
                 initial={{ opacity: 0, y: 26 }}
+                onMouseLeave={resetDashboardTilt}
+                onMouseMove={handleDashboardMouseMove}
+                style={{
+                  rotateX: reducedMotion ? 0 : dashboardRotateX,
+                  rotateY: reducedMotion ? 0 : dashboardRotateY,
+                  transformStyle: "preserve-3d",
+                }}
                 transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                 viewport={{ once: true }}
                 whileInView={{ opacity: 1, y: 0 }}
               >
-                <div className="relative">
+                <div className="relative" style={{ transform: "translateZ(18px)" }}>
                   <div className="border-b border-white/8 px-5 py-4 sm:px-6">
                     <div className="flex items-center justify-between gap-3">
                       <div className="flex items-center gap-3">
@@ -303,11 +330,10 @@ export function Hero() {
                         <HeroMetricCard
                           className="bg-white/[0.035]"
                           title={t("panel.buildVelocity")}
+                          titleClassName="!text-[0.65rem] !tracking-[0.2em]"
                         >
                           <BuildVelocityCardContent
                             description={t("stats.delivery")}
-                            signal={t("panel.aiSignal")}
-                            value="AI"
                           />
                         </HeroMetricCard>
                       </motion.div>
@@ -316,6 +342,7 @@ export function Hero() {
                         <HeroMetricCard
                           className="bg-white/[0.035]"
                           title={t("panel.coverage")}
+                          titleClassName="!text-[0.65rem] !tracking-[0.2em]"
                         >
                           <CoverageMetrics stats={coverageStats} />
                         </HeroMetricCard>
@@ -346,7 +373,7 @@ export function Hero() {
                                 {renderKpiVisual(item.visual)}
                               </div>
                             </div>
-                            <p className="text-sm leading-6 text-slate-400">
+                            <p className="text-sm leading-6 text-slate-300">
                               {item.description}
                             </p>
                           </div>
