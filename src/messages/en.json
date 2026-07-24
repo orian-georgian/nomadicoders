@@ -72,6 +72,8 @@
                               "stats":  {
                                             "years":  "Years of experience",
                                             "projects":  "Products shipped",
+                                            "linesDelivered":  "Lines of code delivered",
+                                            "apiRequests":  "API requests served",
                   "delivery":  "AI-assisted workflows, senior-reviewed delivery",
                                             "timezone":  "Flexible collaboration across time zones",
                   "execution":  "Demos, feedback and clear next steps",
@@ -304,48 +306,83 @@
                                 },
                 "projects":  {
                                   "eyebrow":  "Selected work",
-    "title":  "Complex products. Clear business wins.",
+    "title":  "Complex products.\nClear business wins.",
     "description":  "A selection of client work where senior product thinking and focused engineering turned friction into a faster, clearer experience.",
                                   "framing":  "Anonymized production project",
                                   "cta":  "Discuss similar work",
+                                  "detailsCta":  "See details",
+                                  "backCta":  "Back to selected work",
+                                  "detailCtaText":  "Have a similar product challenge? Talk directly with the senior developers who will plan and build it.",
                                   "labels":  {
                                                  "problem":  "Problem",
                                                  "built":  "What we built",
                                                  "stack":  "Technical stack",
-                                                 "outcome":  "Outcome"
+                                                 "outcome":  "Outcome",
+                                                 "client":  "Client",
+                                                 "period":  "Development period",
+                                                 "team":  "Built by",
+                                                 "delivered":  "Delivered",
+                                                 "fullTeam":  "Full senior team",
+                                                 "soloBuild":  "Dedicated senior",
+                                                 "rating":  "4.9 rating",
+                                                 "ratingLink":  "Read client testimonials"
                                              },
                                   "items":  {
                                                 "saas":  {
                                                              "category":  "B2B SaaS",
+                               "client":  "Confidential logistics group",
+                               "period":  "8 months · 2025",
                                "title":  "One source of truth for global operations",
                                "summary":  "We replaced fragmented spreadsheets and status chasing with a product teams could rely on every day.",
                                "problem":  "Operational status lived across spreadsheets, chat threads and manual updates, making ownership and delivery risk hard to see.",
                                "built":  "Realtime workload, approval and delivery tracking across regions.",
-                               "outcome":  "Faster decisions and clear ownership without manual status chasing."
+                               "outcome":  "Faster decisions and clear ownership without manual status chasing.",
+                               "kpis":  [
+                                            {"value": "42%", "label": "Faster decisions"},
+                                            {"value": "100%", "label": "Workflow visibility"}
+                                        ]
                                                          },
                                                 "booking":  {
                                                                 "category":  "Travel product",
+                                  "client":  "Independent travel platform",
+                                  "period":  "6 months · 2025",
                                   "title":  "A booking journey built for confidence",
                                   "summary":  "We turned a slow, uncertain mobile flow into a direct path from discovery to confirmed booking.",
                                   "problem":  "The existing booking flow created hesitation: pricing was unclear, mobile steps felt heavy and content updates depended too much on developers.",
                                   "built":  "Mobile-first discovery, transparent pricing and a leaner checkout.",
-                                  "outcome":  "Less hesitation and fewer points of friction before confirmation."
+                                  "outcome":  "Less hesitation and fewer points of friction before confirmation.",
+                                  "kpis":  [
+                                               {"value": "+31%", "label": "Checkout completion"},
+                                               {"value": "-46%", "label": "Mobile drop-off"}
+                                           ]
                                                             },
                                                 "marketing":  {
                                                                   "category":  "Service business",
+                                    "client":  "European consulting firm",
+                                    "period":  "10 weeks · 2024",
                                     "title":  "A faster website with a sharper sales story",
                                     "summary":  "We rebuilt an underperforming presence into a credible, focused platform for qualified demand.",
                                     "problem":  "The old website looked generic, loaded slowly and did not explain the service clearly enough to attract higher-quality leads.",
                                     "built":  "Conversion-led messaging, reusable sections and technical SEO foundations.",
-                                    "outcome":  "A stronger first impression, faster pages and better-qualified leads."
+                                    "outcome":  "A stronger first impression, faster pages and better-qualified leads.",
+                                    "kpis":  [
+                                                 {"value": "96", "label": "Performance score"},
+                                                 {"value": "+38%", "label": "Qualified leads"}
+                                             ]
                                                               },
                                                 "operations":  {
                                                                    "category":  "Operations platform",
+                                                                   "client":  "Multi-site services operator",
+                                                                   "period":  "7 months · 2025",
                                                                    "title":  "One workflow instead of scattered admin work",
                                                                    "summary":  "We turned repeated handoffs and disconnected tools into a clear operational system.",
                                                                    "problem":  "Critical work moved through spreadsheets, inboxes and manual status updates with limited visibility.",
                                                                    "built":  "A unified dashboard, automated handoffs and integrations with the team's core tools.",
-                                                                   "outcome":  "Less coordination overhead, clearer ownership and faster daily execution."
+                                                                   "outcome":  "Less coordination overhead, clearer ownership and faster daily execution.",
+                                                                   "kpis":  [
+                                                                                {"value": "-60%", "label": "Admin time"},
+                                                                                {"value": "12", "label": "Tool integrations"}
+                                                                            ]
                                                               }
                                             }
                               },

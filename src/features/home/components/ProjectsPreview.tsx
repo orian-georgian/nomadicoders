@@ -1,63 +1,30 @@
 "use client";
 
-import { ArrowUpRight } from "lucide-react";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
+import { ArrowDownRight, ArrowRight, CalendarDays, ChartColumnIncreasing, Gauge, Star } from "lucide-react";
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 
 import { AnimatedSection } from "@/app/[locale]/(marketing)/_components/AnimatedSection";
 import { Container } from "@/components/ui/Container";
+import { projects } from "@/features/projects/data/projects";
+import { Link } from "@/i18n/navigation";
 
 import { ClientLogos } from "./ClientLogos";
 
-type ProjectKey = "saas" | "booking" | "marketing" | "operations";
-
-type Project = {
-  key: ProjectKey;
-  stack: string[];
-  year: string;
-};
-
-const projects: Project[] = [
-  {
-    key: "saas",
-    stack: ["Next.js", "TypeScript", "PostgreSQL"],
-    year: "2025",
-  },
-  {
-    key: "booking",
-    stack: ["React", "Mobile UX", "CMS"],
-    year: "2025",
-  },
-  {
-    key: "marketing",
-    stack: ["Next.js", "Performance", "SEO"],
-    year: "2024",
-  },
-  {
-    key: "operations",
-    stack: ["TypeScript", "Automation", "APIs"],
-    year: "2025",
-  },
-];
-
 const cardEntrance = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 },
+  hidden: { opacity: 0 },
+  visible: { opacity: 1 },
 };
 
 export function ProjectsPreview() {
   const t = useTranslations("Home.projects");
-  const reducedMotion = Boolean(useReducedMotion());
 
   return (
     <AnimatedSection className="relative overflow-hidden py-10 sm:py-24" id="projects">
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-        <div className="absolute right-[-8rem] top-24 h-72 w-72 rounded-full bg-sky-400/[0.06] blur-3xl" />
-      </div>
-
       <Container className="relative">
         <motion.div
-          className="max-w-3xl space-y-4 text-center sm:text-left"
+          className="max-w-3xl space-y-4 text-left"
           initial={{ opacity: 0, y: 18 }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           viewport={{ amount: 0.45, once: true }}
@@ -66,88 +33,141 @@ export function ProjectsPreview() {
           <span className="text-sm font-semibold uppercase tracking-[0.24em] text-sky-300">
             {t("eyebrow")}
           </span>
-          <h2 className="heading text-3xl sm:text-4xl">{t("title")}</h2>
+          <h2 className="heading whitespace-pre-line text-3xl sm:text-4xl">{t("title")}</h2>
           <p className="subheading max-w-2xl">{t("description")}</p>
         </motion.div>
 
-        <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-          {projects.map((project, index) => {
-            return (
-              <motion.article
-                className="group relative flex min-h-[25rem] flex-col overflow-hidden rounded-[1.6rem] border border-white/10 bg-[#0b1120]/90 shadow-[0_24px_80px_rgba(2,6,23,0.28)] transition-[border-color,box-shadow,transform] duration-300 hover:border-white/15 hover:shadow-[0_28px_88px_rgba(2,6,23,0.34)]"
-                initial="hidden"
-                key={project.key}
-                transition={{ delay: index * 0.07, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-                variants={cardEntrance}
-                viewport={{ amount: 0.25, once: true }}
-                whileHover={reducedMotion ? undefined : { y: -4 }}
-                whileInView="visible"
-              >
-                <div className="border-b border-white/8 px-5 py-4 sm:px-6">
-                  <div className="flex items-center justify-between gap-3">
-                    <div className="flex min-w-0 items-center gap-3">
-                      <div className="flex shrink-0 gap-1.5" aria-hidden="true">
-                        <span className="h-2.5 w-2.5 rounded-full bg-rose-400/80" />
-                        <span className="h-2.5 w-2.5 rounded-full bg-amber-300/80" />
-                        <span className="h-2.5 w-2.5 rounded-full bg-emerald-300/80" />
-                      </div>
-                      <p className="truncate text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-slate-400">
-                        {t(`items.${project.key}.category`)}
-                      </p>
-                    </div>
-                    <span className="rounded-full bg-white/[0.06] px-2.5 py-1 text-[0.68rem] font-medium text-slate-300">
-                      {project.year}
-                    </span>
+        <div className="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+          {[...projects].reverse().map((project, index) => (
+            <motion.article
+              className="group relative flex h-full flex-col overflow-hidden rounded-[1.4rem] border border-white/10 bg-[#101522] shadow-[0_24px_80px_rgba(2,6,23,0.28)] transition-[border-color,box-shadow] duration-300 hover:border-white/15 hover:shadow-[0_28px_88px_rgba(2,6,23,0.34)]"
+              initial="hidden"
+              key={project.key}
+              transition={{ delay: index * 0.07, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+              variants={cardEntrance}
+              viewport={{ amount: 0.25, once: true }}
+              whileInView="visible"
+            >
+              <div className="flex items-center justify-between gap-4 border-b border-white/10 bg-[#0b1120] px-5 py-4 sm:px-6">
+                <div className="flex min-w-0 items-center gap-3">
+                  <div className="flex shrink-0 gap-1.5" aria-hidden="true">
+                    <span className="h-2.5 w-2.5 rounded-full bg-rose-400/80" />
+                    <span className="h-2.5 w-2.5 rounded-full bg-amber-300/80" />
+                    <span className="h-2.5 w-2.5 rounded-full bg-emerald-300/80" />
+                  </div>
+                  <p className="truncate text-[0.68rem] font-semibold uppercase tracking-[0.2em] text-slate-400">
+                    {t(`items.${project.key}.category`)}
+                  </p>
+                </div>
+                <span className="shrink-0 rounded-full border border-[#6ee7b7]/20 bg-[#6ee7b7]/10 px-2.5 py-1 text-[0.68rem] font-semibold text-[#6ee7b7]">
+                  {t("labels.delivered")}
+                </span>
+              </div>
+
+              <div className="flex flex-1 flex-col p-5 sm:p-6">
+                <div className="flex items-center gap-3">
+                  <div className="relative h-11 w-11 shrink-0 overflow-hidden rounded-xl">
+                    <Image
+                      alt=""
+                      aria-hidden="true"
+                      className="object-cover"
+                      fill
+                      sizes="44px"
+                      src={project.clientImageSrc}
+                    />
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-white">{t(`items.${project.key}.client`)}</p>
+                    <p className="mt-1 text-xs text-slate-500">{t("labels.client")} · {t(`items.${project.key}.category`)}</p>
                   </div>
                 </div>
 
-                <div className="flex flex-1 flex-col p-5 sm:p-6">
-                  <h3 className="text-[1.45rem] font-semibold tracking-tight text-white">
-                    {t(`items.${project.key}.title`)}
-                  </h3>
-                  <p className="mt-3 text-sm leading-6 text-slate-400">
-                    {t(`items.${project.key}.summary`)}
-                  </p>
+                <h3 className="mt-5 text-xl font-semibold leading-[1.25] tracking-tight text-white">
+                  {t(`items.${project.key}.title`)}
+                </h3>
 
-                <dl className="mt-6 space-y-4 border-t border-white/10 pt-5">
-                  <div className="grid grid-cols-[4.5rem_1fr] gap-3">
-                    <dt className="text-[0.67rem] font-semibold uppercase tracking-[0.14em] text-slate-500">
-                      {t("labels.built")}
-                    </dt>
-                    <dd className="text-sm leading-5 text-slate-300">
-                      {t(`items.${project.key}.built`)}
-                    </dd>
-                  </div>
-                  <div className="grid grid-cols-[4.5rem_1fr] gap-3">
-                    <dt className="text-[0.67rem] font-semibold uppercase tracking-[0.14em] text-emerald-300/80">
-                      {t("labels.outcome")}
-                    </dt>
-                    <dd className="text-sm font-medium leading-5 text-slate-200">
-                      {t(`items.${project.key}.outcome`)}
-                    </dd>
-                  </div>
-                </dl>
-
-                <div className="mt-auto flex items-end justify-between gap-4 pt-7">
-                  <div className="flex flex-wrap gap-1.5">
-                    {project.stack.map((tech) => (
-                      <span className="rounded-full border border-white/10 px-2.5 py-1 text-[0.68rem] text-slate-400" key={tech}>
-                        {tech}
-                      </span>
-                    ))}
+                <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-3 text-sm">
+                  <div className="flex items-center gap-2 text-slate-400">
+                    <CalendarDays className="h-4 w-4" />
+                    <span>{t(`items.${project.key}.period`)}</span>
                   </div>
                   <a
-                    aria-label={`${t("cta")}: ${t(`items.${project.key}.title`)}`}
-                    className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/[0.05] text-white transition-all duration-300 hover:border-sky-200/30 hover:bg-sky-200/10 hover:text-sky-100"
-                    href="#contact"
+                    aria-label={t("labels.ratingLink")}
+                    className="group/rating flex items-center gap-2 text-[#6ee7b7] transition-colors hover:text-emerald-200"
+                    href="#testimonials-section"
+                    onClick={() => {
+                      window.dispatchEvent(
+                        new CustomEvent("select-testimonial", {
+                          detail: project.testimonialKey,
+                        }),
+                      );
+                    }}
                   >
-                    <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    <Star className="h-4 w-4 fill-current" />
+                    <span>{t("labels.rating")}</span>
+                    <ArrowDownRight className="h-3.5 w-3.5 transition-transform group-hover/rating:translate-x-0.5 group-hover/rating:translate-y-0.5" />
                   </a>
                 </div>
+
+                <div className="mt-4 flex flex-wrap gap-1.5">
+                  {project.stack.map((tech) => (
+                    <span className="rounded-full border border-sky-300/15 bg-sky-300/[0.06] px-2.5 py-1 text-[0.68rem] text-sky-100" key={tech}>
+                      {tech}
+                    </span>
+                  ))}
                 </div>
-              </motion.article>
-            );
-          })}
+
+                <p className="mt-5 text-sm leading-6 text-slate-300">
+                  {t(`items.${project.key}.summary`)}
+                </p>
+
+                <div className="mb-6 mt-5 space-y-2.5">
+                  {[0, 1].map((kpiIndex) => (
+                    <div className="flex min-w-0 items-center gap-2" key={kpiIndex}>
+                      {kpiIndex === 0 ? (
+                        <Gauge className="h-3.5 w-3.5 shrink-0 text-[#6ee7b7]" />
+                      ) : (
+                        <ChartColumnIncreasing className="h-3.5 w-3.5 shrink-0 text-[#6ee7b7]" />
+                      )}
+                      <strong className="shrink-0 text-sm font-semibold text-white">
+                        {t(`items.${project.key}.kpis.${kpiIndex}.value`)}
+                      </strong>
+                      <p className="truncate text-[0.62rem] uppercase tracking-[0.1em] text-slate-500">
+                        {t(`items.${project.key}.kpis.${kpiIndex}.label`)}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="mt-auto flex items-center justify-between gap-4 border-t border-white/10 pt-5">
+                  <div className="flex items-center gap-3">
+                    <div className="flex -space-x-2">
+                      {project.team.map((member) => (
+                        <div className="relative h-9 w-9 overflow-hidden rounded-full border-2 border-[#101522]" key={member}>
+                          <Image
+                            alt={member}
+                            className="object-cover"
+                            fill
+                            sizes="36px"
+                            src={`/images/${member.toLowerCase()}.jfif`}
+                          />
+                        </div>
+                      ))}
+                    </div>
+                    <p className="text-xs text-slate-500">{t("labels.team")}</p>
+                  </div>
+
+                  <Link
+                    className="inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-slate-300 transition-colors hover:text-white"
+                    href={`/projects/${project.key}`}
+                  >
+                    {t("detailsCta")}
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </div>
+              </div>
+            </motion.article>
+          ))}
         </div>
       </Container>
       <ClientLogos embedded />

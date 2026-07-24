@@ -316,6 +316,28 @@ export function TestimonialsSection() {
     };
   }, []);
 
+  useEffect(() => {
+    const selectLinkedTestimonial = (event: Event) => {
+      const testimonialKey = (event as CustomEvent<string>).detail;
+      const testimonialIndex = testimonials.findIndex(
+        (testimonial) => testimonial.key === testimonialKey,
+      );
+
+      if (testimonialIndex < 0) return;
+
+      setActiveIndex((currentIndex) => {
+        setDirection(getDirection(currentIndex, testimonialIndex));
+        return testimonialIndex;
+      });
+    };
+
+    window.addEventListener("select-testimonial", selectLinkedTestimonial);
+
+    return () => {
+      window.removeEventListener("select-testimonial", selectLinkedTestimonial);
+    };
+  }, []);
+
   const { edgeOffset, sideOffset } = getOffsets(viewportWidth);
 
   const prevIndex = wrapIndex(activeIndex - 1);

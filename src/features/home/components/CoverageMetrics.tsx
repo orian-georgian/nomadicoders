@@ -3,18 +3,21 @@
 import {useEffect, useRef, useState} from "react";
 
 import {animate, motion, useInView, useReducedMotion} from "framer-motion";
+import {Code2, Network} from "lucide-react";
 
 type CoverageStat = {
   label: string;
+  live?: boolean;
   value: number;
   suffix?: string;
 };
 
 type CoverageMetricsProps = {
   stats: CoverageStat[];
+  variant?: "cards" | "chart";
 };
 
-export function CoverageMetrics({stats}: CoverageMetricsProps) {
+export function CoverageMetrics({stats, variant = "chart"}: CoverageMetricsProps) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const inView = useInView(containerRef, {once: true, amount: 0.65});
   const reducedMotion = useReducedMotion();
@@ -42,13 +45,68 @@ export function CoverageMetrics({stats}: CoverageMetricsProps) {
     return () => controls.forEach((control) => control.stop());
   }, [inView, stats]);
 
+  useEffect(() => {
+    if (!inView || !stats.some((item) => item.live)) return;
+
+    let timeoutId: ReturnType<typeof setTimeout>;
+    let active = true;
+
+    const scheduleUpdate = (delay: number) => {
+      timeoutId = setTimeout(() => {
+        if (!active) return;
+
+        setValues((current) =>
+          current.map((value, index) =>
+            stats[index]?.live ? value + Math.floor(Math.random() * 5) + 1 : value,
+          ),
+        );
+
+        scheduleUpdate(1200 + Math.floor(Math.random() * 2600));
+      }, delay);
+    };
+
+    scheduleUpdate(1800);
+
+    return () => {
+      active = false;
+      clearTimeout(timeoutId);
+    };
+  }, [inView, stats]);
+
+  if (variant === "cards") {
+    return (
+      <div className="grid w-full grid-cols-2 gap-3" ref={containerRef}>
+        {stats.map((item, index) => (
+          <div
+            className="rounded-xl border border-white/10 bg-[#0b1120]/90 px-4 py-3.5 text-left shadow-[0_12px_36px_rgba(2,6,23,0.14)] sm:px-5"
+            key={item.label}
+          >
+            <div className="flex items-center gap-2">
+              {index === 0 ? (
+                <Code2 aria-hidden="true" className="h-4 w-4 shrink-0 text-sky-300" />
+              ) : (
+                <Network aria-hidden="true" className="h-4 w-4 shrink-0 text-brand-purple" />
+              )}
+              <p className="text-lg font-bold leading-none tabular-nums text-white sm:text-xl">
+                {`${new Intl.NumberFormat("en-US").format(values[index] ?? 0)}${item.suffix ?? ""}`}
+              </p>
+            </div>
+            <p className="mt-2 text-[0.6rem] font-semibold uppercase leading-4 tracking-[0.14em] text-slate-400 sm:text-[0.65rem]">
+              {item.label}
+            </p>
+          </div>
+        ))}
+      </div>
+    );
+  }
+
   return (
     <div className="flex flex-1 flex-col" ref={containerRef}>
       <div className="grid grid-cols-2 gap-3">
         {stats.map((item, index) => (
           <div key={item.label}>
             <p className="text-2xl font-bold leading-none tabular-nums text-white">
-              {`${values[index] ?? 0}${item.suffix ?? ""}`}
+              {`${new Intl.NumberFormat("en-US").format(values[index] ?? 0)}${item.suffix ?? ""}`}
             </p>
             <p className="mt-1.5 whitespace-nowrap text-[0.65rem] leading-4 text-slate-300">
               {item.label}

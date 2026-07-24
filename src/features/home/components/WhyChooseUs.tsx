@@ -248,7 +248,7 @@ export function WhyChooseUs() {
               <p className="text-sm font-medium text-slate-200">{t("comparison.closing")}</p>
             </div>
             <a
-              className="inline-flex items-center gap-2 text-sm font-semibold text-sky-300 transition-colors hover:text-sky-200"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-slate-300 transition-colors hover:text-white"
               href="#projects"
             >
               {t("comparison.proofCta")}

@@ -42,10 +42,18 @@ export function Hero() {
     tiltY.set(0);
   };
 
-  const coverageStats = useMemo(
+  const experienceStats = useMemo(
     () => [
       { label: t("stats.years"), value: 12, suffix: "+" },
       { label: t("stats.projects"), value: 40, suffix: "+" },
+    ],
+    [t],
+  );
+
+  const deliveryStats = useMemo(
+    () => [
+      { label: t("stats.linesDelivered"), value: 1500000, suffix: "+" },
+      { label: t("stats.apiRequests"), live: true, value: 10625322 },
     ],
     [t],
   );
@@ -206,27 +214,6 @@ export function Hero() {
 
   return (
     <section className="section relative flex min-h-[calc(100svh-5rem)] items-center overflow-hidden pb-10 pt-12 sm:pt-16 lg:pb-16 lg:pt-20">
-      <div className="pointer-events-none absolute inset-0">
-        <motion.div
-          animate={{ scale: [1, 1.1, 0.98], x: [0, 24, -8], y: [0, -18, 10] }}
-          className="absolute -left-20 top-6 h-56 w-56 rounded-full bg-sky-400/12 blur-3xl sm:h-72 sm:w-72"
-          transition={{
-            duration: 11,
-            ease: "easeInOut",
-            repeat: Number.POSITIVE_INFINITY,
-          }}
-        />
-        <motion.div
-          animate={{ scale: [1, 0.92, 1.08], x: [0, -22, 12], y: [0, 20, -10] }}
-          className="absolute right-[-4rem] top-20 h-64 w-64 rounded-full bg-brand-purple/10 blur-3xl sm:h-80 sm:w-80"
-          transition={{
-            duration: 13,
-            ease: "easeInOut",
-            repeat: Number.POSITIVE_INFINITY,
-          }}
-        />
-      </div>
-
       <Container>
         <motion.div
           className="grid items-center gap-14 lg:grid-cols-[1.02fr_0.98fr] lg:gap-10"
@@ -253,8 +240,6 @@ export function Hero() {
               </motion.div>
 
               <div className="relative mx-auto max-w-3xl lg:mx-0">
-                <div className="absolute -left-4 top-8 -z-10 h-28 w-28 rounded-full bg-sky-400/12 blur-3xl" />
-                <div className="absolute bottom-0 right-0 -z-10 h-24 w-24 rounded-full bg-brand-purple/10 blur-3xl" />
                 <h1 className="heading max-w-3xl text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl lg:leading-[1.02]">
                   {t.rich("title", {
                     accent: (chunks) => <span className="text-brand-purple">{chunks}</span>,
@@ -285,6 +270,13 @@ export function Hero() {
               >
                 {t("secondaryCta")}
               </a>
+            </motion.div>
+
+            <motion.div
+              className="mx-auto max-w-md lg:mx-0"
+              variants={fadeIn(0.12)}
+            >
+              <CoverageMetrics stats={deliveryStats} variant="cards" />
             </motion.div>
 
           </div>
@@ -344,7 +336,7 @@ export function Hero() {
                           title={t("panel.coverage")}
                           titleClassName="!text-[0.65rem] !tracking-[0.2em]"
                         >
-                          <CoverageMetrics stats={coverageStats} />
+                          <CoverageMetrics stats={experienceStats} />
                         </HeroMetricCard>
                       </motion.div>
                     </div>

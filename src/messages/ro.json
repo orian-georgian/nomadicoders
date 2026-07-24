@@ -72,6 +72,8 @@
                               "stats":  {
                                             "years":  "Ani de experienta",
                                             "projects":  "Produse livrate",
+                                            "linesDelivered":  "Linii de cod livrate",
+                                            "apiRequests":  "Cereri API procesate",
                   "delivery":  "Workflow-uri asistate de AI, livrare verificata de seniori",
                                             "timezone":  "Colaborare flexibila intre fusuri orare",
                   "execution":  "Demo-uri, feedback si urmatorii pasi clari",
@@ -304,48 +306,83 @@
                                 },
                 "projects":  {
                                   "eyebrow":  "Proiecte selectate",
-    "title":  "Produse complexe. Rezultate clare pentru business.",
+    "title":  "Produse complexe.\nRezultate clare pentru business.",
     "description":  "O selectie de proiecte in care gandirea de produs si executia senior au transformat frictiunea intr-o experienta mai rapida si mai clara.",
                                   "framing":  "Proiect de productie anonimizat",
                                   "cta":  "Discuta un proiect similar",
+                                  "detailsCta":  "Vezi detalii",
+                                  "backCta":  "Inapoi la proiectele selectate",
+                                  "detailCtaText":  "Ai o provocare de produs similara? Discuta direct cu dezvoltatorii seniori care o vor planifica si construi.",
                                   "labels":  {
                                                  "problem":  "Problema",
                                                  "built":  "Ce am construit",
                                                  "stack":  "Stack tehnic",
-                                                 "outcome":  "Rezultat"
+                                                 "outcome":  "Rezultat",
+                                                 "client":  "Client",
+                                                 "period":  "Perioada de dezvoltare",
+                                                 "team":  "Construit de",
+                                                 "delivered":  "Livrat",
+                                                 "fullTeam":  "Echipa senior completa",
+                                                 "soloBuild":  "Senior dedicat",
+                                                 "rating":  "Rating 4,9",
+                                                 "ratingLink":  "Citeste testimonialele clientilor"
                                              },
                                   "items":  {
                                                 "saas":  {
                                                              "category":  "B2B SaaS",
+                               "client":  "Grup logistic confidential",
+                               "period":  "8 luni · 2025",
                                "title":  "O singura sursa de adevar pentru operatiuni globale",
                                "summary":  "Am inlocuit foile de calcul fragmentate si urmarirea manuala a statusului cu un produs pe care echipele se pot baza zilnic.",
                                                              "problem":  "Statusul operational era imprastiat in foi de calcul, conversatii si actualizari manuale, ceea ce facea riscurile greu de vazut.",
                                "built":  "Workload, aprobari si livrari urmarite in timp real intre regiuni.",
-                               "outcome":  "Decizii mai rapide si ownership clar, fara urmarirea manuala a statusului."
+                               "outcome":  "Decizii mai rapide si ownership clar, fara urmarirea manuala a statusului.",
+                               "kpis":  [
+                                            {"value": "42%", "label": "Decizii mai rapide"},
+                                            {"value": "100%", "label": "Vizibilitate workflow"}
+                                        ]
                                                          },
                                                 "booking":  {
                                                                 "category":  "Produs de calatorii",
+                                  "client":  "Platforma independenta de calatorii",
+                                  "period":  "6 luni · 2025",
                                   "title":  "Un parcurs de rezervare construit pentru incredere",
                                   "summary":  "Am transformat un flux mobil lent si neclar intr-un drum direct de la explorare la rezervare confirmata.",
                                                                 "problem":  "Fluxul existent crea ezitare: preturile nu erau destul de clare, pasii pe mobil pareau greoi si actualizarile de continut depindeau prea mult de dezvoltatori.",
                                   "built":  "Explorare mobile-first, preturi transparente si un checkout simplificat.",
-                                  "outcome":  "Mai putina ezitare si mai putine puncte de frictiune inainte de confirmare."
+                                  "outcome":  "Mai putina ezitare si mai putine puncte de frictiune inainte de confirmare.",
+                                  "kpis":  [
+                                               {"value": "+31%", "label": "Finalizare checkout"},
+                                               {"value": "-46%", "label": "Abandon pe mobil"}
+                                           ]
                                                             },
                                                 "marketing":  {
                                                                   "category":  "Business de servicii",
+                                    "client":  "Firma europeana de consultanta",
+                                    "period":  "10 saptamani · 2024",
                                     "title":  "Un website mai rapid, cu un mesaj de vanzare mai clar",
                                     "summary":  "Am reconstruit o prezenta slaba intr-o platforma credibila si concentrata pe cerere calificata.",
                                                                   "problem":  "Website-ul vechi parea generic, se incarca lent si nu explica serviciul destul de clar pentru lead-uri mai bune.",
                                     "built":  "Mesaj orientat spre conversie, sectiuni reutilizabile si fundatie SEO tehnica.",
-                                    "outcome":  "O prima impresie mai puternica, pagini mai rapide si lead-uri mai calificate."
+                                    "outcome":  "O prima impresie mai puternica, pagini mai rapide si lead-uri mai calificate.",
+                                    "kpis":  [
+                                                 {"value": "96", "label": "Scor de performanta"},
+                                                 {"value": "+38%", "label": "Lead-uri calificate"}
+                                             ]
                                                               },
                                                 "operations":  {
                                                                    "category":  "Platforma operationala",
+                                                                   "client":  "Operator de servicii multi-locatie",
+                                                                   "period":  "7 luni · 2025",
                                                                    "title":  "Un singur workflow in locul administrarii fragmentate",
                                                                    "summary":  "Am transformat handoff-urile repetate si tool-urile deconectate intr-un sistem operational clar.",
                                                                    "problem":  "Munca esentiala trecea prin foi de calcul, inbox-uri si actualizari manuale, cu vizibilitate limitata.",
                                                                    "built":  "Un dashboard unificat, handoff-uri automatizate si integrari cu tool-urile principale ale echipei.",
-                                                                   "outcome":  "Mai putina coordonare manuala, responsabilitate clara si executie zilnica mai rapida."
+                                                                   "outcome":  "Mai putina coordonare manuala, responsabilitate clara si executie zilnica mai rapida.",
+                                                                   "kpis":  [
+                                                                                {"value": "-60%", "label": "Timp administrativ"},
+                                                                                {"value": "12", "label": "Integrari cu tool-uri"}
+                                                                            ]
                                                               }
                                             }
                               },
