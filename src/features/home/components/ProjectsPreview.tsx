@@ -149,7 +149,7 @@ export function ProjectsPreview() {
                             className="object-cover"
                             fill
                             sizes="36px"
-                            src={`/images/${member.toLowerCase()}.jfif`}
+                            src={`/images/${member.toLowerCase()}.jpg`}
                           />
                         </div>
                       ))}

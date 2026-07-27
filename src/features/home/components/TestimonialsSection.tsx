@@ -23,7 +23,7 @@ const profileMeta = {
       {
         alt: "Andreea",
         imageClassName: "object-cover",
-        imageSrc: "/images/andreea.jfif",
+        imageSrc: "/images/andreea.jpg",
         wrapperClassName: "p-0",
       },
     ],
@@ -34,7 +34,7 @@ const profileMeta = {
       {
         alt: "Georgian",
         imageClassName: "object-cover",
-        imageSrc: "/images/georgian.jfif",
+        imageSrc: "/images/georgian.jpg",
         wrapperClassName: "p-0",
       },
     ],
@@ -45,13 +45,13 @@ const profileMeta = {
       {
         alt: "Georgian",
         imageClassName: "object-cover",
-        imageSrc: "/images/georgian.jfif",
+        imageSrc: "/images/georgian.jpg",
         wrapperClassName: "p-0",
       },
       {
         alt: "Andreea",
         imageClassName: "object-cover",
-        imageSrc: "/images/andreea.jfif",
+        imageSrc: "/images/andreea.jpg",
         wrapperClassName: "p-0",
       },
     ],
@@ -80,7 +80,7 @@ type Testimonial = {
 
 const testimonials: Testimonial[] = [
   {
-    avatarSrc: "/images/reviewers/santiago.jfif",
+    avatarSrc: "/images/reviewers/santiago.jpg",
     authorInitials: "SSG",
     company: "Siemens Energy",
     key: "georgian",
@@ -98,7 +98,7 @@ const testimonials: Testimonial[] = [
     sourceType: "linkedin",
   },
   {
-    avatarSrc: "/images/reviewers/bjorn.jfif",
+    avatarSrc: "/images/reviewers/bjorn.jpg",
     authorInitials: "BK",
     company: "TKD Solutions",
     key: "andreea",
@@ -115,7 +115,7 @@ const testimonials: Testimonial[] = [
     sourceType: "linkedin",
   },
   {
-    avatarSrc: "/images/reviewers/sylvain.jfif",
+    avatarSrc: "/images/reviewers/sylvain.jpg",
     authorInitials: "SL",
     company: "Flowie",
     key: "sylvain",
@@ -133,7 +133,7 @@ const testimonials: Testimonial[] = [
     sourceType: "linkedin",
   },
   {
-    avatarSrc: "/images/reviewers/cristina.jfif",
+    avatarSrc: "/images/reviewers/cristina.jpg",
     authorInitials: "CM",
     company: "European Parliament",
     key: "cristina",
@@ -151,7 +151,7 @@ const testimonials: Testimonial[] = [
     sourceType: "linkedin",
   },
   {
-    avatarSrc: "/images/reviewers/cristian.jfif",
+    avatarSrc: "/images/reviewers/cristian.jpg",
     authorInitials: "CB",
     company: "dotWhite",
     key: "cristian",
@@ -169,7 +169,7 @@ const testimonials: Testimonial[] = [
     sourceType: "linkedin",
   },
   {
-    avatarSrc: "/images/reviewers/alina.jfif",
+    avatarSrc: "/images/reviewers/alina.jpg",
     authorInitials: "AC",
     company: "Globant",
     key: "alina",
@@ -187,7 +187,7 @@ const testimonials: Testimonial[] = [
     sourceType: "linkedin",
   },
   {
-    avatarSrc: "/images/reviewers/julia.jfif",
+    avatarSrc: "/images/reviewers/julia.jpg",
     authorInitials: "JH",
     company: "Flowie",
     key: "julia",

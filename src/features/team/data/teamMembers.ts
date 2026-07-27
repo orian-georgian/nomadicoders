@@ -4,7 +4,7 @@ export const teamMembers: TeamMemberProfileData[] = [
   {
     slug: "georgian",
     name: "Georgian",
-    imageSrc: "/images/georgian.jfif",
+    imageSrc: "/images/georgian.jpg",
     role: "Senior Frontend Engineer",
     tagline:
       "Design-minded frontend engineer focused on product quality and smooth UX.",
@@ -214,7 +214,7 @@ export const teamMembers: TeamMemberProfileData[] = [
   {
     slug: "andreea",
     name: "Andreea Orian",
-    imageSrc: "/images/andreea.jfif",
+    imageSrc: "/images/andreea.jpg",
     role: "Senior Full-Stack Engineer",
     tagline:
       "Full-stack engineer shaping scalable systems with practical product thinking.",
