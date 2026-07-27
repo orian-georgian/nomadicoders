@@ -22,8 +22,8 @@ type KpiVisual = "execution" | "handoffs" | "quality" | "direct";
 export function Hero() {
   const t = useTranslations("Home.hero");
   const reducedMotion = Boolean(useReducedMotion());
-  const tiltX = useMotionValue(0);
-  const tiltY = useMotionValue(0);
+  const tiltX = useMotionValue(0.5);
+  const tiltY = useMotionValue(-0.5);
   const tiltXSpring = useSpring(tiltX, { damping: 30, stiffness: 300 });
   const tiltYSpring = useSpring(tiltY, { damping: 30, stiffness: 300 });
   const dashboardRotateX = useTransform(tiltYSpring, [-0.5, 0.5], ["6deg", "-6deg"]);
@@ -38,8 +38,8 @@ export function Hero() {
   };
 
   const resetDashboardTilt = () => {
-    tiltX.set(0);
-    tiltY.set(0);
+    tiltX.set(0.5);
+    tiltY.set(-0.5);
   };
 
   const experienceStats = useMemo(
